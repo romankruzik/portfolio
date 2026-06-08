@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 423.8 414">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ff7262;
+      }
+
+      .cls-2 {
+        fill: #a259ff;
+      }
+
+      .cls-3 {
+        fill: #1abcfe;
+      }
+
+      .cls-4 {
+        fill: #f24e1e;
+      }
+
+      .cls-5 {
+        fill: #0acf83;
+      }
+    </style>
+  </defs>
+  <rect width="423.8" height="414" rx="76.11" ry="76.11"/>
+  <g>
+    <path id="path0_fill" data-name="path0 fill" class="cls-5" d="M162.53,361.6c27.25,0,49.37-22.12,49.37-49.37v-49.37h-49.37c-27.25,0-49.37,22.12-49.37,49.37s22.12,49.37,49.37,49.37Z"/>
+    <path id="path1_fill" data-name="path1 fill" class="cls-2" d="M113.17,213.5c0-27.25,22.12-49.37,49.37-49.37h49.37v98.73h-49.37c-27.25,0-49.37-22.12-49.37-49.37Z"/>
+    <path id="path1_fill-2" data-name="path1 fill" class="cls-4" d="M113.17,114.77c0-27.25,22.12-49.37,49.37-49.37h49.37v98.73h-49.37c-27.25,0-49.37-22.12-49.37-49.37Z"/>
+    <path id="path2_fill" data-name="path2 fill" class="cls-1" d="M211.9,65.4h49.37c27.25,0,49.37,22.12,49.37,49.37s-22.12,49.37-49.37,49.37h-49.37v-98.73Z"/>
+    <path id="path3_fill" data-name="path3 fill" class="cls-3" d="M310.63,213.5c0,27.25-22.12,49.37-49.37,49.37s-49.37-22.12-49.37-49.37,22.12-49.37,49.37-49.37,49.37,22.12,49.37,49.37Z"/>
+  </g>
+</svg>
