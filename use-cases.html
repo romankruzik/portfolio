@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Studies — Kružík Design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --void: #0a0a0a;
+    --void2: #111111;
+    --void3: #1a1a1a;
+    --border: rgba(255,255,255,0.08);
+    --border-mid: rgba(255,255,255,0.14);
+    --electric: #E8FF00;
+    --electric-dim: rgba(232,255,0,0.12);
+    --offwhite: #F0EEE8;
+    --muted: #6a6a6a;
+    --muted2: #444;
+    --text: #e8e6e0;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--void);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* Cursor */
+  .cursor {
+    position: fixed;
+    width: 10px; height: 10px;
+    background: var(--electric);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.15s ease, opacity 0.2s ease;
+    transform: translate(-50%, -50%);
+  }
+  .cursor-ring {
+    position: fixed;
+    width: 36px; height: 36px;
+    border: 1px solid rgba(232,255,0,0.4);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: all 0.12s ease;
+  }
+  @media (hover: none) and (pointer: coarse) {
+    body { cursor: auto; }
+    .cursor, .cursor-ring { display: none; }
+  }
+
+  /* Nav */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 60px;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s, background 0.3s, padding 0.3s;
+  }
+  nav.scrolled {
+    border-color: var(--border);
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(12px);
+    padding: 18px 60px;
+  }
+  .nav-logo {
+    display: block;
+    text-decoration: none;
+    line-height: 0;
+  }
+  .nav-logo img {
+    display: block;
+    height: 16px;
+    width: auto;
+  }
+  .back-link {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .back-link:hover { color: var(--electric); }
+
+  /* Page hero */
+  .page-hero {
+    padding: 160px 60px 100px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .page-hero-bg {
+    position: absolute;
+    top: 50%;
+    right: -40px;
+    transform: translateY(-50%);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(120px, 18vw, 260px);
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255,255,255,0.04);
+    letter-spacing: -0.04em;
+    line-height: 0.85;
+    pointer-events: none;
+    user-select: none;
+    white-space: nowrap;
+  }
+  .page-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--electric);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .page-eyebrow::before {
+    content: '04';
+    opacity: 0.4;
+    font-size: 11px;
+  }
+  .page-eyebrow::after {
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 1px;
+    background: var(--electric);
+  }
+  .page-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(56px, 8vw, 110px);
+    font-weight: 900;
+    line-height: 0.92;
+    letter-spacing: -0.03em;
+    color: var(--offwhite);
+    margin-bottom: 40px;
+  }
+  .page-headline em { font-style: italic; color: var(--electric); }
+  .page-intro {
+    max-width: 600px;
+    font-size: 19px;
+    line-height: 1.8;
+    color: var(--muted);
+  }
+  .page-intro strong { color: var(--text); font-weight: 400; }
+
+  /* Why list — repeated from main */
+  .why-reprise {
+    padding: 80px 60px;
+    border-bottom: 1px solid var(--border);
+    background: var(--void2);
+  }
+  .why-reprise-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted2);
+    margin-bottom: 32px;
+  }
+  .why-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    list-style: none;
+  }
+  .why-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    font-size: 18px;
+    color: var(--muted);
+    line-height: 1.6;
+    padding: 24px;
+    border: 1px solid var(--border);
+    background: var(--void);
+  }
+  .why-item::before {
+    content: '✦';
+    color: var(--electric);
+    font-size: 9px;
+    margin-top: 5px;
+    flex-shrink: 0;
+  }
+  .why-item strong { color: var(--text); font-weight: 400; display: block; margin-bottom: 4px; }
+
+  /* Use cases section */
+  .use-cases {
+    padding: 100px 60px;
+  }
+  .use-cases-header {
+    margin-bottom: 80px;
+  }
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--electric);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+    max-width: 80px;
+  }
+  .use-cases-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: var(--offwhite);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+  .use-cases-headline em { font-style: italic; color: var(--electric); }
+  .use-cases-sub {
+    font-size: 18px;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 500px;
+  }
+
+  /* Timeline */
+  .timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 32px;
+    top: 0; bottom: 0;
+    width: 1px;
+    background: var(--border);
+  }
+
+  .timeline-step {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 40px;
+    padding: 48px 0;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    transition: background 0.2s;
+  }
+  .timeline-step:first-child { border-top: 1px solid var(--border); }
+  .timeline-step:hover { background: var(--void2); margin: 0 -60px; padding-left: 60px; padding-right: 60px; }
+
+  .step-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    position: relative;
+    z-index: 1;
+  }
+  .step-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--void);
+    border: 1.5px solid var(--muted2);
+    margin-top: 6px;
+    flex-shrink: 0;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .timeline-step:hover .step-dot {
+    border-color: var(--electric);
+    background: var(--electric);
+  }
+  .step-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    color: var(--muted2);
+    margin-top: 10px;
+  }
+
+  .step-body { padding-top: 0; }
+  .step-phase {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--electric);
+    margin-bottom: 10px;
+    opacity: 0.7;
+  }
+  .step-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--offwhite);
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+    margin-bottom: 12px;
+  }
+  .step-desc {
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--muted);
+    margin-bottom: 24px;
+    max-width: 600px;
+  }
+  .step-desc:last-child { margin-bottom: 0; }
+  .step-desc + .step-deliverables { margin-top: 0; }
+  .step-deliverables + .step-desc { margin-top: 20px; }
+
+  /* Placeholder card */
+  .step-placeholder {
+    border: 1px dashed var(--border-mid);
+    padding: 28px 32px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    max-width: 640px;
+    background: var(--void3);
+  }
+  .placeholder-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--electric-dim);
+    border: 1px solid rgba(232,255,0,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+    color: var(--electric);
+  }
+  .placeholder-text { flex: 1; }
+  .placeholder-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--electric);
+    opacity: 0.6;
+    margin-bottom: 6px;
+  }
+  .placeholder-title {
+    font-size: 17px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .placeholder-title strong { color: var(--text); font-weight: 400; }
+
+  /* Deliverables tags */
+  .step-deliverables {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+  }
+  .deliverable-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 5px 12px;
+  }
+
+  /* Case study content sections */
+  .cs-section {
+    padding: 100px 60px;
+    border-bottom: 1px solid var(--border);
+  }
+  .cs-section.alt { background: var(--void2); }
+  .cs-section-header { margin-bottom: 60px; }
+  .cs-section-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: var(--offwhite);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+  .cs-section-headline em { font-style: italic; color: var(--electric); }
+  .cs-section-intro {
+    font-size: 18px;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 700px;
+  }
+  .cs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    list-style: none;
+  }
+  .cs-card {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    font-size: 17px;
+    color: var(--muted);
+    line-height: 1.65;
+    padding: 24px;
+    border: 1px solid var(--border);
+    background: var(--void);
+  }
+  .cs-section.alt .cs-card { background: var(--void); }
+  .cs-card::before {
+    content: '✦';
+    color: var(--electric);
+    font-size: 9px;
+    margin-top: 5px;
+    flex-shrink: 0;
+  }
+  .cs-card strong {
+    color: var(--text);
+    font-weight: 400;
+    display: block;
+    margin-bottom: 6px;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+  .ba-list { display: flex; flex-direction: column; gap: 0; }
+  .ba-item {
+    padding: 48px 0;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.2s;
+  }
+  .ba-item:first-child { border-top: 1px solid var(--border); }
+  .ba-item:hover { background: var(--void2); margin: 0 -60px; padding-left: 60px; padding-right: 60px; }
+  .ba-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--offwhite);
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+  .ba-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 900px; }
+  .ba-block {
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--muted);
+  }
+  .ba-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--electric);
+    opacity: 0.8;
+    display: block;
+    margin-bottom: 8px;
+  }
+  .ba-label.after { color: var(--text); opacity: 1; }
+
+  /* CTA strip */
+  .cta-strip {
+    padding: 80px 60px;
+    border-top: 1px solid var(--border);
+    background: var(--void2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  /* container for CTA text */
+  .cta-strip-text { display: block; }
+  .cta-strip-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--offwhite);
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .cta-strip-headline em { font-style: italic; color: var(--electric); }
+  .cta-strip-sub {
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .btn-primary {
+    font-family: 'DM Mono', monospace;
+    font-size: 15px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--void);
+    background: var(--electric);
+    padding: 16px 36px;
+    text-decoration: none;
+    display: inline-block;
+    transition: opacity 0.2s, transform 0.2s;
+    white-space: nowrap;
+  }
+  .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+
+  /* Footer */
+  footer {
+    padding: 48px 60px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--void2);
+  }
+  .footer-logo {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--electric);
+  }
+  .footer-copy {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--muted2);
+  }
+  .footer-socials { display: flex; gap: 24px; }
+  .footer-socials a {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-socials a:hover { color: var(--electric); }
+
+  /* Reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    nav { padding: 24px 28px; }
+    nav.scrolled { padding: 16px 28px; }
+    .page-hero { padding: 120px 28px 80px; }
+    .page-headline { font-size: 52px; }
+    .why-reprise { padding: 60px 28px; }
+    .why-list { grid-template-columns: 1fr; }
+    .use-cases, .cs-section { padding: 60px 28px; }
+    .cs-grid { grid-template-columns: 1fr; }
+    .ba-pair { grid-template-columns: 1fr; gap: 20px; }
+    .ba-item:hover { margin: 0 -28px; padding-left: 28px; padding-right: 28px; }
+    .timeline::before { left: 24px; }
+    .timeline-step { grid-template-columns: 52px 1fr; gap: 20px; }
+    .timeline-step:hover { margin: 0 -28px; padding-left: 28px; padding-right: 28px; }
+    .cta-strip { padding: 60px 28px; flex-direction: column; align-items: flex-start; }
+    footer { padding: 32px 28px; flex-direction: column; gap: 20px; text-align: center; }
+  }
+  @media (max-width: 500px) {
+    .page-headline { font-size: 40px; }
+    .step-title { font-size: 20px; }
+    .step-placeholder { flex-direction: column; gap: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo"><img src="Logos/logo_k_electric.svg" alt="Kružík Design"></a>
+  <a href="index.html#why-roman" class="back-link">← Back</a>
+</nav>
+
+<!-- Page hero -->
+<section class="page-hero">
+  <div class="page-hero-bg">Why</div>
+  <p class="page-eyebrow">Why Roman</p>
+  <h1 class="page-headline">Beyond the<br><em>ordinary</em></h1>
+  <p class="page-intro">
+    Design is more than aesthetics — it's how ideas communicate, persist, and connect. Here's what I bring beyond the portfolio, and <strong>how I actually work</strong> with clients from the first conversation to the final handoff.
+  </p>
+</section>
+
+<!-- Why pillars -->
+<div class="why-reprise">
+  <p class="why-reprise-label">Core strengths</p>
+  <ul class="why-list">
+    <li class="why-item"><div><strong>Rhythm-led design thinking.</strong> Years of drumming have sharpened my sense of timing, pattern, and pace — skills that translate directly into interface flow and visual hierarchy.</div></li>
+    <li class="why-item"><div><strong>Gaming-native visual intuition.</strong> Deep knowledge of what makes a visual world feel complete, consistent, and immersive — applied to every project from brand systems to UI.</div></li>
+    <li class="why-item"><div><strong>Cross-discipline fluency.</strong> I move comfortably between print, screen, pixel art, and illustration — understanding the full context of how work lives in the world.</div></li>
+    <li class="why-item"><div><strong>End-user empathy at the core.</strong> Every UX decision starts with understanding the actual person on the other side of the screen.</div></li>
+  </ul>
+</div>
+
+<!-- Case study process -->
+<section class="use-cases">
+  <div class="use-cases-header reveal">
+    <p class="section-label">Process</p>
+    <h2 class="use-cases-headline">From first call<br>to <em>finished product</em></h2>
+    <p class="use-cases-sub">A real look at how I work — from aligning on goals through research, structure, and delivery.</p>
+  </div>
+
+  <div class="timeline">
+
+    <div class="timeline-step reveal">
+      <div class="step-node">
+        <div class="step-dot"></div>
+        <span class="step-num">01</span>
+      </div>
+      <div class="step-body">
+        <p class="step-phase">Contact</p>
+        <h3 class="step-title">Aligning on goals</h3>
+        <p class="step-desc">Every project starts with a direct conversation with the product owner or client. I document key requirements in structured meeting notes and validate them immediately to ensure shared understanding of goals, constraints, and user needs.</p>
+        <div class="step-deliverables">
+          <span class="deliverable-tag">Meeting notes</span>
+          <span class="deliverable-tag">Requirements</span>
+          <span class="deliverable-tag">Goals</span>
+          <span class="deliverable-tag">User needs</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-step reveal reveal-delay-1">
+      <div class="step-node">
+        <div class="step-dot"></div>
+        <span class="step-num">02</span>
+      </div>
+      <div class="step-body">
+        <p class="step-phase">Discovery</p>
+        <h3 class="step-title">Research & direction</h3>
+        <p class="step-desc">I analyze existing solutions and interaction patterns to avoid unnecessary complexity. Early sketches help separate essential functionality from noise. This phase focuses on exploring multiple directions quickly rather than refining details.</p>
+        <div class="step-deliverables">
+          <span class="deliverable-tag">Existing solutions</span>
+          <span class="deliverable-tag">Interaction patterns</span>
+          <span class="deliverable-tag">Early sketches</span>
+          <span class="deliverable-tag">Direction exploration</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-step reveal">
+      <div class="step-node">
+        <div class="step-dot"></div>
+        <span class="step-num">03</span>
+      </div>
+      <div class="step-body">
+        <p class="step-phase">Structure</p>
+        <h3 class="step-title">Wireframes & architecture</h3>
+        <p class="step-desc">I translate research into structured wireframes defining layout, hierarchy, and system behavior. Key elements include:</p>
+        <p class="step-desc">Wireframes are validated early with stakeholders to avoid costly changes later.</p>
+        <div class="step-deliverables">
+          <span class="deliverable-tag">Wireframes</span>
+          <span class="deliverable-tag">Layout</span>
+          <span class="deliverable-tag">Hierarchy</span>
+          <span class="deliverable-tag">System behavior</span>
+          <span class="deliverable-tag">Catalog structure</span>
+          <span class="deliverable-tag">System feedback</span>
+          <span class="deliverable-tag">Stakeholder validation</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-step reveal reveal-delay-1">
+      <div class="step-node">
+        <div class="step-dot"></div>
+        <span class="step-num">04</span>
+      </div>
+      <div class="step-body">
+        <p class="step-phase">Visual Design</p>
+        <h3 class="step-title">High-fidelity UI</h3>
+        <p class="step-desc">If no design system exists, I build visual direction through hi-fi mockups. The goal is to make the system visually clear and production-ready.</p>
+        <div class="step-deliverables">
+          <span class="deliverable-tag">Hi-fi mockups</span>
+          <span class="deliverable-tag">Design system</span>
+          <span class="deliverable-tag">Typography</span>
+          <span class="deliverable-tag">Color system</span>
+          <span class="deliverable-tag">Production-ready</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-step reveal">
+      <div class="step-node">
+        <div class="step-dot"></div>
+        <span class="step-num">05</span>
+      </div>
+      <div class="step-body">
+        <p class="step-phase">Validation</p>
+        <h3 class="step-title">Prototype & feedback</h3>
+        <p class="step-desc">I create interactive prototypes to test real user flows with stakeholders. Feedback is gathered continuously and translated into iterations until the product behaves as expected for both users and business needs.</p>
+        <div class="step-deliverables">
+          <span class="deliverable-tag">Prototypes</span>
+          <span class="deliverable-tag">User flows</span>
+          <span class="deliverable-tag">Stakeholder feedback</span>
+          <span class="deliverable-tag">Iteration cycles</span>
+          <span class="deliverable-tag">Business alignment</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-step reveal reveal-delay-1">
+      <div class="step-node">
+        <div class="step-dot" style="border-color: var(--electric); background: var(--electric);"></div>
+        <span class="step-num">06</span>
+      </div>
+      <div class="step-body">
+        <p class="step-phase">Delivery</p>
+        <h3 class="step-title">Handoff to development</h3>
+        <p class="step-desc">Final design is structured for implementation with clean files and supporting documentation. I stay available during development to clarify interactions and support smooth implementation.</p>
+        <div class="step-deliverables">
+          <span class="deliverable-tag">Clean files</span>
+          <span class="deliverable-tag">Documentation</span>
+          <span class="deliverable-tag">Dev handoff</span>
+          <span class="deliverable-tag">Interaction specs</span>
+          <span class="deliverable-tag">Implementation support</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Outcome & Impact -->
+<section class="cs-section alt">
+  <div class="cs-section-header reveal">
+    <p class="section-label">Results</p>
+    <h2 class="cs-section-headline">Outcome &amp; Impact<br><em>(Evidence-based)</em></h2>
+    <p class="cs-section-intro">The redesign of the catalog system resulted in measurable improvements in usability, clarity, and system accessibility across devices.</p>
+  </div>
+  <ul class="cs-grid reveal reveal-delay-1">
+    <li class="cs-card"><div><strong>Reduced cognitive load in navigation</strong>The navigation structure was simplified and reorganized, which significantly reduced user confusion when browsing the catalog. Users are now able to understand system hierarchy faster and locate relevant content with less effort and fewer misclicks.</div></li>
+    <li class="cs-card"><div><strong>Improved package status clarity</strong>The system introduced clearer state visibility for packages (available, downloading, outdated, or paused). This reduced uncertainty during interaction and helped users immediately understand what action, if any, is required.</div></li>
+    <li class="cs-card"><div><strong>More consistent cross-device experience</strong>Interaction patterns were standardized across different device types and system environments. This resulted in a more predictable and stable user experience, especially in mixed-device workflows.</div></li>
+    <li class="cs-card"><div><strong>Faster content discoverability by manufacturer</strong>The improved categorization and filtering logic enabled users to locate packages by manufacturer significantly faster, reducing time spent searching and improving task completion efficiency.</div></li>
+    <li class="cs-card"><div><strong>Extended system compatibility for legacy devices</strong>The redesigned catalog architecture supports older and less capable devices without degrading performance, ensuring broader usability across the installed user base.</div></li>
+  </ul>
+</section>
+
+<!-- Before / After -->
+<section class="cs-section">
+  <div class="cs-section-header reveal">
+    <p class="section-label">Transformation</p>
+    <h2 class="cs-section-headline">Before / After<br><em>(Problem → Solution)</em></h2>
+  </div>
+  <div class="ba-list">
+    <div class="ba-item reveal">
+      <h3 class="ba-title">Navigation &amp; structure</h3>
+      <div class="ba-pair">
+        <div class="ba-block"><span class="ba-label">Before</span>Users struggled to understand the catalog hierarchy, which led to confusion when searching for specific packages and inconsistent navigation behavior.</div>
+        <div class="ba-block"><span class="ba-label after">After</span>The catalog structure was simplified and reorganized into a clearer hierarchy, enabling users to navigate intuitively and locate relevant content with fewer steps.</div>
+      </div>
+    </div>
+    <div class="ba-item reveal reveal-delay-1">
+      <h3 class="ba-title">Package status clarity</h3>
+      <div class="ba-pair">
+        <div class="ba-block"><span class="ba-label">Before</span>Users lacked clear feedback about the state of their packages, often unsure whether content was up to date, downloading, or incomplete.</div>
+        <div class="ba-block"><span class="ba-label after">After</span>A structured status system was introduced, clearly communicating package states and reducing uncertainty during interaction.</div>
+      </div>
+    </div>
+    <div class="ba-item reveal">
+      <h3 class="ba-title">Cross-device usage</h3>
+      <div class="ba-pair">
+        <div class="ba-block"><span class="ba-label">Before</span>Inconsistent behavior across different devices made it difficult for users to reliably work with the catalog in mixed environments.</div>
+        <div class="ba-block"><span class="ba-label after">After</span>Interaction patterns were unified, ensuring consistent behavior and predictable user experience across devices.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Design Decisions -->
+<section class="cs-section alt">
+  <div class="cs-section-header reveal">
+    <p class="section-label">Rationale</p>
+    <h2 class="cs-section-headline">Design <em>Decisions</em></h2>
+  </div>
+  <ul class="cs-grid reveal reveal-delay-1">
+    <li class="cs-card"><div><strong>Why structure-first approach</strong>I prioritized information architecture before visual design to ensure scalability and prevent costly restructuring later in development.</div></li>
+    <li class="cs-card"><div><strong>Why explicit system states</strong>I designed package states as visible, always-present feedback elements to reduce cognitive load and eliminate hidden system behavior.</div></li>
+    <li class="cs-card"><div><strong>Why modular catalog design</strong>The catalog was structured as a modular system to support versioning, device differences, and future expansion without breaking existing flows.</div></li>
+    <li class="cs-card"><div><strong>Why early validation</strong>Wireframes were validated with stakeholders before visual design to minimize late-stage changes and ensure alignment on functional requirements.</div></li>
+  </ul>
+</section>
+
+<!-- Constraints -->
+<section class="cs-section">
+  <div class="cs-section-header reveal">
+    <p class="section-label">Context</p>
+    <h2 class="cs-section-headline"><em>Constraints</em></h2>
+  </div>
+  <ul class="cs-grid reveal reveal-delay-1">
+    <li class="cs-card"><div><strong>Legacy device support</strong>The system had to remain usable on older or less capable devices, which influenced performance-conscious design decisions and simplified interaction patterns.</div></li>
+    <li class="cs-card"><div><strong>Multi-device environment</strong>Users operate across different device types, requiring consistent interaction logic rather than device-specific variations.</div></li>
+    <li class="cs-card"><div><strong>Product owner dependency</strong>All functional decisions had to be aligned with the product owner early, requiring structured documentation and clear communication of intent.</div></li>
+    <li class="cs-card"><div><strong>Versioning complexity</strong>The catalog needed to support multiple versions of packages simultaneously, which influenced both structure and navigation logic.</div></li>
+  </ul>
+</section>
+
+<!-- CTA -->
+<div class="cta-strip">
+  <div class="cta-strip-text">
+    <h3 class="cta-strip-headline">Ready to start<br>a <em>project?</em></h3>
+    <p class="cta-strip-sub">Let's talk about what you're building.</p>
+  </div>
+  <a href="index.html#contact" class="btn-primary">Get in touch →</a>
+</div>
+
+<!-- Footer -->
+<footer>
+  <span class="footer-logo">Kružík Design</span>
+  <span class="footer-copy">© 2026 Roman Kružík · Czech Republic</span>
+  <div class="footer-socials">
+    <a href="https://www.linkedin.com/in/roman-kru%C5%BE%C3%ADk-05a044168/" target="_blank">LinkedIn</a>
+    <a href="https://www.instagram.com/kruzik_design/" target="_blank">Instagram</a>
+    <a href="https://www.artstation.com/romankruzik" target="_blank">ArtStation</a>
+    <a href="https://x.com/Carcass255" target="_blank">X</a>
+  </div>
+</footer>
+
+<script>
+  // Cursor
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mx = -100, my = -100, rx = -100, ry = -100;
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+  function animateCursor() {
+    cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
+    rx += (mx - rx) * 0.14; ry += (my - ry) * 0.14;
+    ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+    requestAnimationFrame(animateCursor);
+  }
+  animateCursor();
+  document.querySelectorAll('a, button').forEach(el => {
+    el.addEventListener('mouseenter', () => { cursor.style.transform = 'translate(-50%,-50%) scale(2.5)'; ring.style.opacity = '0'; });
+    el.addEventListener('mouseleave', () => { cursor.style.transform = 'translate(-50%,-50%) scale(1)'; ring.style.opacity = '1'; });
+  });
+
+  // Nav scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); });
+
+  // Reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

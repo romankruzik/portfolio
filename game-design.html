@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Game Design — Kružík Design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --void: #0a0a0a;
+    --void2: #111111;
+    --void3: #1a1a1a;
+    --border: rgba(255,255,255,0.08);
+    --electric: #E8FF00;
+    --offwhite: #F0EEE8;
+    --muted: #6a6a6a;
+    --muted2: #444;
+    --text: #e8e6e0;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--void);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  .cursor {
+    position: fixed;
+    width: 10px; height: 10px;
+    background: var(--electric);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.15s ease, opacity 0.2s ease;
+    transform: translate(-50%, -50%);
+  }
+  .cursor-ring {
+    position: fixed;
+    width: 36px; height: 36px;
+    border: 1px solid rgba(232,255,0,0.4);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: all 0.12s ease;
+  }
+  @media (hover: none) and (pointer: coarse) {
+    body { cursor: auto; }
+    .cursor, .cursor-ring { display: none; }
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 60px;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s, background 0.3s, padding 0.3s;
+  }
+  nav.scrolled {
+    border-color: var(--border);
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(12px);
+    padding: 18px 60px;
+  }
+
+  .nav-logo {
+    display: block;
+    text-decoration: none;
+    line-height: 0;
+  }
+  .nav-logo img {
+    display: block;
+    height: 16px;
+    width: auto;
+  }
+
+  .back-link {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .back-link:hover { color: var(--electric); }
+
+  .page-header {
+    padding: 160px 60px 80px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    color: var(--electric);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-num::before {
+    content: attr(data-num);
+    font-size: 13px;
+    opacity: 0.5;
+  }
+
+  .page-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 5vw, 64px);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: var(--offwhite);
+    line-height: 1;
+    margin-bottom: 24px;
+  }
+  .page-headline em { font-style: italic; color: var(--electric); }
+
+  .page-sub {
+    max-width: 520px;
+    font-size: 19px;
+    line-height: 1.7;
+    color: var(--muted);
+  }
+
+  .gallery {
+    padding: 80px 60px 140px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--border);
+  }
+
+  .gallery-item {
+    background: var(--void);
+    overflow: hidden;
+  }
+  .gallery-item--clickable {
+    cursor: none;
+  }
+  .gallery-item--clickable .gallery-media {
+    cursor: none;
+    border: none;
+    padding: 0;
+    background: none;
+    width: 100%;
+    display: block;
+  }
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.3s;
+  }
+  .gallery-item--clickable:hover img { opacity: 0.88; }
+  .gallery-item:not(.gallery-item--clickable):hover img { opacity: 0.92; }
+
+  .gallery-caption {
+    padding: 20px 24px 24px;
+    border-top: 1px solid var(--border);
+  }
+  .gallery-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--offwhite);
+    margin-bottom: 6px;
+  }
+  .gallery-type {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted2);
+  }
+  .project-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 28px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  .project-modal.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+  .project-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(10,10,10,0.88);
+    backdrop-filter: blur(8px);
+  }
+  .project-modal-panel {
+    position: relative;
+    width: 100%;
+    max-width: 720px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: var(--void2);
+    border: 1px solid var(--border);
+    transform: translateY(16px);
+    transition: transform 0.3s ease;
+  }
+  .project-modal.is-open .project-modal-panel {
+    transform: translateY(0);
+  }
+  .project-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 1;
+    background: rgba(10,10,10,0.7);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    font-size: 24px;
+    line-height: 1;
+    width: 40px;
+    height: 40px;
+    cursor: none;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .project-modal-close:hover { color: var(--electric); border-color: rgba(232,255,0,0.3); }
+  .project-modal-image {
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid var(--border);
+  }
+  .project-modal-body {
+    padding: 32px 40px 40px;
+  }
+  .project-modal-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 36px);
+    font-weight: 700;
+    color: var(--offwhite);
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+  .project-modal-text {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--muted);
+  }
+  body.modal-open { overflow: hidden; }
+
+  footer {
+    padding: 48px 60px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--void2);
+  }
+  .footer-logo {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--electric);
+  }
+  .footer-copy {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--muted2);
+  }
+  .footer-socials {
+    display: flex;
+    gap: 24px;
+  }
+  .footer-socials a {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-socials a:hover { color: var(--electric); }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+  .reveal-delay-5 { transition-delay: 0.5s; }
+  .reveal-delay-6 { transition-delay: 0.6s; }
+  .reveal-delay-7 { transition-delay: 0.7s; }
+
+  @media (max-width: 900px) {
+    nav { padding: 24px 28px; }
+    nav.scrolled { padding: 16px 28px; }
+    .page-header { padding: 120px 28px 60px; }
+    .gallery { padding: 60px 28px 100px; grid-template-columns: 1fr; }
+    footer { padding: 32px 28px; flex-direction: column; gap: 20px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo"><img src="Logos/logo_k_electric.svg" alt="Kružík Design"></a>
+  <a href="index.html#services" class="back-link">← Back</a>
+</nav>
+
+<header class="page-header reveal">
+  <p class="section-num" data-num="02">Portfolio</p>
+  <h1 class="page-headline">Game <em>Design</em></h1>
+  <p class="page-sub">Captivating assets for 2D games — enriching the gaming experience with visually stunning pixel-perfect elements.</p>
+</header>
+
+<main class="gallery">
+  <article class="gallery-item reveal">
+    <img src="Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-portfolio.png" alt="That One Hungry Room portfolio">
+    <div class="gallery-caption">
+      <h2 class="gallery-title">That One Hungry Room</h2>
+      <p class="gallery-type">Brno Game Jam 2023 · Game</p>
+    </div>
+  </article>
+  <article class="gallery-item reveal reveal-delay-1">
+    <img src="Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-assets.png" alt="That One Hungry Room assets">
+    <div class="gallery-caption">
+      <h2 class="gallery-title">That One Hungry Room Assets</h2>
+      <p class="gallery-type">Brno Game Jam 2023 · Pixel Art</p>
+    </div>
+  </article>
+  <article class="gallery-item reveal reveal-delay-2">
+    <img src="Work/Game Design/Brno Game Jam 2023/Postavy.png" alt="That One Hungry Room characters">
+    <div class="gallery-caption">
+      <h2 class="gallery-title">Hungry Room Characters</h2>
+      <p class="gallery-type">Brno Game Jam 2023 · Characters</p>
+    </div>
+  </article>
+  <article class="gallery-item reveal reveal-delay-3">
+    <img src="Work/Game Design/Brno Game Jam 2024/Lost-in-Underground-Screen.png" alt="Lost in Underground screen">
+    <div class="gallery-caption">
+      <h2 class="gallery-title">Lost in Underground</h2>
+      <p class="gallery-type">Brno Game Jam 2024 · Game</p>
+    </div>
+  </article>
+  <article class="gallery-item reveal reveal-delay-4">
+    <img src="Work/Game Design/Brno Game Jam 2024/Tiles.png" alt="Lost in Underground tiles">
+    <div class="gallery-caption">
+      <h2 class="gallery-title">Lost in Underground Tiles</h2>
+      <p class="gallery-type">Brno Game Jam 2024 · Tileset</p>
+    </div>
+  </article>
+  <article class="gallery-item reveal reveal-delay-5">
+    <img src="Work/Game Design/Dark Knight/Dark Pixel Background.png" alt="Dark Knight pixel background">
+    <div class="gallery-caption">
+      <h2 class="gallery-title">Dark Knight</h2>
+      <p class="gallery-type">Pixel Art · Environment</p>
+    </div>
+  </article>
+  <article class="gallery-item reveal reveal-delay-6">
+    <img src="Work/Game Design/GameDevHub/Moodboard/Moodboard-Goblin-Brotherhood.png" alt="GameDevHub moodboard">
+    <div class="gallery-caption">
+      <h2 class="gallery-title">Goblin Brotherhood Moodboard</h2>
+      <p class="gallery-type">GameDevHub · Moodboard</p>
+    </div>
+  </article>
+  <article class="gallery-item reveal reveal-delay-7">
+    <img src="Work/Game Design/GameDevHub/Wireframes/Wireframes.png" alt="GameDevHub wireframes">
+    <div class="gallery-caption">
+      <h2 class="gallery-title">GameDevHub Wireframes</h2>
+      <p class="gallery-type">GameDevHub · UX/UI</p>
+    </div>
+  </article>
+  <article class="gallery-item reveal">
+    <img src="Work/Game Design/Steam Capsule Concepts/05-Finals.png" alt="Steam capsule finals">
+    <div class="gallery-caption">
+      <h2 class="gallery-title">Steam Capsule Concepts</h2>
+      <p class="gallery-type">Store Art · Concepts</p>
+    </div>
+  </article>
+</main>
+
+<div class="project-modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle">
+  <div class="project-modal-backdrop" id="projectModalBackdrop"></div>
+  <div class="project-modal-panel">
+    <button type="button" class="project-modal-close" id="projectModalClose" aria-label="Close">×</button>
+    <img class="project-modal-image" id="projectModalImage" src="" alt="">
+    <div class="project-modal-body">
+      <h2 class="project-modal-title" id="projectModalTitle"></h2>
+      <p class="project-modal-text" id="projectModalText"></p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span class="footer-logo">Kružík Design</span>
+  <span class="footer-copy">© 2026 Roman Kružík · Czech Republic</span>
+  <div class="footer-socials">
+    <a href="https://www.linkedin.com/in/roman-kru%C5%BE%C3%ADk-05a044168/" target="_blank">LinkedIn</a>
+    <a href="https://www.instagram.com/kruzik_design/" target="_blank">Instagram</a>
+    <a href="https://www.artstation.com/romankruzik" target="_blank">ArtStation</a>
+    <a href="https://x.com/Carcass255" target="_blank">X</a>
+  </div>
+</footer>
+
+<script>
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mx = -100, my = -100, rx = -100, ry = -100;
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+  function animateCursor() {
+    cursor.style.left = mx + 'px';
+    cursor.style.top = my + 'px';
+    rx += (mx - rx) * 0.14;
+    ry += (my - ry) * 0.14;
+    ring.style.left = rx + 'px';
+    ring.style.top = ry + 'px';
+    requestAnimationFrame(animateCursor);
+  }
+  animateCursor();
+
+  document.querySelectorAll('a, button').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursor.style.transform = 'translate(-50%,-50%) scale(2.5)';
+      ring.style.opacity = '0';
+    });
+    el.addEventListener('mouseleave', () => {
+      cursor.style.transform = 'translate(-50%,-50%) scale(1)';
+      ring.style.opacity = '1';
+    });
+  });
+
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+
+  const projectModal = document.getElementById('projectModal');
+  const projectModalTitle = document.getElementById('projectModalTitle');
+  const projectModalText = document.getElementById('projectModalText');
+  const projectModalImage = document.getElementById('projectModalImage');
+  const projectModalClose = document.getElementById('projectModalClose');
+  const projectModalBackdrop = document.getElementById('projectModalBackdrop');
+
+  function openProjectModal(title, text, imageSrc, imageAlt) {
+    projectModalTitle.textContent = title;
+    projectModalText.textContent = text;
+    projectModalImage.src = imageSrc;
+    projectModalImage.alt = imageAlt;
+    projectModal.classList.add('is-open');
+    document.body.classList.add('modal-open');
+  }
+
+  function closeProjectModal() {
+    projectModal.classList.remove('is-open');
+    document.body.classList.remove('modal-open');
+  }
+
+  document.querySelectorAll('.gallery-item--clickable').forEach(item => {
+    const trigger = item.querySelector('.gallery-media');
+    trigger.addEventListener('click', () => {
+      const img = trigger.querySelector('img');
+      openProjectModal(item.dataset.modalTitle, item.dataset.modalText, img.src, img.alt);
+    });
+  });
+
+  projectModalClose.addEventListener('click', closeProjectModal);
+  projectModalBackdrop.addEventListener('click', closeProjectModal);
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && projectModal.classList.contains('is-open')) {
+      closeProjectModal();
+    }
+  });
+</script>
+</body>
+</html>

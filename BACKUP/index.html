@@ -125,8 +125,8 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 120px 60px 100px;
+    justify-content: flex-end;
+    padding: 0 60px 80px;
     position: relative;
     overflow: hidden;
   }
@@ -150,31 +150,31 @@
 
   .hero-eyebrow {
     font-family: 'DM Mono', monospace;
-    font-size: 14px;
+    font-size: 11px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--electric);
-    margin-bottom: 30px;
+    margin-bottom: 24px;
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 16px;
   }
   .hero-eyebrow::before {
     content: '';
     display: inline-block;
-    width: 50px;
+    width: 40px;
     height: 1px;
     background: var(--electric);
   }
 
   .hero-headline {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(80px, 10vw, 150px);
+    font-size: clamp(64px, 8vw, 120px);
     font-weight: 900;
     line-height: 0.92;
     letter-spacing: -0.03em;
     color: var(--offwhite);
-    margin-bottom: 60px;
+    margin-bottom: 48px;
   }
   .hero-headline em {
     font-style: italic;
@@ -189,34 +189,18 @@
   }
 
   .hero-desc {
-    max-width: 500px;
-    font-size: 24px;
+    max-width: 400px;
+    font-size: 19px;
     line-height: 1.7;
     color: var(--muted);
     font-weight: 300;
   }
   .hero-desc strong { color: var(--text); font-weight: 400; }
 
-  .hero-bottom-right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 32px;
-    flex-shrink: 0;
-  }
-
   .hero-cta-group {
     display: flex;
-    gap: 12px;
+    gap: 16px;
     align-items: center;
-    justify-content: flex-end;
-    flex-wrap: wrap;
-  }
-
-  .hero-cta-group .btn-primary,
-  .hero-cta-group .btn-ghost {
-    padding: 10px 22px;
-    letter-spacing: 0.14em;
   }
 
   .btn-primary {
@@ -252,9 +236,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     font-family: 'DM Mono', monospace;
-    font-size: 13px;
+    font-size: 10px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--muted2);
@@ -741,106 +725,23 @@
   .reveal-delay-2 { transition-delay: 0.2s; }
   .reveal-delay-3 { transition-delay: 0.3s; }
 
-  /* Hamburger button — hidden on desktop */
-  .nav-hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 4px;
-    z-index: 200;
-  }
-  .nav-hamburger span {
-    display: block;
-    width: 24px;
-    height: 1.5px;
-    background: var(--electric);
-    transition: transform 0.3s, opacity 0.3s;
-  }
-  .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
-  .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-
-  /* Mobile menu overlay */
-  .mobile-menu {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(10,10,10,0.97);
-    z-index: 150;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(8px);
-  }
-  .mobile-menu.open { display: flex; }
-  .mobile-menu ul { list-style: none; text-align: center; display: flex; flex-direction: column; gap: 8px; }
-  .mobile-menu-link {
-    font-family: 'Playfair Display', serif;
-    font-size: 48px;
-    font-weight: 900;
-    letter-spacing: -0.02em;
-    color: var(--offwhite);
-    text-decoration: none;
-    line-height: 1.1;
-    transition: color 0.2s;
-    display: block;
-    padding: 8px 0;
-  }
-  .mobile-menu-link:hover { color: var(--electric); }
-
-  /* Fix 6: Hide custom cursor on touch devices */
-  @media (hover: none) and (pointer: coarse) {
-    body { cursor: auto; }
-    .cursor, .cursor-ring { display: none; }
-  }
-
-  /* Responsive — tablet and mobile */
+  /* Responsive */
   @media (max-width: 900px) {
     nav { padding: 24px 28px; }
     nav.scrolled { padding: 16px 28px; }
-
-    /* Show hamburger, hide desktop links — keep Hire me visible */
     .nav-links { display: none; }
-    .nav-hamburger { display: flex; }
-
-    .hero { padding: 100px 28px 60px; overflow: hidden; }
-    .hero-headline { font-size: 65px; }
-    .hero-desc { font-size: 20px; max-width: 100%; }
-
-    .hero-bottom { flex-direction: column; align-items: stretch; gap: 32px; }
-    .hero-bottom-right { width: 100%; align-items: flex-end; }
-    .hero-scroll-hint { display: none; }
-
-    /* About & Why: single column */
+    .hero { padding: 0 28px 60px; }
+    .hero-headline { font-size: 52px; }
+    .hero-bottom { flex-direction: column; align-items: flex-start; }
     .about, .why { padding: 80px 28px; grid-template-columns: 1fr; gap: 60px; }
-
-    /* Fix 4: Contact — force single column */
-    .contact { padding: 80px 28px; display: block; }
-
-    /* Services */
+    .contact { padding: 80px 28px; }
     .services { padding: 80px 28px; }
     .services-grid { grid-template-columns: 1fr 1fr; }
     .services-header { flex-direction: column; }
-
-    /* Experience */
     .experience { padding: 80px 28px; }
     .exp-item { grid-template-columns: 1fr; gap: 12px; }
-
-    /* Fix 5: Tools strip — stack label above badges */
-    .tools-strip { padding: 40px 28px; flex-direction: column; align-items: flex-start; gap: 20px; }
-
+    .tools-strip { padding: 40px 28px; }
     footer { padding: 32px 28px; flex-direction: column; gap: 20px; text-align: center; }
-  }
-
-  /* Fix 7: Services grid — 1 column on small phones */
-  @media (max-width: 500px) {
-    .services-grid { grid-template-columns: 1fr; }
-    .hero-headline { font-size: 53px; }
-    .hero-desc { font-size: 18px; }
-    .contact-link-value { font-size: 14px; }
-    .exp-tag { font-size: 10px; padding: 5px 10px; }
   }
 </style>
 </head>
@@ -855,31 +756,16 @@
     <li><a href="#about">About</a></li>
     <li><a href="#services">Portfolio</a></li>
     <li><a href="#experience">Experience</a></li>
-    <li><a href="#why-roman">Case Studies</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <a href="#contact" class="nav-cta">Hire me</a>
-  <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
-    <span></span><span></span><span></span>
-  </button>
 </nav>
-
-<!-- Mobile menu overlay -->
-<div class="mobile-menu" id="mobileMenu">
-  <ul>
-    <li><a href="#about" class="mobile-menu-link">About</a></li>
-    <li><a href="#services" class="mobile-menu-link">Portfolio</a></li>
-    <li><a href="#experience" class="mobile-menu-link">Experience</a></li>
-    <li><a href="#why-roman" class="mobile-menu-link">Case Studies</a></li>
-    <li><a href="#contact" class="mobile-menu-link">Contact</a></li>
-  </ul>
-</div>
 
 <!-- Hero -->
 <section class="hero" id="home">
   <div class="hero-bg-text">Design</div>
 
-  <div class="hero-eyebrow">UX/UI Designer - Product Designer - 2D Artist</div>
+  <div class="hero-eyebrow">UX/UI Designer — 2D Artist — Czech Republic</div>
 
   <h1 class="hero-headline">
     Roman<br>
@@ -890,13 +776,11 @@
     <p class="hero-desc">
       I push creative boundaries with <strong>original and engaging work</strong>. The rhythm of music and drumming guides the flow of my designs — my love for gaming fuels the inspiration behind my illustrations.
     </p>
-    <div class="hero-bottom-right">
-      <div class="hero-cta-group">
-        <a href="#services" class="btn-primary">View Work</a>
-        <a href="#contact" class="btn-ghost">Get in Touch</a>
-      </div>
-      <div class="hero-scroll-hint">Scroll</div>
+    <div class="hero-cta-group">
+      <a href="#services" class="btn-primary">View Work</a>
+      <a href="#contact" class="btn-ghost">Get in Touch</a>
     </div>
+    <div class="hero-scroll-hint">Scroll</div>
   </div>
 </section>
 
@@ -935,7 +819,7 @@
     </p>
     <div class="about-stats">
       <div class="stat">
-        <div class="stat-num">15+</div>
+        <div class="stat-num">5+</div>
         <div class="stat-label">Years experience</div>
       </div>
       <div class="stat">
@@ -991,28 +875,28 @@
       <div class="service-icon">◈</div>
       <h3 class="service-name">Graphic Design</h3>
       <p class="service-desc">From logos to branding and marketing materials — exceptional solutions that captivate audiences and elevate brands.</p>
-      <a href="graphic-design.html" class="service-link">View designs</a>
+      <a href="Work/Graphic Design/index.html" class="service-link">View designs</a>
     </div>
     <div class="service-card reveal reveal-delay-1">
       <span class="service-num">02</span>
       <div class="service-icon">◉</div>
       <h3 class="service-name">UX/UI Design</h3>
       <p class="service-desc">Wireframes into engaging prototypes. Deep empathy with end users, ensuring their needs are at the forefront of every decision.</p>
-      <a href="uxui-design.html" class="service-link">Explore work</a>
+      <a href="#" class="service-link">Explore work</a>
     </div>
     <div class="service-card reveal reveal-delay-2">
       <span class="service-num">03</span>
       <div class="service-icon">◆</div>
       <h3 class="service-name">Game Design</h3>
       <p class="service-desc">Captivating assets for 2D games — enriching the gaming experience with visually stunning pixel-perfect elements.</p>
-      <a href="game-design.html" class="service-link">See game art</a>
+      <a href="#" class="service-link">See game art</a>
     </div>
     <div class="service-card reveal reveal-delay-3">
       <span class="service-num">04</span>
       <div class="service-icon">✦</div>
       <h3 class="service-name">Illustration</h3>
       <p class="service-desc">Illustrations that breathe life into stories — bringing characters and narratives to vivid reality.</p>
-      <a href="illustration.html" class="service-link">Explore artwork</a>
+      <a href="#" class="service-link">Explore artwork</a>
     </div>
   </div>
 </section>
@@ -1025,63 +909,39 @@
   </div>
   <div class="exp-list">
     <div class="exp-item reveal">
-      <span class="exp-date">2026</span>
+      <span class="exp-date">2022 — Present</span>
       <div>
-        <div class="exp-role">Flexographic Prepress Specialist</div>
-        <div class="exp-company">DMF s. r. o.</div>
+        <div class="exp-role">Freelance Designer</div>
+        <div class="exp-company">Kružík Design — Remote</div>
       </div>
-      <span class="exp-tag">Prepress · Print</span>
+      <span class="exp-tag">UX/UI · Brand · Illustration</span>
     </div>
     <div class="exp-item reveal">
-      <span class="exp-date">2023 — 2025</span>
+      <span class="exp-date">2020 — 2022</span>
       <div>
-        <div class="exp-role">UX/UI Designer</div>
-        <div class="exp-company">TESCAN 3DIM</div>
+        <div class="exp-role">2D Artist & Game Asset Designer</div>
+        <div class="exp-company">Independent — Czech Republic</div>
       </div>
-      <span class="exp-tag">UX/UI · Product Design</span>
+      <span class="exp-tag">Game Design · Pixel Art</span>
     </div>
     <div class="exp-item reveal">
-      <span class="exp-date">2020 — 2023</span>
-      <div>
-        <div class="exp-role">IT Support</div>
-        <div class="exp-company">ROHLIK.CZ — Brno Warehouse</div>
-      </div>
-      <span class="exp-tag">IT Support</span>
-    </div>
-    <div class="exp-item reveal">
-      <span class="exp-date">2017 — 2019</span>
-      <div>
-        <div class="exp-role">Operator / Designer of IAM System Perun</div>
-        <div class="exp-company">Masaryk University (ICS)</div>
-      </div>
-      <span class="exp-tag">System Design · UX</span>
-    </div>
-    <div class="exp-item reveal">
-      <span class="exp-date">2012 — 2017</span>
-      <div>
-        <div class="exp-role">Lead Graphic Designer</div>
-        <div class="exp-company">NOVÁ ŠKOLA s. r. o.</div>
-      </div>
-      <span class="exp-tag">Graphic Design · Lead</span>
-    </div>
-    <div class="exp-item reveal">
-      <span class="exp-date">2011 — 2012</span>
+      <span class="exp-date">2018 — 2020</span>
       <div>
         <div class="exp-role">Graphic Designer</div>
-        <div class="exp-company">NAŠE ŠKOLA s. r. o.</div>
+        <div class="exp-company">Agency / Studio work</div>
       </div>
-      <span class="exp-tag">Graphic Design</span>
+      <span class="exp-tag">Graphic Design · Print</span>
     </div>
   </div>
 </section>
 
 <!-- Why Roman -->
-<section class="why" id="why-roman">
+<section class="why">
   <div class="reveal">
     <p class="section-num" data-num="04">Why Roman</p>
     <h2 class="why-headline">Beyond the<br><em>ordinary</em></h2>
     <p class="why-body">Design is more than aesthetics — it's how ideas communicate, persist, and connect. Here's what I bring beyond the portfolio.</p>
-    <a href="use-cases.html" class="btn-primary">Case Studies</a>
+    <a href="#" class="btn-primary">View Resume</a>
   </div>
   <ul class="why-list reveal reveal-delay-1">
     <li class="why-item"><strong>Rhythm-led design thinking.</strong> Years of drumming have sharpened my sense of timing, pattern, and pace — skills that translate directly into interface flow and visual hierarchy.</li>
@@ -1155,22 +1015,6 @@
     el.addEventListener('mouseleave', () => {
       cursor.style.transform = 'translate(-50%,-50%) scale(1)';
       ring.style.opacity = '1';
-    });
-  });
-
-  // Hamburger menu
-  const hamburger = document.getElementById('navHamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
-  hamburger.addEventListener('click', () => {
-    const open = mobileMenu.classList.toggle('open');
-    hamburger.classList.toggle('open', open);
-    document.body.style.overflow = open ? 'hidden' : '';
-  });
-  document.querySelectorAll('.mobile-menu-link').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.remove('open');
-      hamburger.classList.remove('open');
-      document.body.style.overflow = '';
     });
   });
 
