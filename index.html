@@ -596,6 +596,22 @@
     padding: 6px 14px;
     white-space: nowrap;
   }
+  .exp-item--expandable { cursor: none; }
+  .exp-detail {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease;
+  }
+  .exp-item.is-open .exp-detail { grid-template-rows: 1fr; }
+  .exp-detail-inner { overflow: hidden; }
+  .exp-detail-inner p {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--muted);
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
 
   /* Why me */
   .why {
@@ -1029,51 +1045,81 @@
     <h2 class="exp-headline">Professional<br><em>journey</em></h2>
   </div>
   <div class="exp-list">
-    <div class="exp-item reveal">
+    <div class="exp-item exp-item--expandable reveal" role="button" tabindex="0" aria-expanded="false">
       <span class="exp-date">2026</span>
       <div>
         <div class="exp-role">Flexographic Prepress Specialist</div>
         <div class="exp-company">DMF s. r. o.</div>
+        <div class="exp-detail">
+          <div class="exp-detail-inner">
+            <p>I focused on preparing graphic data for flexographic printing. Based on customer artwork, I prepared production-ready files using knowledge of overprint, trapping, and other technical requirements necessary to ensure accurate transfer to printing plates. The goal was to guarantee that the final plates could reproduce the design on various flexible materials (labels, bags, packaging films, and other soft substrates) with maximum precision. I also assisted in the production of printing plates and engraved cylinders.</p>
+          </div>
+        </div>
       </div>
       <span class="exp-tag">Prepress · Print</span>
     </div>
-    <div class="exp-item reveal">
+    <div class="exp-item exp-item--expandable reveal" role="button" tabindex="0" aria-expanded="false">
       <span class="exp-date">2023 — 2025</span>
       <div>
         <div class="exp-role">UX/UI Designer</div>
         <div class="exp-company">TESCAN 3DIM</div>
+        <div class="exp-detail">
+          <div class="exp-detail-inner">
+            <p>I worked primarily for an international client on the redesign of a global application used by doctors and dentists worldwide. The goal was to unify multiple system modules, define a new visual direction, design a consistent icon set, and ensure coherence across complex workflow wizards used for dental procedures and clinical projects.</p>
+          </div>
+        </div>
       </div>
       <span class="exp-tag">UX/UI · Product Design</span>
     </div>
-    <div class="exp-item reveal">
+    <div class="exp-item exp-item--expandable reveal" role="button" tabindex="0" aria-expanded="false">
       <span class="exp-date">2020 — 2023</span>
       <div>
         <div class="exp-role">IT Support</div>
         <div class="exp-company">ROHLIK.CZ — Brno Warehouse</div>
+        <div class="exp-detail">
+          <div class="exp-detail-inner">
+            <p>I joined the company during a relocation of the Brno warehouse to new and larger premises. My responsibility was to ensure a smooth transition without disrupting order processing workflows. I provided support for both hardware and software systems and gradually helped simplify and automate internal processes to improve efficiency.</p>
+          </div>
+        </div>
       </div>
       <span class="exp-tag">IT Support</span>
     </div>
-    <div class="exp-item reveal">
+    <div class="exp-item exp-item--expandable reveal" role="button" tabindex="0" aria-expanded="false">
       <span class="exp-date">2017 — 2019</span>
       <div>
         <div class="exp-role">Operator / Designer of IAM System Perun</div>
         <div class="exp-company">Masaryk University (ICS)</div>
+        <div class="exp-detail">
+          <div class="exp-detail-inner">
+            <p>I provided first-level support for users from Czech and international universities and research institutions using the PERUN Identity and Access Management system. Users contacted me via phone or ticketing system, and I helped them configure full access hierarchies to fully utilize the system's capabilities. In addition, I tested new components, created documentation and user guides, and contributed to the production of visual materials, presentations, and web pages for both new and existing users.</p>
+          </div>
+        </div>
       </div>
       <span class="exp-tag">System Design · UX</span>
     </div>
-    <div class="exp-item reveal">
+    <div class="exp-item exp-item--expandable reveal" role="button" tabindex="0" aria-expanded="false">
       <span class="exp-date">2012 — 2017</span>
       <div>
         <div class="exp-role">Lead Graphic Designer</div>
         <div class="exp-company">NOVÁ ŠKOLA s. r. o.</div>
+        <div class="exp-detail">
+          <div class="exp-detail-inner">
+            <p>I led a team of 5–8 graphic designers and was responsible for the production of interactive textbooks for grades 1–9 of primary schools. The textbooks were created in an internal authoring tool (Media Creator), which I also helped test and improve by suggesting new features. I provided training for teachers on how to use the interactive textbooks and was responsible for user support.</p>
+          </div>
+        </div>
       </div>
       <span class="exp-tag">Graphic Design · Lead</span>
     </div>
-    <div class="exp-item reveal">
+    <div class="exp-item exp-item--expandable reveal" role="button" tabindex="0" aria-expanded="false">
       <span class="exp-date">2011 — 2012</span>
       <div>
         <div class="exp-role">Graphic Designer</div>
         <div class="exp-company">NAŠE ŠKOLA s. r. o.</div>
+        <div class="exp-detail">
+          <div class="exp-detail-inner">
+            <p>I created interactive textbooks for primary education (grades 1–9). My work included photo manipulation, retouching, layout design, illustration, and drawing. The content was based on print-ready textbook materials, which I extended with multimedia elements, links, educational extras, and interactive exercises. Using simple scripting, I brought selected exercises to life and made them interactive for students.</p>
+          </div>
+        </div>
       </div>
       <span class="exp-tag">Graphic Design</span>
     </div>
@@ -1191,6 +1237,28 @@
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
   }, { threshold: 0.12 });
   reveals.forEach(el => observer.observe(el));
+
+  const expItems = document.querySelectorAll('.exp-item--expandable');
+  expItems.forEach(item => {
+    const toggle = () => {
+      const wasOpen = item.classList.contains('is-open');
+      expItems.forEach(other => {
+        other.classList.remove('is-open');
+        other.setAttribute('aria-expanded', 'false');
+      });
+      if (!wasOpen) {
+        item.classList.add('is-open');
+        item.setAttribute('aria-expanded', 'true');
+      }
+    };
+    item.addEventListener('click', toggle);
+    item.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggle();
+      }
+    });
+  });
 </script>
 </body>
 </html>

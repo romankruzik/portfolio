@@ -155,9 +155,16 @@
     background: var(--void);
     overflow: hidden;
   }
-  .gallery-item--clickable {
-    cursor: none;
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.3s;
   }
+  .gallery-item:hover img { opacity: 0.92; }
+
+  /* Pop-up gallery — disabled; restore with gallery-item--clickable + .gallery-media button
+  .gallery-item--clickable { cursor: none; }
   .gallery-item--clickable .gallery-media {
     cursor: none;
     border: none;
@@ -166,14 +173,9 @@
     width: 100%;
     display: block;
   }
-  .gallery-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: opacity 0.3s;
-  }
   .gallery-item--clickable:hover img { opacity: 0.88; }
   .gallery-item:not(.gallery-item--clickable):hover img { opacity: 0.92; }
+  */
 
   .gallery-caption {
     padding: 20px 24px 24px;
@@ -193,6 +195,7 @@
     text-transform: uppercase;
     color: var(--muted2);
   }
+  /* Pop-up modal — disabled
   .project-modal {
     position: fixed;
     inset: 0;
@@ -268,6 +271,7 @@
     color: var(--muted);
   }
   body.modal-open { overflow: hidden; }
+  */
 
   footer {
     padding: 48px var(--page-gutter);
@@ -347,90 +351,69 @@
   <p class="page-sub">Branding, print, logos, and marketing materials — selected work from logos to posters and mockups.</p>
 </header>
 
-<main class="gallery">
+<!--
+  Pop-up gallery item (restore to re-enable click-to-open modals):
   <article class="gallery-item gallery-item--clickable reveal"
-    data-modal-title="Craniogen Website"
-    data-modal-text="Craniogen bridges the gap between technology and medicine, enabling surgeons to design personalized cranial implants with ease and accuracy. I focused on UX/UI design that prioritizes usability, precision, and trust – translating complex medical data into a clean, human-centered digital workflow. The result is a tool that empowers professionals to create life-changing solutions with confidence.">
-    <button type="button" class="gallery-media" aria-label="Open Craniogen project details">
-      <img src="Work/Graphic Design/Craniogen-Mockups.png" alt="Craniogen mockups">
+    data-modal-title="Project Title"
+    data-modal-text="Project description…">
+    <button type="button" class="gallery-media" aria-label="Open project details">
+      <img src="…" alt="…">
     </button>
+    …caption…
+  </article>
+-->
+<main class="gallery">
+  <article class="gallery-item reveal">
+    <img src="Work/Graphic Design/Craniogen-Mockups.png" alt="Craniogen mockups">
     <div class="gallery-caption">
       <h2 class="gallery-title">Craniogen</h2>
       <p class="gallery-type">Branding · Mockups</p>
     </div>
   </article>
-  <article class="gallery-item gallery-item--clickable reveal reveal-delay-1"
-    data-modal-title="Groot T-shirt"
-    data-modal-text="I've enjoyed creating t-shirt designs since elementary school, when I made a souvenir t-shirt for our class. Here's a Groot t-shirt that my wife asked me to make.">
-    <button type="button" class="gallery-media" aria-label="Open Groot T-shirt project details">
-      <img src="Work/Graphic Design/Groot-Tshirts-Mockup.png" alt="Groot t-shirts mockup">
-    </button>
+  <article class="gallery-item reveal reveal-delay-1">
+    <img src="Work/Graphic Design/Groot-Tshirts-Mockup.png" alt="Groot t-shirts mockup">
     <div class="gallery-caption">
       <h2 class="gallery-title">Groot T-shirts</h2>
       <p class="gallery-type">Apparel · Mockup</p>
     </div>
   </article>
-  <article class="gallery-item gallery-item--clickable reveal reveal-delay-2"
-    data-modal-title="JIRMI Tech Logo"
-    data-modal-text="Creating a logo for a friend and his company, which provides services related to electronics and computer networks.">
-    <button type="button" class="gallery-media" aria-label="Open JIRMI Tech project details">
-      <img src="Work/Graphic Design/JIRMI-Tech-Logo-BLACK-BEST.png" alt="JIRMI Tech logo">
-    </button>
+  <article class="gallery-item reveal reveal-delay-2">
+    <img src="Work/Graphic Design/JIRMI-Tech-Logo-BLACK-BEST.png" alt="JIRMI Tech logo">
     <div class="gallery-caption">
       <h2 class="gallery-title">JIRMI Tech</h2>
       <p class="gallery-type">Logo Design</p>
     </div>
   </article>
-  <article class="gallery-item gallery-item--clickable reveal reveal-delay-3"
-    data-modal-title="Líné Fitko Poster"
-    data-modal-text="Poster design for Líné Fitko, presenting the studio’s equipment and its benefits. The visuals highlight VacuShape and massage machines that promote fat reduction and lymphatic cleansing, using a clean and informative layout for easy understanding.">
-    <button type="button" class="gallery-media" aria-label="Open Líné Fitko project details">
-      <img src="Work/Graphic Design/Line-Fitko-Poster.png" alt="Line Fitko poster">
-    </button>
+  <article class="gallery-item reveal reveal-delay-3">
+    <img src="Work/Graphic Design/Line-Fitko-Poster.png" alt="Line Fitko poster">
     <div class="gallery-caption">
       <h2 class="gallery-title">Line Fitko</h2>
       <p class="gallery-type">Poster · Print</p>
     </div>
   </article>
-  <article class="gallery-item gallery-item--clickable reveal reveal-delay-4"
-    data-modal-title="MUNI & ICS"
-    data-modal-text="I designed this infographic for Masaryk University and ICS Brno to visualize academic data and highlight the university’s technological initiatives in a clear and engaging way.">
-    <button type="button" class="gallery-media" aria-label="Open MUNI & ICS project details">
-      <img src="Work/Graphic Design/MUNI-a-UVT.png" alt="MUNI and ICS design">
-    </button>
+  <article class="gallery-item reveal reveal-delay-4">
+    <img src="Work/Graphic Design/MUNI-a-UVT.png" alt="MUNI and ICS design">
     <div class="gallery-caption">
       <h2 class="gallery-title">MUNI & ICS</h2>
       <p class="gallery-type">Institutional Design</p>
     </div>
   </article>
-  <article class="gallery-item gallery-item--clickable reveal reveal-delay-5"
-    data-modal-title="OK Asian Brand"
-    data-modal-text="I was asked to create a logo for an Asian bistro, as well as other products such as a menu, business cards, gift certificates, etc. I also came up with the name of the bistro, which was based on the word &quot;occasion&quot;, where one should always find an opportunity to have good Asian food.">
-    <button type="button" class="gallery-media" aria-label="Open OK Asian Brand project details">
-      <img src="Work/Graphic Design/okASIAN-1920x1280.png" alt="OK Asian Brand design">
-    </button>
+  <article class="gallery-item reveal reveal-delay-5">
+    <img src="Work/Graphic Design/okASIAN-1920x1280.png" alt="OK Asian Brand design">
     <div class="gallery-caption">
       <h2 class="gallery-title">OK Asian Brand</h2>
       <p class="gallery-type">Visual Identity</p>
     </div>
   </article>
-  <article class="gallery-item gallery-item--clickable reveal reveal-delay-6"
-    data-modal-title="3DIM Web Mockup"
-    data-modal-text="I designed a presentation website for the 3DIM team to highlight our creative process, technical skills, and team achievements.">
-    <button type="button" class="gallery-media" aria-label="Open 3DIM Web Mockup project details">
-      <img src="Work/Graphic Design/Perspective-Screens-3DIM.png" alt="3DIM Web Mockup">
-    </button>
+  <article class="gallery-item reveal reveal-delay-6">
+    <img src="Work/Graphic Design/Perspective-Screens-3DIM.png" alt="3DIM Web Mockup">
     <div class="gallery-caption">
       <h2 class="gallery-title">3DIM Web Mockup</h2>
       <p class="gallery-type">Presentation · Mockup</p>
     </div>
   </article>
-  <article class="gallery-item gallery-item--clickable reveal reveal-delay-7"
-    data-modal-title="Mora Wines"
-    data-modal-text="Visual identity and branding for Mora Wines — a wine label and presentation design focused on elegance, readability, and a cohesive brand feel across digital and print materials.">
-    <button type="button" class="gallery-media" aria-label="Open Mora Wines project details">
-      <img src="Work/Graphic Design/MoraWines-1920x1080.jpg" alt="Mora Wines branding">
-    </button>
+  <article class="gallery-item reveal reveal-delay-7">
+    <img src="Work/Graphic Design/MoraWines-1920x1080.jpg" alt="Mora Wines branding">
     <div class="gallery-caption">
       <h2 class="gallery-title">Mora Wines</h2>
       <p class="gallery-type">Branding · Visual Identity</p>
@@ -438,6 +421,7 @@
   </article>
 </main>
 
+<!-- Pop-up modal — disabled
 <div class="project-modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle">
   <div class="project-modal-backdrop" id="projectModalBackdrop"></div>
   <div class="project-modal-panel">
@@ -449,6 +433,7 @@
     </div>
   </div>
 </div>
+-->
 
 <footer>
   <span class="footer-logo">Kružík Design</span>
@@ -499,6 +484,7 @@
   }, { threshold: 0.12 });
   reveals.forEach(el => observer.observe(el));
 
+  /* Pop-up modal — disabled; uncomment with modal HTML + gallery-item--clickable markup
   const projectModal = document.getElementById('projectModal');
   const projectModalTitle = document.getElementById('projectModalTitle');
   const projectModalText = document.getElementById('projectModalText');
@@ -535,6 +521,7 @@
       closeProjectModal();
     }
   });
+  */
 </script>
 </body>
 </html>
