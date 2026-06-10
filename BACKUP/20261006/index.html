@@ -24,11 +24,6 @@
     --muted: #6a6a6a;
     --muted2: #444;
     --text: #e8e6e0;
-    --page-gutter: 60px;
-  }
-
-  @media (min-width: 901px) {
-    :root { --page-gutter: 120px; }
   }
 
   html { scroll-behavior: smooth; }
@@ -73,7 +68,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 28px var(--page-gutter);
+    padding: 28px 60px;
     border-bottom: 1px solid transparent;
     transition: border-color 0.3s, background 0.3s, padding 0.3s;
   }
@@ -81,7 +76,7 @@
     border-color: var(--border);
     background: rgba(10,10,10,0.92);
     backdrop-filter: blur(12px);
-    padding: 18px var(--page-gutter);
+    padding: 18px 60px;
   }
 
   .nav-logo {
@@ -131,7 +126,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 120px var(--page-gutter) 100px;
+    padding: 120px 60px 100px;
     position: relative;
     overflow: hidden;
   }
@@ -314,7 +309,7 @@
 
   /* About */
   .about {
-    padding: 140px var(--page-gutter);
+    padding: 140px 60px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 120px;
@@ -438,7 +433,7 @@
 
   /* Services */
   .services {
-    padding: 140px var(--page-gutter);
+    padding: 140px 60px;
     border-bottom: 1px solid var(--border);
   }
   .services-header {
@@ -538,7 +533,7 @@
 
   /* Experience */
   .experience {
-    padding: 140px var(--page-gutter);
+    padding: 140px 60px;
     border-bottom: 1px solid var(--border);
   }
   .experience-header {
@@ -599,7 +594,7 @@
 
   /* Why me */
   .why {
-    padding: 140px var(--page-gutter);
+    padding: 140px 60px;
     background: var(--void2);
     border-bottom: 1px solid var(--border);
     display: grid;
@@ -649,7 +644,7 @@
 
   /* Contact */
   .contact {
-    padding: 140px var(--page-gutter);
+    padding: 140px 60px;
   }
   .contact-headline {
     font-family: 'Playfair Display', serif;
@@ -697,7 +692,7 @@
 
   /* Footer */
   footer {
-    padding: 48px var(--page-gutter);
+    padding: 48px 60px;
     border-top: 1px solid var(--border);
     display: flex;
     align-items: center;

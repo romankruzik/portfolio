@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UX/UI Design — Kružík Design</title>
+<title>Game Design — Kružík Design</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -20,11 +20,6 @@
     --muted: #6a6a6a;
     --muted2: #444;
     --text: #e8e6e0;
-    --page-gutter: 60px;
-  }
-
-  @media (min-width: 901px) {
-    :root { --page-gutter: 120px; }
   }
 
   html { scroll-behavior: smooth; }
@@ -70,7 +65,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 28px var(--page-gutter);
+    padding: 28px 60px;
     border-bottom: 1px solid transparent;
     transition: border-color 0.3s, background 0.3s, padding 0.3s;
   }
@@ -78,7 +73,7 @@
     border-color: var(--border);
     background: rgba(10,10,10,0.92);
     backdrop-filter: blur(12px);
-    padding: 18px var(--page-gutter);
+    padding: 18px 60px;
   }
 
   .nav-logo {
@@ -104,7 +99,7 @@
   .back-link:hover { color: var(--electric); }
 
   .page-header {
-    padding: 160px var(--page-gutter) 80px;
+    padding: 160px 60px 80px;
     border-bottom: 1px solid var(--border);
   }
 
@@ -144,7 +139,7 @@
   }
 
   .gallery {
-    padding: 80px var(--page-gutter) 140px;
+    padding: 80px 60px 140px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1px;
@@ -270,7 +265,7 @@
   body.modal-open { overflow: hidden; }
 
   footer {
-    padding: 48px var(--page-gutter);
+    padding: 48px 60px;
     border-top: 1px solid var(--border);
     display: flex;
     align-items: center;
@@ -320,6 +315,7 @@
   .reveal-delay-4 { transition-delay: 0.4s; }
   .reveal-delay-5 { transition-delay: 0.5s; }
   .reveal-delay-6 { transition-delay: 0.6s; }
+  .reveal-delay-7 { transition-delay: 0.7s; }
 
   @media (max-width: 900px) {
     nav { padding: 24px 28px; }
@@ -342,51 +338,72 @@
 
 <header class="page-header reveal">
   <p class="section-num" data-num="02">Portfolio</p>
-  <h1 class="page-headline">UX/UI <em>Design</em></h1>
-  <p class="page-sub">Wireframes into engaging prototypes — deep empathy with end users, ensuring their needs are at the forefront of every decision.</p>
+  <h1 class="page-headline">Game <em>Design</em></h1>
+  <p class="page-sub">Captivating assets for 2D games — enriching the gaming experience with visually stunning pixel-perfect elements.</p>
 </header>
 
 <main class="gallery">
   <article class="gallery-item reveal">
-    <img src="Work/UXUI Design/Protocom-Wireframe.png" alt="Protocom wireframe">
+    <img src="Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-portfolio.png" alt="That One Hungry Room portfolio">
     <div class="gallery-caption">
-      <h2 class="gallery-title">Protocom Wireframe</h2>
-      <p class="gallery-type">Wireframe</p>
+      <h2 class="gallery-title">That One Hungry Room</h2>
+      <p class="gallery-type">Brno Game Jam 2023 · Game</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-1">
-    <img src="Work/UXUI Design/BSP - Tescan 3DIM/Catalog/Catalog.png" alt="BSP Tescan catalog">
+    <img src="Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-assets.png" alt="That One Hungry Room assets">
     <div class="gallery-caption">
-      <h2 class="gallery-title">BSP Catalog</h2>
-      <p class="gallery-type">UX/UI · Catalog</p>
+      <h2 class="gallery-title">That One Hungry Room Assets</h2>
+      <p class="gallery-type">Brno Game Jam 2023 · Pixel Art</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-2">
-    <img src="Work/UXUI Design/BSP - Tescan 3DIM/Design Kit/Design-Kit-Mockup.png" alt="BSP design kit mockup">
+    <img src="Work/Game Design/Brno Game Jam 2023/Postavy.png" alt="That One Hungry Room characters">
     <div class="gallery-caption">
-      <h2 class="gallery-title">BSP Design Kit</h2>
-      <p class="gallery-type">Design System · Mockup</p>
+      <h2 class="gallery-title">Hungry Room Characters</h2>
+      <p class="gallery-type">Brno Game Jam 2023 · Characters</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-3">
-    <img src="Work/UXUI Design/BSP - Tescan 3DIM/Icons/Set-of-Icons.png" alt="BSP icon set">
+    <img src="Work/Game Design/Brno Game Jam 2024/Lost-in-Underground-Screen.png" alt="Lost in Underground screen">
     <div class="gallery-caption">
-      <h2 class="gallery-title">BSP Icon Set</h2>
-      <p class="gallery-type">Design System · Icons</p>
+      <h2 class="gallery-title">Lost in Underground</h2>
+      <p class="gallery-type">Brno Game Jam 2024 · Game</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-4">
-    <img src="Work/UXUI Design/FPS Game/Wireframe.png" alt="FPS game wireframe">
+    <img src="Work/Game Design/Brno Game Jam 2024/Tiles.png" alt="Lost in Underground tiles">
     <div class="gallery-caption">
-      <h2 class="gallery-title">FPS Game Wireframe</h2>
-      <p class="gallery-type">Wireframe</p>
+      <h2 class="gallery-title">Lost in Underground Tiles</h2>
+      <p class="gallery-type">Brno Game Jam 2024 · Tileset</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-5">
-    <img src="Work/UXUI Design/FPS Game/Prototype.png" alt="FPS game prototype">
+    <img src="Work/Game Design/Dark Knight/Dark Pixel Background.png" alt="Dark Knight pixel background">
     <div class="gallery-caption">
-      <h2 class="gallery-title">FPS Game Prototype</h2>
-      <p class="gallery-type">Prototype</p>
+      <h2 class="gallery-title">Dark Knight</h2>
+      <p class="gallery-type">Pixel Art · Environment</p>
+    </div>
+  </article>
+  <article class="gallery-item reveal reveal-delay-6">
+    <img src="Work/Game Design/GameDevHub/Moodboard/Moodboard-Goblin-Brotherhood.png" alt="GameDevHub moodboard">
+    <div class="gallery-caption">
+      <h2 class="gallery-title">Goblin Brotherhood Moodboard</h2>
+      <p class="gallery-type">GameDevHub · Moodboard</p>
+    </div>
+  </article>
+  <article class="gallery-item reveal reveal-delay-7">
+    <img src="Work/Game Design/GameDevHub/Wireframes/Wireframes.png" alt="GameDevHub wireframes">
+    <div class="gallery-caption">
+      <h2 class="gallery-title">GameDevHub Wireframes</h2>
+      <p class="gallery-type">GameDevHub · UX/UI</p>
+    </div>
+  </article>
+  <article class="gallery-item reveal">
+    <img src="Work/Game Design/Steam Capsule Concepts/05-Finals.png" alt="Steam capsule finals">
+    <div class="gallery-caption">
+      <h2 class="gallery-title">Steam Capsule Concepts</h2>
+      <p class="gallery-type">Store Art · Concepts</p>
     </div>
   </article>
 </main>

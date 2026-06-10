@@ -20,11 +20,6 @@
     --muted: #6a6a6a;
     --muted2: #444;
     --text: #e8e6e0;
-    --page-gutter: 60px;
-  }
-
-  @media (min-width: 901px) {
-    :root { --page-gutter: 120px; }
   }
 
   html { scroll-behavior: smooth; }
@@ -70,7 +65,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 28px var(--page-gutter);
+    padding: 28px 60px;
     border-bottom: 1px solid transparent;
     transition: border-color 0.3s, background 0.3s, padding 0.3s;
   }
@@ -78,7 +73,7 @@
     border-color: var(--border);
     background: rgba(10,10,10,0.92);
     backdrop-filter: blur(12px);
-    padding: 18px var(--page-gutter);
+    padding: 18px 60px;
   }
 
   .nav-logo {
@@ -104,7 +99,7 @@
   .back-link:hover { color: var(--electric); }
 
   .page-header {
-    padding: 160px var(--page-gutter) 80px;
+    padding: 160px 60px 80px;
     border-bottom: 1px solid var(--border);
   }
 
@@ -144,7 +139,7 @@
   }
 
   .gallery {
-    padding: 80px var(--page-gutter) 140px;
+    padding: 80px 60px 140px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1px;
@@ -270,7 +265,7 @@
   body.modal-open { overflow: hidden; }
 
   footer {
-    padding: 48px var(--page-gutter);
+    padding: 48px 60px;
     border-top: 1px solid var(--border);
     display: flex;
     align-items: center;
