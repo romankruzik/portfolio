@@ -70,7 +70,8 @@
     .cursor,
     .cursor-ring { display: block; }
     body:hover .cursor { opacity: 1; }
-    .exp-item--expandable { cursor: none; }
+    .exp-item--expandable,
+    a.service-card { cursor: none; }
   }
 
   /* Nav */
@@ -484,6 +485,8 @@
     transition: background 0.3s;
     position: relative;
     overflow: hidden;
+    text-decoration: none;
+    color: inherit;
   }
   .service-card::before {
     content: '';
@@ -539,7 +542,7 @@
     transition: gap 0.2s;
   }
   .service-link::after { content: '→'; }
-  .service-link:hover { gap: 16px; }
+  .service-card:hover .service-link { gap: 16px; }
 
   /* Experience */
   .experience {
@@ -1002,34 +1005,34 @@
     <p class="services-sub">Four disciplines, one unified vision — design that captivates and communicates.</p>
   </div>
   <div class="services-grid">
-    <div class="service-card reveal">
+    <a href="graphic-design.html" class="service-card reveal">
       <span class="service-num">01</span>
       <div class="service-icon">◈</div>
       <h3 class="service-name">Graphic Design</h3>
       <p class="service-desc">From logos to branding and marketing materials — exceptional solutions that captivate audiences and elevate brands.</p>
-      <a href="graphic-design.html" class="service-link">View designs</a>
-    </div>
-    <div class="service-card reveal reveal-delay-1">
+      <span class="service-link">View designs</span>
+    </a>
+    <a href="uxui-design.html" class="service-card reveal reveal-delay-1">
       <span class="service-num">02</span>
       <div class="service-icon">◉</div>
       <h3 class="service-name">UX/UI Design</h3>
       <p class="service-desc">Wireframes into engaging prototypes. Deep empathy with end users, ensuring their needs are at the forefront of every decision.</p>
-      <a href="uxui-design.html" class="service-link">Explore work</a>
-    </div>
-    <div class="service-card reveal reveal-delay-2">
+      <span class="service-link">Explore work</span>
+    </a>
+    <a href="game-design.html" class="service-card reveal reveal-delay-2">
       <span class="service-num">03</span>
       <div class="service-icon">◆</div>
       <h3 class="service-name">Game Design</h3>
       <p class="service-desc">Captivating assets for 2D games — enriching the gaming experience with visually stunning pixel-perfect elements.</p>
-      <a href="game-design.html" class="service-link">See game art</a>
-    </div>
-    <div class="service-card reveal reveal-delay-3">
+      <span class="service-link">See game art</span>
+    </a>
+    <a href="illustration.html" class="service-card reveal reveal-delay-3">
       <span class="service-num">04</span>
       <div class="service-icon">✦</div>
       <h3 class="service-name">Illustration</h3>
       <p class="service-desc">Illustrations that breathe life into stories — bringing characters and narratives to vivid reality.</p>
-      <a href="illustration.html" class="service-link">Explore artwork</a>
-    </div>
+      <span class="service-link">Explore artwork</span>
+    </a>
   </div>
 </section>
 
