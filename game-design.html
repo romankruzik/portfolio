@@ -68,10 +68,11 @@
     .cursor-ring { display: block; }
     .gallery-item--clickable,
     .gallery-item--clickable .gallery-media,
-    .project-modal-close { cursor: none; }
+    .project-modal-close,
+    a.portfolio-nav-link { cursor: none; }
   }
 
-  nav {
+  nav#nav {
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 100;
@@ -82,7 +83,7 @@
     border-bottom: 1px solid transparent;
     transition: border-color 0.3s, background 0.3s, padding 0.3s;
   }
-  nav.scrolled {
+  nav#nav.scrolled {
     border-color: var(--border);
     background: rgba(10,10,10,0.92);
     backdrop-filter: blur(12px);
@@ -152,7 +153,7 @@
   }
 
   .gallery {
-    padding: 80px var(--page-gutter) 140px;
+    padding: 80px var(--page-gutter) 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1px;
@@ -272,6 +273,59 @@
   }
   body.modal-open { overflow: hidden; }
 
+  .portfolio-nav {
+    grid-column: 1 / -1;
+    display: flex;
+    border-top: 1px solid var(--border);
+    background: var(--border);
+    gap: 1px;
+  }
+  .portfolio-nav-link {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 44px var(--page-gutter);
+    background: var(--void2);
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.25s, padding 0.2s;
+  }
+  .portfolio-nav-link:hover { background: #1a1a1a; }
+  .portfolio-nav-link--prev { justify-content: flex-start; }
+  .portfolio-nav-link--prev:hover { padding-left: calc(var(--page-gutter) + 8px); }
+  .portfolio-nav-link--next {
+    justify-content: flex-end;
+    text-align: right;
+  }
+  .portfolio-nav-link--next:hover { padding-right: calc(var(--page-gutter) + 8px); }
+  .portfolio-nav-arrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 24px;
+    line-height: 1;
+    color: var(--electric);
+    flex-shrink: 0;
+  }
+  .portfolio-nav-label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .portfolio-nav-dir {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--tag);
+  }
+  .portfolio-nav-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(20px, 2.5vw, 28px);
+    font-weight: 700;
+    color: var(--electric);
+    line-height: 1.1;
+  }
+
   footer {
     padding: 48px var(--page-gutter);
     border-top: 1px solid var(--border);
@@ -326,10 +380,18 @@
   .reveal-delay-7 { transition-delay: 0.7s; }
 
   @media (max-width: 900px) {
-    nav { padding: 24px 28px; }
-    nav.scrolled { padding: 16px 28px; }
+    nav#nav { padding: 24px 28px; }
+    nav#nav.scrolled { padding: 16px 28px; }
     .page-header { padding: 120px 28px 60px; }
-    .gallery { padding: 60px 28px 100px; grid-template-columns: 1fr; }
+    .gallery { padding: 60px 28px 0; grid-template-columns: 1fr; }
+    .portfolio-nav { flex-direction: column; }
+    .portfolio-nav-link { padding: 28px; }
+    .portfolio-nav-link--prev:hover { padding-left: 36px; }
+    .portfolio-nav-link--next {
+      text-align: left;
+      justify-content: flex-start;
+    }
+    .portfolio-nav-link--next:hover { padding-right: 28px; padding-left: 36px; }
     footer { padding: 32px 28px; flex-direction: column; gap: 20px; text-align: center; }
   }
 </style>
@@ -414,6 +476,23 @@
       <p class="gallery-type">Store Art · Concepts</p>
     </div>
   </article>
+
+  <nav class="portfolio-nav reveal" aria-label="Portfolio navigation">
+    <a href="uxui-design.html" class="portfolio-nav-link portfolio-nav-link--prev">
+      <span class="portfolio-nav-arrow" aria-hidden="true">←</span>
+      <span class="portfolio-nav-label">
+        <span class="portfolio-nav-dir">Previous</span>
+        <span class="portfolio-nav-title">UX/UI Design</span>
+      </span>
+    </a>
+    <a href="illustration.html" class="portfolio-nav-link portfolio-nav-link--next">
+      <span class="portfolio-nav-label">
+        <span class="portfolio-nav-dir">Next</span>
+        <span class="portfolio-nav-title">Illustration</span>
+      </span>
+      <span class="portfolio-nav-arrow" aria-hidden="true">→</span>
+    </a>
+  </nav>
 </main>
 
 <div class="project-modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle">
