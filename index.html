@@ -143,6 +143,26 @@
     padding: 120px var(--page-gutter) 100px;
     position: relative;
     overflow: hidden;
+    background: var(--void);
+  }
+
+  .hero-video {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .hero-video__media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
   }
 
   .hero-bg-text {
@@ -160,6 +180,12 @@
     pointer-events: none;
     user-select: none;
     white-space: nowrap;
+    z-index: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-video,
+    .why-video { display: none; }
   }
 
   .hero-eyebrow {
@@ -629,6 +655,26 @@
     grid-template-columns: 1fr 1fr;
     gap: 120px;
     align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .why-video {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .why-video__media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    opacity: 0.1;
+  }
+  .why > *:not(.why-video) {
+    position: relative;
+    z-index: 1;
   }
   .why-headline {
     font-family: 'Playfair Display', serif;
@@ -898,25 +944,33 @@
 
 <!-- Hero -->
 <section class="hero" id="home">
+  <div class="hero-video" aria-hidden="true">
+    <video class="hero-video__media" autoplay muted loop playsinline>
+      <source src="Videos/vid_brno_game_jam.mp4" type="video/mp4">
+    </video>
+  </div>
+
   <div class="hero-bg-text">Design</div>
 
-  <div class="hero-eyebrow">UX/UI Designer - Product Designer - 2D Artist</div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">UX/UI Designer - Product Designer - 2D Artist</div>
 
-  <h1 class="hero-headline">
-    Roman<br>
-    <em>Kružík</em>
-  </h1>
+    <h1 class="hero-headline">
+      Roman<br>
+      <em>Kružík</em>
+    </h1>
 
-  <div class="hero-bottom">
-    <p class="hero-desc">
-      I push creative boundaries with <strong>original and engaging work</strong>. The rhythm of music and drumming guides the flow of my designs — my love for gaming fuels the inspiration behind my illustrations.
-    </p>
-    <div class="hero-bottom-right">
-      <div class="hero-cta-group">
-        <a href="#services" class="btn-primary">View Work</a>
-        <a href="#contact" class="btn-ghost">Get in Touch</a>
+    <div class="hero-bottom">
+      <p class="hero-desc">
+        I push creative boundaries with <strong>original and engaging work</strong>. The rhythm of music and drumming guides the flow of my designs — my love for gaming fuels the inspiration behind my illustrations.
+      </p>
+      <div class="hero-bottom-right">
+        <div class="hero-cta-group">
+          <a href="#services" class="btn-primary">View Work</a>
+          <a href="#contact" class="btn-ghost">Get in Touch</a>
+        </div>
+        <div class="hero-scroll-hint">Scroll</div>
       </div>
-      <div class="hero-scroll-hint">Scroll</div>
     </div>
   </div>
 </section>
@@ -1126,6 +1180,11 @@
 
 <!-- Why Roman -->
 <section class="why" id="why-roman">
+  <div class="why-video" aria-hidden="true">
+    <video class="why-video__media" autoplay muted loop playsinline>
+      <source src="Videos/vid_drummer.mp4" type="video/mp4">
+    </video>
+  </div>
   <div class="reveal">
     <p class="section-num" data-num="04">Why Roman</p>
     <h2 class="why-headline">Beyond the<br><em>ordinary</em></h2>
