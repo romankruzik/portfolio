@@ -1,0 +1,2 @@
+- hotová verze s optimalizací
+- zálohuji proto, že chci zkusit nasadit druhý jazyk tj. èeštinu

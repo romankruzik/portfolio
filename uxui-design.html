@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="description" content="UX/UI projects — wireframes, prototypes, design systems and product design.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>UX/UI Design — Kružík Design</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -424,6 +425,39 @@
     }
     .footer-socials { justify-content: center; }
   }
+
+  .lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .lang-switch__link {
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .lang-switch__link:hover { color: var(--electric); }
+  .lang-switch__link.is-active {
+    color: var(--electric);
+  }
+  .lang-switch__sep {
+    color: var(--tag);
+    opacity: 0.6;
+  }
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+  .mobile-menu-lang {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
 </style>
 </head>
 <body>
@@ -433,7 +467,14 @@
 
 <nav id="nav">
   <a href="index.html" class="nav-logo"><img src="Logos/logo_k_electric.svg" alt="Kružík Design"></a>
-  <a href="index.html#services" class="back-link">← Back</a>
+    <div class="nav-actions">
+    <div class="lang-switch" aria-label="Language">
+    <a href="uxui-design-cz.html" class="lang-switch__link" hreflang="cs" lang="cs">CZ</a>
+    <span class="lang-switch__sep" aria-hidden="true">/</span>
+    <a href="uxui-design.html" class="lang-switch__link is-active" hreflang="en" lang="en" aria-current="page">EN</a>
+  </div>
+    <a href="index.html#services" class="back-link">← Back</a>
+  </div>
 </nav>
 
 <header class="page-header reveal">
@@ -622,5 +663,6 @@
     }
   });
 </script>
+<script src="locale-state.js"></script>
 </body>
 </html>

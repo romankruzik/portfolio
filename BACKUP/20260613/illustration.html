@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="description" content="Game art and pixel design — assets for 2D games, game jam projects and concepts.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Game Design — Kružík Design</title>
+<title>Illustration — Kružík Design</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -69,6 +68,8 @@
     .cursor-ring { display: block; }
     .gallery-item--clickable,
     .gallery-item--clickable .gallery-media,
+    .gallery-item--video,
+    .gallery-video__volume,
     .project-modal-close,
     a.portfolio-nav-link { cursor: none; }
   }
@@ -165,9 +166,6 @@
     background: var(--void);
     overflow: hidden;
   }
-  .gallery-item--full {
-    grid-column: 1 / -1;
-  }
   .gallery-item--clickable .gallery-media {
     border: none;
     padding: 0;
@@ -175,8 +173,7 @@
     width: 100%;
     display: block;
   }
-  .gallery-item img,
-  .gallery-item video {
+  .gallery-item img {
     width: 100%;
     height: auto;
     display: block;
@@ -187,8 +184,80 @@
     width: 100%;
   }
   .gallery-item--clickable:hover img { opacity: 0.88; }
-  .gallery-item:not(.gallery-item--clickable):hover img,
-  .gallery-item:not(.gallery-item--clickable):hover video { opacity: 0.92; }
+  .gallery-item:not(.gallery-item--clickable):hover img { opacity: 0.92; }
+
+  .gallery-video {
+    position: relative;
+    width: 100%;
+    background: var(--void2);
+    cursor: pointer;
+  }
+  .gallery-video__media {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.3s;
+  }
+  .gallery-item--video:not(.is-playing):hover .gallery-video__media { opacity: 0.92; }
+  .gallery-video__play {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: rgba(10, 10, 10, 0.35);
+    transition: opacity 0.25s, background 0.25s;
+    pointer-events: none;
+  }
+  .gallery-item--video.is-playing .gallery-video__play {
+    opacity: 0;
+  }
+  .gallery-item--video:not(.is-playing):hover .gallery-video__play {
+    background: rgba(10, 10, 10, 0.45);
+  }
+  .gallery-video__play-icon {
+    width: 64px;
+    height: 64px;
+    border: 1px solid rgba(232, 255, 0, 0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    line-height: 1;
+    color: var(--electric);
+    padding-left: 5px;
+  }
+  .gallery-video__controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 14px 16px;
+    background: linear-gradient(transparent, rgba(10, 10, 10, 0.88));
+    pointer-events: none;
+  }
+  .gallery-video__volume-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--tag);
+    pointer-events: none;
+  }
+  .gallery-video__volume {
+    width: 100px;
+    height: 4px;
+    accent-color: var(--electric);
+    cursor: pointer;
+    pointer-events: auto;
+  }
 
   .gallery-caption {
     padding: 20px 24px 24px;
@@ -401,6 +470,8 @@
   .reveal-delay-5 { transition-delay: 0.5s; }
   .reveal-delay-6 { transition-delay: 0.6s; }
   .reveal-delay-7 { transition-delay: 0.7s; }
+  .reveal-delay-8 { transition-delay: 0.8s; }
+  .reveal-delay-9 { transition-delay: 0.9s; }
 
   @media (max-width: 900px) {
     nav#nav { padding: 24px 28px; }
@@ -431,39 +502,6 @@
     }
     .footer-socials { justify-content: center; }
   }
-
-  .lang-switch {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-  }
-  .lang-switch__link {
-    color: var(--muted);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  .lang-switch__link:hover { color: var(--electric); }
-  .lang-switch__link.is-active {
-    color: var(--electric);
-  }
-  .lang-switch__sep {
-    color: var(--tag);
-    opacity: 0.6;
-  }
-  .nav-actions {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-  }
-  .mobile-menu-lang {
-    margin-top: 24px;
-    padding-top: 24px;
-    border-top: 1px solid var(--border);
-  }
 </style>
 </head>
 <body>
@@ -473,166 +511,145 @@
 
 <nav id="nav">
   <a href="index.html" class="nav-logo"><img src="Logos/logo_k_electric.svg" alt="Kružík Design"></a>
-    <div class="nav-actions">
-    <div class="lang-switch" aria-label="Language">
-    <a href="game-design-cz.html" class="lang-switch__link" hreflang="cs" lang="cs">CZ</a>
-    <span class="lang-switch__sep" aria-hidden="true">/</span>
-    <a href="game-design.html" class="lang-switch__link is-active" hreflang="en" lang="en" aria-current="page">EN</a>
-  </div>
-    <a href="index.html#services" class="back-link">← Back</a>
-  </div>
+  <a href="index.html#services" class="back-link">← Back</a>
 </nav>
 
 <header class="page-header reveal">
   <p class="section-num" data-num="02">Portfolio</p>
-  <h1 class="page-headline">Game <em>Design</em></h1>
-  <p class="page-sub">Captivating assets for 2D games — enriching the gaming experience with visually stunning pixel-perfect elements.</p>
+  <h1 class="page-headline">Illustr<em>ation</em></h1>
+  <p class="page-sub">Illustrations that breathe life into stories — bringing characters and narratives to vivid reality.</p>
 </header>
 
 <main class="gallery">
   <article class="gallery-item reveal">
     <picture>
-      <source type="image/webp" srcset="Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-portfolio-640w.webp 640w, Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-portfolio-960w.webp 960w, Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-portfolio-1280w.webp 1280w, Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-portfolio.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
-      <img src="Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-portfolio.png" alt="That One Hungry Room portfolio" width="1920" height="1280" loading="eager" decoding="async">
+      <source type="image/webp" srcset="Work/Illustration/01 Sketch-Mockup-PUNK-640w.webp 640w, Work/Illustration/01 Sketch-Mockup-PUNK-960w.webp 960w, Work/Illustration/01 Sketch-Mockup-PUNK-1280w.webp 1280w, Work/Illustration/01 Sketch-Mockup-PUNK.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/Illustration/01 Sketch-Mockup-PUNK.png" alt="PUNK sketch mockup" width="1920" height="1280" loading="eager" decoding="async">
     </picture>
     <div class="gallery-caption">
-      <h2 class="gallery-title">That One Hungry Room</h2>
-      <p class="gallery-type">Brno Game Jam 2023 · Game</p>
+      <h2 class="gallery-title">Postapo Punk</h2>
+      <p class="gallery-type">Sketch · Mockup</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-1">
     <picture>
-      <source type="image/webp" srcset="Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-assets-640w.webp 640w, Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-assets-960w.webp 960w, Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-assets-1280w.webp 1280w, Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-assets.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
-      <img src="Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-assets.png" alt="That One Hungry Room assets" width="1920" height="1280" loading="eager" decoding="async">
+      <source type="image/webp" srcset="Work/Illustration/02 Sketches-Mockup-640w.webp 640w, Work/Illustration/02 Sketches-Mockup-960w.webp 960w, Work/Illustration/02 Sketches-Mockup-1280w.webp 1280w, Work/Illustration/02 Sketches-Mockup.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/Illustration/02 Sketches-Mockup.png" alt="Sketches mockup" width="1920" height="1280" loading="eager" decoding="async">
     </picture>
     <div class="gallery-caption">
-      <h2 class="gallery-title">That One Hungry Room Assets</h2>
-      <p class="gallery-type">Brno Game Jam 2023 · Assets</p>
+      <h2 class="gallery-title">Sketches Mockup</h2>
+      <p class="gallery-type">Sketch · Collection</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-2">
     <picture>
-      <source type="image/webp" srcset="Work/Game Design/Brno Game Jam 2023/Postavy-640w.webp 640w, Work/Game Design/Brno Game Jam 2023/Postavy-960w.webp 960w, Work/Game Design/Brno Game Jam 2023/Postavy-1280w.webp 1280w, Work/Game Design/Brno Game Jam 2023/Postavy.webp 1536w" sizes="(max-width: 900px) 100vw, 50vw">
-      <img src="Work/Game Design/Brno Game Jam 2023/Postavy.png" alt="That One Hungry Room characters" width="1536" height="1536" loading="lazy" decoding="async">
+      <source type="image/webp" srcset="Work/Illustration/03 Retro-Paper-DnD-Board-640w.webp 640w, Work/Illustration/03 Retro-Paper-DnD-Board-960w.webp 960w, Work/Illustration/03 Retro-Paper-DnD-Board-1280w.webp 1280w, Work/Illustration/03 Retro-Paper-DnD-Board.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/Illustration/03 Retro-Paper-DnD-Board.png" alt="Retro paper DnD board" width="1920" height="1280" loading="lazy" decoding="async">
     </picture>
     <div class="gallery-caption">
-      <h2 class="gallery-title">Hungry Room Characters</h2>
-      <p class="gallery-type">Brno Game Jam 2023 · Characters</p>
+      <h2 class="gallery-title">Retro Paper DnD Board</h2>
+      <p class="gallery-type">Illustration · Board</p>
     </div>
   </article>
-  <article class="gallery-item reveal reveal-delay-3">
-    <picture>
-      <source type="image/webp" srcset="Work/Game Design/Brno Game Jam 2024/Lost-in-Underground-Screen-640w.webp 640w, Work/Game Design/Brno Game Jam 2024/Lost-in-Underground-Screen-960w.webp 960w, Work/Game Design/Brno Game Jam 2024/Lost-in-Underground-Screen-1280w.webp 1280w, Work/Game Design/Brno Game Jam 2024/Lost-in-Underground-Screen.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
-      <img src="Work/Game Design/Brno Game Jam 2024/Lost-in-Underground-Screen.png" alt="Lost in Underground screen" width="1920" height="1280" loading="lazy" decoding="async">
-    </picture>
+  <article class="gallery-item gallery-item--video reveal reveal-delay-3">
+    <div class="gallery-video" data-gallery-video>
+      <video class="gallery-video__media" preload="metadata" playsinline src="Work/Illustration/04 cold war - animation.mp4"></video>
+      <div class="gallery-video__play" aria-hidden="true">
+        <span class="gallery-video__play-icon">▶</span>
+      </div>
+      <div class="gallery-video__controls">
+        <span class="gallery-video__volume-label">Vol</span>
+        <input type="range" class="gallery-video__volume" min="0" max="1" step="0.05" value="1" aria-label="Volume">
+      </div>
+    </div>
     <div class="gallery-caption">
-      <h2 class="gallery-title">Lost in Underground</h2>
-      <p class="gallery-type">Brno Game Jam 2024 · Game</p>
+      <h2 class="gallery-title">Cold War Animation</h2>
+      <p class="gallery-type">Illustration · Animation</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-4">
     <picture>
-      <source type="image/webp" srcset="Work/Game Design/Brno Game Jam 2024/Tiles.webp 330w" sizes="(max-width: 900px) 100vw, 50vw">
-      <img src="Work/Game Design/Brno Game Jam 2024/Tiles.png" alt="Lost in Underground tiles" width="330" height="330" loading="lazy" decoding="async">
+      <source type="image/webp" srcset="Work/Illustration/05 Bird-Mask-1980x1280-640w.webp 640w, Work/Illustration/05 Bird-Mask-1980x1280-960w.webp 960w, Work/Illustration/05 Bird-Mask-1980x1280-1280w.webp 1280w, Work/Illustration/05 Bird-Mask-1980x1280.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/Illustration/05 Bird-Mask-1980x1280.png" alt="Bird mask illustration" width="1920" height="1280" loading="lazy" decoding="async">
     </picture>
     <div class="gallery-caption">
-      <h2 class="gallery-title">Lost in Underground Tiles</h2>
-      <p class="gallery-type">Brno Game Jam 2024 · Tileset</p>
+      <h2 class="gallery-title">Bird Mask</h2>
+      <p class="gallery-type">Illustration · Character</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-5">
-    <video autoplay muted loop playsinline preload="metadata" aria-label="Dark Knight pixel environment">
-      <source src="Work/Game Design/Dark Knight/Dark Knight.mp4" type="video/mp4">
-    </video>
+    <picture>
+      <source type="image/webp" srcset="Work/Illustration/06 Dva-vytecnici-640w.webp 640w, Work/Illustration/06 Dva-vytecnici-960w.webp 960w, Work/Illustration/06 Dva-vytecnici-1280w.webp 1280w, Work/Illustration/06 Dva-vytecnici.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/Illustration/06 Dva-vytecnici.png" alt="Dva vytecnici illustration" width="1920" height="1280" loading="lazy" decoding="async">
+    </picture>
     <div class="gallery-caption">
-      <h2 class="gallery-title">Dark Knight</h2>
-      <p class="gallery-type">Pixel Art · Fantasy</p>
+      <h2 class="gallery-title">Dva vytečníci</h2>
+      <p class="gallery-type">Illustration · Character</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-6">
     <picture>
-      <source type="image/webp" srcset="Work/Game Design/GameDevHub/Moodboard/Moodboard-Goblin-Brotherhood-640w.webp 640w, Work/Game Design/GameDevHub/Moodboard/Moodboard-Goblin-Brotherhood-960w.webp 960w, Work/Game Design/GameDevHub/Moodboard/Moodboard-Goblin-Brotherhood-1280w.webp 1280w, Work/Game Design/GameDevHub/Moodboard/Moodboard-Goblin-Brotherhood.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
-      <img src="Work/Game Design/GameDevHub/Moodboard/Moodboard-Goblin-Brotherhood.png" alt="GameDevHub moodboard" width="1920" height="1280" loading="lazy" decoding="async">
+      <source type="image/webp" srcset="Work/Illustration/07 Bud-Spencer-and-Terence-Hill---Malý-Unavený-Joe-2-640w.webp 640w, Work/Illustration/07 Bud-Spencer-and-Terence-Hill---Malý-Unavený-Joe-2-960w.webp 960w, Work/Illustration/07 Bud-Spencer-and-Terence-Hill---Malý-Unavený-Joe-2-1280w.webp 1280w, Work/Illustration/07 Bud-Spencer-and-Terence-Hill---Malý-Unavený-Joe-2.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/Illustration/07 Bud-Spencer-and-Terence-Hill---Malý-Unavený-Joe-2.png" alt="Bud Spencer and Terence Hill illustration" width="1920" height="1071" loading="lazy" decoding="async">
     </picture>
     <div class="gallery-caption">
-      <h2 class="gallery-title">Goblin Brotherhood Moodboard</h2>
-      <p class="gallery-type">GameDevHub · Moodboard</p>
+      <h2 class="gallery-title">Malý Unavený Joe</h2>
+      <p class="gallery-type">Illustration · Portrait</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-7">
     <picture>
-      <source type="image/webp" srcset="Work/Game Design/GameDevHub/Wireframes/Wireframes-640w.webp 640w, Work/Game Design/GameDevHub/Wireframes/Wireframes-960w.webp 960w, Work/Game Design/GameDevHub/Wireframes/Wireframes-1280w.webp 1280w, Work/Game Design/GameDevHub/Wireframes/Wireframes.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
-      <img src="Work/Game Design/GameDevHub/Wireframes/Wireframes.png" alt="GameDevHub wireframes" width="1920" height="1280" loading="lazy" decoding="async">
+      <source type="image/webp" srcset="Work/Illustration/08 Hercule-Poirot-Iris-640w.webp 640w, Work/Illustration/08 Hercule-Poirot-Iris-960w.webp 960w, Work/Illustration/08 Hercule-Poirot-Iris.webp 1200w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/Illustration/08 Hercule-Poirot-Iris.png" alt="Hercule Poirot Iris illustration" width="1200" height="1265" loading="lazy" decoding="async">
     </picture>
     <div class="gallery-caption">
-      <h2 class="gallery-title">GameDevHub Wireframes</h2>
-      <p class="gallery-type">GameDevHub · UX/UI</p>
+      <h2 class="gallery-title">Hercule Poirot</h2>
+      <p class="gallery-type">Illustration · Portrait</p>
     </div>
   </article>
-
-  <article class="gallery-item gallery-item--full reveal">
+  <article class="gallery-item reveal reveal-delay-8">
     <picture>
-      <source type="image/webp" srcset="Work/Game Design/Steam Capsule Concepts/01-Research-640w.webp 640w, Work/Game Design/Steam Capsule Concepts/01-Research-960w.webp 960w, Work/Game Design/Steam Capsule Concepts/01-Research-1280w.webp 1280w, Work/Game Design/Steam Capsule Concepts/01-Research.webp 1920w" sizes="100vw">
-      <img src="Work/Game Design/Steam Capsule Concepts/01-Research.png" alt="Research" width="1920" height="1080" loading="lazy" decoding="async">
+      <source type="image/webp" srcset="Work/Illustration/09 Hercule-Poirot-S5-Iris---02-640w.webp 640w, Work/Illustration/09 Hercule-Poirot-S5-Iris---02-960w.webp 960w, Work/Illustration/09 Hercule-Poirot-S5-Iris---02-1280w.webp 1280w, Work/Illustration/09 Hercule-Poirot-S5-Iris---02.webp 1563w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/Illustration/09 Hercule-Poirot-S5-Iris---02.png" alt="Hercule Poirot S5 Iris illustration" width="1563" height="1200" loading="lazy" decoding="async">
     </picture>
     <div class="gallery-caption">
-      <h2 class="gallery-title">Research</h2>
-      <p class="gallery-type">Steam Capsule Concepts · Research</p>
+      <h2 class="gallery-title">Hercule Poirot Character</h2>
+      <p class="gallery-type">Illustration · Portrait</p>
     </div>
   </article>
-  <article class="gallery-item gallery-item--full reveal">
+  <article class="gallery-item reveal reveal-delay-9">
     <picture>
-      <source type="image/webp" srcset="Work/Game Design/Steam Capsule Concepts/02-Main-Concept-640w.webp 640w, Work/Game Design/Steam Capsule Concepts/02-Main-Concept-960w.webp 960w, Work/Game Design/Steam Capsule Concepts/02-Main-Concept-1280w.webp 1280w, Work/Game Design/Steam Capsule Concepts/02-Main-Concept.webp 1920w" sizes="100vw">
-      <img src="Work/Game Design/Steam Capsule Concepts/02-Main-Concept.png" alt="Main Concept" width="1920" height="1080" loading="lazy" decoding="async">
+      <source type="image/webp" srcset="Work/Illustration/10 Orc-Warrior-and-scifi-640w.webp 640w, Work/Illustration/10 Orc-Warrior-and-scifi-960w.webp 960w, Work/Illustration/10 Orc-Warrior-and-scifi-1280w.webp 1280w, Work/Illustration/10 Orc-Warrior-and-scifi.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/Illustration/10 Orc-Warrior-and-scifi.png" alt="Orc warrior and sci-fi illustration" width="1920" height="951" loading="lazy" decoding="async">
     </picture>
     <div class="gallery-caption">
-      <h2 class="gallery-title">Main Concept</h2>
-      <p class="gallery-type">Steam Capsule Concepts · Main Concept</p>
+      <h2 class="gallery-title">Orc Warrior & Sci-Fi</h2>
+      <p class="gallery-type">Illustration · Fantasy</p>
     </div>
   </article>
-  <article class="gallery-item gallery-item--full reveal">
+  <article class="gallery-item reveal">
     <picture>
-      <source type="image/webp" srcset="Work/Game Design/Steam Capsule Concepts/03-Main-Concept-Scale-Thumbnail-640w.webp 640w, Work/Game Design/Steam Capsule Concepts/03-Main-Concept-Scale-Thumbnail-960w.webp 960w, Work/Game Design/Steam Capsule Concepts/03-Main-Concept-Scale-Thumbnail-1280w.webp 1280w, Work/Game Design/Steam Capsule Concepts/03-Main-Concept-Scale-Thumbnail.webp 1920w" sizes="100vw">
-      <img src="Work/Game Design/Steam Capsule Concepts/03-Main-Concept-Scale-Thumbnail.png" alt="Main Concept Scale Thumbnail" width="1920" height="1080" loading="lazy" decoding="async">
+      <source type="image/webp" srcset="Work/Illustration/11 Mapa-Černohvozdu-640w.webp 640w, Work/Illustration/11 Mapa-Černohvozdu-960w.webp 960w, Work/Illustration/11 Mapa-Černohvozdu.webp 1080w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/Illustration/11 Mapa-Černohvozdu.png" alt="Mapa Černohvozdu illustration" width="1080" height="1653" loading="lazy" decoding="async">
     </picture>
     <div class="gallery-caption">
-      <h2 class="gallery-title">Main Concept Scale Thumbnail</h2>
-      <p class="gallery-type">Steam Capsule Concepts · Main Concept Scale Thumbnail</p>
-    </div>
-  </article>
-  <article class="gallery-item gallery-item--full reveal">
-    <picture>
-      <source type="image/webp" srcset="Work/Game Design/Steam Capsule Concepts/04-Other-Concepts-640w.webp 640w, Work/Game Design/Steam Capsule Concepts/04-Other-Concepts-960w.webp 960w, Work/Game Design/Steam Capsule Concepts/04-Other-Concepts-1280w.webp 1280w, Work/Game Design/Steam Capsule Concepts/04-Other-Concepts.webp 1920w" sizes="100vw">
-      <img src="Work/Game Design/Steam Capsule Concepts/04-Other-Concepts.png" alt="Other Concepts" width="1920" height="1080" loading="lazy" decoding="async">
-    </picture>
-    <div class="gallery-caption">
-      <h2 class="gallery-title">Other Concepts</h2>
-      <p class="gallery-type">Steam Capsule Concepts · Other Concepts</p>
-    </div>
-  </article>
-  <article class="gallery-item gallery-item--full reveal">
-    <picture>
-      <source type="image/webp" srcset="Work/Game Design/Steam Capsule Concepts/05-Finals-640w.webp 640w, Work/Game Design/Steam Capsule Concepts/05-Finals-960w.webp 960w, Work/Game Design/Steam Capsule Concepts/05-Finals-1280w.webp 1280w, Work/Game Design/Steam Capsule Concepts/05-Finals.webp 1920w" sizes="100vw">
-      <img src="Work/Game Design/Steam Capsule Concepts/05-Finals.png" alt="Finals" width="1920" height="1080" loading="lazy" decoding="async">
-    </picture>
-    <div class="gallery-caption">
-      <h2 class="gallery-title">Finals</h2>
-      <p class="gallery-type">Steam Capsule Concepts · Finals</p>
+      <h2 class="gallery-title">Gamebook Blank Map</h2>
+      <p class="gallery-type">Illustration · Map</p>
     </div>
   </article>
 
   <nav class="portfolio-nav reveal" aria-label="Portfolio navigation">
-    <a href="uxui-design.html" class="portfolio-nav-link portfolio-nav-link--prev">
+    <a href="game-design.html" class="portfolio-nav-link portfolio-nav-link--prev">
       <span class="portfolio-nav-arrow" aria-hidden="true">←</span>
       <span class="portfolio-nav-label">
         <span class="portfolio-nav-dir">Previous</span>
-        <span class="portfolio-nav-title">UX/UI Design</span>
+        <span class="portfolio-nav-title">Game Design</span>
       </span>
     </a>
-    <a href="illustration.html" class="portfolio-nav-link portfolio-nav-link--next">
+    <a href="graphic-design.html" class="portfolio-nav-link portfolio-nav-link--next">
       <span class="portfolio-nav-label">
         <span class="portfolio-nav-dir">Next</span>
-        <span class="portfolio-nav-title">Illustration</span>
+        <span class="portfolio-nav-title">Graphic Design</span>
       </span>
       <span class="portfolio-nav-arrow" aria-hidden="true">→</span>
     </a>
@@ -738,7 +755,35 @@
       closeProjectModal();
     }
   });
+
+  document.querySelectorAll('[data-gallery-video]').forEach(player => {
+    const video = player.querySelector('.gallery-video__media');
+    const volume = player.querySelector('.gallery-video__volume');
+    const item = player.closest('.gallery-item--video');
+
+    player.addEventListener('click', e => {
+      if (e.target === volume) return;
+      if (video.paused) {
+        video.muted = false;
+        video.volume = parseFloat(volume.value);
+        video.play();
+        item.classList.add('is-playing');
+      } else {
+        video.pause();
+        item.classList.remove('is-playing');
+      }
+    });
+
+    volume.addEventListener('click', e => e.stopPropagation());
+    volume.addEventListener('input', () => {
+      video.volume = parseFloat(volume.value);
+      video.muted = volume.value === '0';
+    });
+
+    video.addEventListener('ended', () => {
+      item.classList.remove('is-playing');
+    });
+  });
 </script>
-<script src="locale-state.js"></script>
 </body>
 </html>

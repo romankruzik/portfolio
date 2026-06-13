@@ -25,7 +25,7 @@ SIZES_ABOUT = "(max-width: 900px) 100vw, 40vw"
 
 def build_picture(meta: dict, *, sizes: str, loading: str, fetchpriority: str | None = None) -> str:
     src = meta["src"].replace("&", "&amp;")
-    srcset_items = [f'{item["url"]} {item["w"]}w' for item in meta["srcset"]]
+    srcset_items = [f'{item["url"].replace("&", "&amp;")} {item["w"]}w' for item in meta["srcset"]]
     srcset = ", ".join(srcset_items)
     attrs = [
         f'width="{meta["width"]}"',

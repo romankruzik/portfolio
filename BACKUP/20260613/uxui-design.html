@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="description" content="Game art and pixel design — assets for 2D games, game jam projects and concepts.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Game Design — Kružík Design</title>
+<title>UX/UI Design — Kružík Design</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -165,9 +164,6 @@
     background: var(--void);
     overflow: hidden;
   }
-  .gallery-item--full {
-    grid-column: 1 / -1;
-  }
   .gallery-item--clickable .gallery-media {
     border: none;
     padding: 0;
@@ -175,8 +171,7 @@
     width: 100%;
     display: block;
   }
-  .gallery-item img,
-  .gallery-item video {
+  .gallery-item img {
     width: 100%;
     height: auto;
     display: block;
@@ -187,8 +182,7 @@
     width: 100%;
   }
   .gallery-item--clickable:hover img { opacity: 0.88; }
-  .gallery-item:not(.gallery-item--clickable):hover img,
-  .gallery-item:not(.gallery-item--clickable):hover video { opacity: 0.92; }
+  .gallery-item:not(.gallery-item--clickable):hover img { opacity: 0.92; }
 
   .gallery-caption {
     padding: 20px 24px 24px;
@@ -400,7 +394,6 @@
   .reveal-delay-4 { transition-delay: 0.4s; }
   .reveal-delay-5 { transition-delay: 0.5s; }
   .reveal-delay-6 { transition-delay: 0.6s; }
-  .reveal-delay-7 { transition-delay: 0.7s; }
 
   @media (max-width: 900px) {
     nav#nav { padding: 24px 28px; }
@@ -431,39 +424,6 @@
     }
     .footer-socials { justify-content: center; }
   }
-
-  .lang-switch {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-  }
-  .lang-switch__link {
-    color: var(--muted);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  .lang-switch__link:hover { color: var(--electric); }
-  .lang-switch__link.is-active {
-    color: var(--electric);
-  }
-  .lang-switch__sep {
-    color: var(--tag);
-    opacity: 0.6;
-  }
-  .nav-actions {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-  }
-  .mobile-menu-lang {
-    margin-top: 24px;
-    padding-top: 24px;
-    border-top: 1px solid var(--border);
-  }
 </style>
 </head>
 <body>
@@ -473,166 +433,89 @@
 
 <nav id="nav">
   <a href="index.html" class="nav-logo"><img src="Logos/logo_k_electric.svg" alt="Kružík Design"></a>
-    <div class="nav-actions">
-    <div class="lang-switch" aria-label="Language">
-    <a href="game-design-cz.html" class="lang-switch__link" hreflang="cs" lang="cs">CZ</a>
-    <span class="lang-switch__sep" aria-hidden="true">/</span>
-    <a href="game-design.html" class="lang-switch__link is-active" hreflang="en" lang="en" aria-current="page">EN</a>
-  </div>
-    <a href="index.html#services" class="back-link">← Back</a>
-  </div>
+  <a href="index.html#services" class="back-link">← Back</a>
 </nav>
 
 <header class="page-header reveal">
   <p class="section-num" data-num="02">Portfolio</p>
-  <h1 class="page-headline">Game <em>Design</em></h1>
-  <p class="page-sub">Captivating assets for 2D games — enriching the gaming experience with visually stunning pixel-perfect elements.</p>
+  <h1 class="page-headline">UX/UI <em>Design</em></h1>
+  <p class="page-sub">Wireframes into engaging prototypes — deep empathy with end users, ensuring their needs are at the forefront of every decision.</p>
 </header>
 
 <main class="gallery">
   <article class="gallery-item reveal">
     <picture>
-      <source type="image/webp" srcset="Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-portfolio-640w.webp 640w, Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-portfolio-960w.webp 960w, Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-portfolio-1280w.webp 1280w, Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-portfolio.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
-      <img src="Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-portfolio.png" alt="That One Hungry Room portfolio" width="1920" height="1280" loading="eager" decoding="async">
+      <source type="image/webp" srcset="Work/UXUI Design/Protocom-Wireframe-640w.webp 640w, Work/UXUI Design/Protocom-Wireframe-960w.webp 960w, Work/UXUI Design/Protocom-Wireframe-1280w.webp 1280w, Work/UXUI Design/Protocom-Wireframe.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/UXUI Design/Protocom-Wireframe.png" alt="Protocom wireframe" width="1920" height="1280" loading="eager" decoding="async">
     </picture>
     <div class="gallery-caption">
-      <h2 class="gallery-title">That One Hungry Room</h2>
-      <p class="gallery-type">Brno Game Jam 2023 · Game</p>
+      <h2 class="gallery-title">Protocom Wireframe</h2>
+      <p class="gallery-type">Wireframe</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-1">
     <picture>
-      <source type="image/webp" srcset="Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-assets-640w.webp 640w, Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-assets-960w.webp 960w, Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-assets-1280w.webp 1280w, Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-assets.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
-      <img src="Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-assets.png" alt="That One Hungry Room assets" width="1920" height="1280" loading="eager" decoding="async">
+      <source type="image/webp" srcset="Work/UXUI Design/BSP - Tescan 3DIM/Catalog/Catalog-640w.webp 640w, Work/UXUI Design/BSP - Tescan 3DIM/Catalog/Catalog-960w.webp 960w, Work/UXUI Design/BSP - Tescan 3DIM/Catalog/Catalog-1280w.webp 1280w, Work/UXUI Design/BSP - Tescan 3DIM/Catalog/Catalog.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/UXUI Design/BSP - Tescan 3DIM/Catalog/Catalog.png" alt="BSP Tescan catalog" width="1920" height="1280" loading="eager" decoding="async">
     </picture>
     <div class="gallery-caption">
-      <h2 class="gallery-title">That One Hungry Room Assets</h2>
-      <p class="gallery-type">Brno Game Jam 2023 · Assets</p>
+      <h2 class="gallery-title">BSP Catalog</h2>
+      <p class="gallery-type">UX/UI · Catalog</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-2">
     <picture>
-      <source type="image/webp" srcset="Work/Game Design/Brno Game Jam 2023/Postavy-640w.webp 640w, Work/Game Design/Brno Game Jam 2023/Postavy-960w.webp 960w, Work/Game Design/Brno Game Jam 2023/Postavy-1280w.webp 1280w, Work/Game Design/Brno Game Jam 2023/Postavy.webp 1536w" sizes="(max-width: 900px) 100vw, 50vw">
-      <img src="Work/Game Design/Brno Game Jam 2023/Postavy.png" alt="That One Hungry Room characters" width="1536" height="1536" loading="lazy" decoding="async">
+      <source type="image/webp" srcset="Work/UXUI Design/BSP - Tescan 3DIM/Design Kit/Design-Kit-Mockup-640w.webp 640w, Work/UXUI Design/BSP - Tescan 3DIM/Design Kit/Design-Kit-Mockup-960w.webp 960w, Work/UXUI Design/BSP - Tescan 3DIM/Design Kit/Design-Kit-Mockup-1280w.webp 1280w, Work/UXUI Design/BSP - Tescan 3DIM/Design Kit/Design-Kit-Mockup.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/UXUI Design/BSP - Tescan 3DIM/Design Kit/Design-Kit-Mockup.png" alt="BSP design kit mockup" width="1920" height="1280" loading="lazy" decoding="async">
     </picture>
     <div class="gallery-caption">
-      <h2 class="gallery-title">Hungry Room Characters</h2>
-      <p class="gallery-type">Brno Game Jam 2023 · Characters</p>
+      <h2 class="gallery-title">BSP Design Kit</h2>
+      <p class="gallery-type">Design System · Mockup</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-3">
     <picture>
-      <source type="image/webp" srcset="Work/Game Design/Brno Game Jam 2024/Lost-in-Underground-Screen-640w.webp 640w, Work/Game Design/Brno Game Jam 2024/Lost-in-Underground-Screen-960w.webp 960w, Work/Game Design/Brno Game Jam 2024/Lost-in-Underground-Screen-1280w.webp 1280w, Work/Game Design/Brno Game Jam 2024/Lost-in-Underground-Screen.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
-      <img src="Work/Game Design/Brno Game Jam 2024/Lost-in-Underground-Screen.png" alt="Lost in Underground screen" width="1920" height="1280" loading="lazy" decoding="async">
+      <source type="image/webp" srcset="Work/UXUI Design/BSP - Tescan 3DIM/Icons/Set-of-Icons-640w.webp 640w, Work/UXUI Design/BSP - Tescan 3DIM/Icons/Set-of-Icons-960w.webp 960w, Work/UXUI Design/BSP - Tescan 3DIM/Icons/Set-of-Icons-1280w.webp 1280w, Work/UXUI Design/BSP - Tescan 3DIM/Icons/Set-of-Icons.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/UXUI Design/BSP - Tescan 3DIM/Icons/Set-of-Icons.png" alt="BSP icon set" width="1920" height="1280" loading="lazy" decoding="async">
     </picture>
     <div class="gallery-caption">
-      <h2 class="gallery-title">Lost in Underground</h2>
-      <p class="gallery-type">Brno Game Jam 2024 · Game</p>
+      <h2 class="gallery-title">BSP Icon Set</h2>
+      <p class="gallery-type">Design System · Icons</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-4">
     <picture>
-      <source type="image/webp" srcset="Work/Game Design/Brno Game Jam 2024/Tiles.webp 330w" sizes="(max-width: 900px) 100vw, 50vw">
-      <img src="Work/Game Design/Brno Game Jam 2024/Tiles.png" alt="Lost in Underground tiles" width="330" height="330" loading="lazy" decoding="async">
+      <source type="image/webp" srcset="Work/UXUI Design/FPS Game/Wireframe-640w.webp 640w, Work/UXUI Design/FPS Game/Wireframe-960w.webp 960w, Work/UXUI Design/FPS Game/Wireframe-1280w.webp 1280w, Work/UXUI Design/FPS Game/Wireframe-1920w.webp 1920w, Work/UXUI Design/FPS Game/Wireframe.webp 2000w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/UXUI Design/FPS Game/Wireframe.png" alt="FPS game wireframe" width="2000" height="1125" loading="lazy" decoding="async">
     </picture>
     <div class="gallery-caption">
-      <h2 class="gallery-title">Lost in Underground Tiles</h2>
-      <p class="gallery-type">Brno Game Jam 2024 · Tileset</p>
+      <h2 class="gallery-title">FPS Game Wireframe</h2>
+      <p class="gallery-type">Wireframe</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-5">
-    <video autoplay muted loop playsinline preload="metadata" aria-label="Dark Knight pixel environment">
-      <source src="Work/Game Design/Dark Knight/Dark Knight.mp4" type="video/mp4">
-    </video>
-    <div class="gallery-caption">
-      <h2 class="gallery-title">Dark Knight</h2>
-      <p class="gallery-type">Pixel Art · Fantasy</p>
-    </div>
-  </article>
-  <article class="gallery-item reveal reveal-delay-6">
     <picture>
-      <source type="image/webp" srcset="Work/Game Design/GameDevHub/Moodboard/Moodboard-Goblin-Brotherhood-640w.webp 640w, Work/Game Design/GameDevHub/Moodboard/Moodboard-Goblin-Brotherhood-960w.webp 960w, Work/Game Design/GameDevHub/Moodboard/Moodboard-Goblin-Brotherhood-1280w.webp 1280w, Work/Game Design/GameDevHub/Moodboard/Moodboard-Goblin-Brotherhood.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
-      <img src="Work/Game Design/GameDevHub/Moodboard/Moodboard-Goblin-Brotherhood.png" alt="GameDevHub moodboard" width="1920" height="1280" loading="lazy" decoding="async">
+      <source type="image/webp" srcset="Work/UXUI Design/FPS Game/Prototype-640w.webp 640w, Work/UXUI Design/FPS Game/Prototype-960w.webp 960w, Work/UXUI Design/FPS Game/Prototype-1280w.webp 1280w, Work/UXUI Design/FPS Game/Prototype-1920w.webp 1920w, Work/UXUI Design/FPS Game/Prototype.webp 2000w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/UXUI Design/FPS Game/Prototype.png" alt="FPS game prototype" width="2000" height="1125" loading="lazy" decoding="async">
     </picture>
     <div class="gallery-caption">
-      <h2 class="gallery-title">Goblin Brotherhood Moodboard</h2>
-      <p class="gallery-type">GameDevHub · Moodboard</p>
-    </div>
-  </article>
-  <article class="gallery-item reveal reveal-delay-7">
-    <picture>
-      <source type="image/webp" srcset="Work/Game Design/GameDevHub/Wireframes/Wireframes-640w.webp 640w, Work/Game Design/GameDevHub/Wireframes/Wireframes-960w.webp 960w, Work/Game Design/GameDevHub/Wireframes/Wireframes-1280w.webp 1280w, Work/Game Design/GameDevHub/Wireframes/Wireframes.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
-      <img src="Work/Game Design/GameDevHub/Wireframes/Wireframes.png" alt="GameDevHub wireframes" width="1920" height="1280" loading="lazy" decoding="async">
-    </picture>
-    <div class="gallery-caption">
-      <h2 class="gallery-title">GameDevHub Wireframes</h2>
-      <p class="gallery-type">GameDevHub · UX/UI</p>
-    </div>
-  </article>
-
-  <article class="gallery-item gallery-item--full reveal">
-    <picture>
-      <source type="image/webp" srcset="Work/Game Design/Steam Capsule Concepts/01-Research-640w.webp 640w, Work/Game Design/Steam Capsule Concepts/01-Research-960w.webp 960w, Work/Game Design/Steam Capsule Concepts/01-Research-1280w.webp 1280w, Work/Game Design/Steam Capsule Concepts/01-Research.webp 1920w" sizes="100vw">
-      <img src="Work/Game Design/Steam Capsule Concepts/01-Research.png" alt="Research" width="1920" height="1080" loading="lazy" decoding="async">
-    </picture>
-    <div class="gallery-caption">
-      <h2 class="gallery-title">Research</h2>
-      <p class="gallery-type">Steam Capsule Concepts · Research</p>
-    </div>
-  </article>
-  <article class="gallery-item gallery-item--full reveal">
-    <picture>
-      <source type="image/webp" srcset="Work/Game Design/Steam Capsule Concepts/02-Main-Concept-640w.webp 640w, Work/Game Design/Steam Capsule Concepts/02-Main-Concept-960w.webp 960w, Work/Game Design/Steam Capsule Concepts/02-Main-Concept-1280w.webp 1280w, Work/Game Design/Steam Capsule Concepts/02-Main-Concept.webp 1920w" sizes="100vw">
-      <img src="Work/Game Design/Steam Capsule Concepts/02-Main-Concept.png" alt="Main Concept" width="1920" height="1080" loading="lazy" decoding="async">
-    </picture>
-    <div class="gallery-caption">
-      <h2 class="gallery-title">Main Concept</h2>
-      <p class="gallery-type">Steam Capsule Concepts · Main Concept</p>
-    </div>
-  </article>
-  <article class="gallery-item gallery-item--full reveal">
-    <picture>
-      <source type="image/webp" srcset="Work/Game Design/Steam Capsule Concepts/03-Main-Concept-Scale-Thumbnail-640w.webp 640w, Work/Game Design/Steam Capsule Concepts/03-Main-Concept-Scale-Thumbnail-960w.webp 960w, Work/Game Design/Steam Capsule Concepts/03-Main-Concept-Scale-Thumbnail-1280w.webp 1280w, Work/Game Design/Steam Capsule Concepts/03-Main-Concept-Scale-Thumbnail.webp 1920w" sizes="100vw">
-      <img src="Work/Game Design/Steam Capsule Concepts/03-Main-Concept-Scale-Thumbnail.png" alt="Main Concept Scale Thumbnail" width="1920" height="1080" loading="lazy" decoding="async">
-    </picture>
-    <div class="gallery-caption">
-      <h2 class="gallery-title">Main Concept Scale Thumbnail</h2>
-      <p class="gallery-type">Steam Capsule Concepts · Main Concept Scale Thumbnail</p>
-    </div>
-  </article>
-  <article class="gallery-item gallery-item--full reveal">
-    <picture>
-      <source type="image/webp" srcset="Work/Game Design/Steam Capsule Concepts/04-Other-Concepts-640w.webp 640w, Work/Game Design/Steam Capsule Concepts/04-Other-Concepts-960w.webp 960w, Work/Game Design/Steam Capsule Concepts/04-Other-Concepts-1280w.webp 1280w, Work/Game Design/Steam Capsule Concepts/04-Other-Concepts.webp 1920w" sizes="100vw">
-      <img src="Work/Game Design/Steam Capsule Concepts/04-Other-Concepts.png" alt="Other Concepts" width="1920" height="1080" loading="lazy" decoding="async">
-    </picture>
-    <div class="gallery-caption">
-      <h2 class="gallery-title">Other Concepts</h2>
-      <p class="gallery-type">Steam Capsule Concepts · Other Concepts</p>
-    </div>
-  </article>
-  <article class="gallery-item gallery-item--full reveal">
-    <picture>
-      <source type="image/webp" srcset="Work/Game Design/Steam Capsule Concepts/05-Finals-640w.webp 640w, Work/Game Design/Steam Capsule Concepts/05-Finals-960w.webp 960w, Work/Game Design/Steam Capsule Concepts/05-Finals-1280w.webp 1280w, Work/Game Design/Steam Capsule Concepts/05-Finals.webp 1920w" sizes="100vw">
-      <img src="Work/Game Design/Steam Capsule Concepts/05-Finals.png" alt="Finals" width="1920" height="1080" loading="lazy" decoding="async">
-    </picture>
-    <div class="gallery-caption">
-      <h2 class="gallery-title">Finals</h2>
-      <p class="gallery-type">Steam Capsule Concepts · Finals</p>
+      <h2 class="gallery-title">FPS Game Prototype</h2>
+      <p class="gallery-type">Prototype</p>
     </div>
   </article>
 
   <nav class="portfolio-nav reveal" aria-label="Portfolio navigation">
-    <a href="uxui-design.html" class="portfolio-nav-link portfolio-nav-link--prev">
+    <a href="graphic-design.html" class="portfolio-nav-link portfolio-nav-link--prev">
       <span class="portfolio-nav-arrow" aria-hidden="true">←</span>
       <span class="portfolio-nav-label">
         <span class="portfolio-nav-dir">Previous</span>
-        <span class="portfolio-nav-title">UX/UI Design</span>
+        <span class="portfolio-nav-title">Graphic Design</span>
       </span>
     </a>
-    <a href="illustration.html" class="portfolio-nav-link portfolio-nav-link--next">
+    <a href="game-design.html" class="portfolio-nav-link portfolio-nav-link--next">
       <span class="portfolio-nav-label">
         <span class="portfolio-nav-dir">Next</span>
-        <span class="portfolio-nav-title">Illustration</span>
+        <span class="portfolio-nav-title">Game Design</span>
       </span>
       <span class="portfolio-nav-arrow" aria-hidden="true">→</span>
     </a>
@@ -739,6 +622,5 @@
     }
   });
 </script>
-<script src="locale-state.js"></script>
 </body>
 </html>
