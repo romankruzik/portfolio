@@ -68,6 +68,8 @@
     .cursor-ring { display: block; }
     .gallery-item--clickable,
     .gallery-item--clickable .gallery-media,
+    .gallery-item--video,
+    .gallery-video__volume,
     .project-modal-close,
     a.portfolio-nav-link { cursor: none; }
   }
@@ -179,6 +181,79 @@
   }
   .gallery-item--clickable:hover img { opacity: 0.88; }
   .gallery-item:not(.gallery-item--clickable):hover img { opacity: 0.92; }
+
+  .gallery-video {
+    position: relative;
+    width: 100%;
+    background: var(--void2);
+    cursor: pointer;
+  }
+  .gallery-video__media {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.3s;
+  }
+  .gallery-item--video:not(.is-playing):hover .gallery-video__media { opacity: 0.92; }
+  .gallery-video__play {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: rgba(10, 10, 10, 0.35);
+    transition: opacity 0.25s, background 0.25s;
+    pointer-events: none;
+  }
+  .gallery-item--video.is-playing .gallery-video__play {
+    opacity: 0;
+  }
+  .gallery-item--video:not(.is-playing):hover .gallery-video__play {
+    background: rgba(10, 10, 10, 0.45);
+  }
+  .gallery-video__play-icon {
+    width: 64px;
+    height: 64px;
+    border: 1px solid rgba(232, 255, 0, 0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    line-height: 1;
+    color: var(--electric);
+    padding-left: 5px;
+  }
+  .gallery-video__controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 14px 16px;
+    background: linear-gradient(transparent, rgba(10, 10, 10, 0.88));
+    pointer-events: none;
+  }
+  .gallery-video__volume-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--tag);
+    pointer-events: none;
+  }
+  .gallery-video__volume {
+    width: 100px;
+    height: 4px;
+    accent-color: var(--electric);
+    cursor: pointer;
+    pointer-events: auto;
+  }
 
   .gallery-caption {
     padding: 20px 24px 24px;
@@ -445,7 +520,7 @@
   <article class="gallery-item reveal">
     <img src="Work/Illustration/01 Sketch-Mockup-PUNK.png" alt="PUNK sketch mockup">
     <div class="gallery-caption">
-      <h2 class="gallery-title">PUNK Sketch Mockup</h2>
+      <h2 class="gallery-title">Postapo Punk</h2>
       <p class="gallery-type">Sketch · Mockup</p>
     </div>
   </article>
@@ -463,52 +538,68 @@
       <p class="gallery-type">Illustration · Board</p>
     </div>
   </article>
-  <article class="gallery-item reveal reveal-delay-3">
+  <article class="gallery-item gallery-item--video reveal reveal-delay-3">
+    <div class="gallery-video" data-gallery-video>
+      <video class="gallery-video__media" preload="metadata" playsinline src="Work/Illustration/04 cold war - animation.mp4"></video>
+      <div class="gallery-video__play" aria-hidden="true">
+        <span class="gallery-video__play-icon">▶</span>
+      </div>
+      <div class="gallery-video__controls">
+        <span class="gallery-video__volume-label">Vol</span>
+        <input type="range" class="gallery-video__volume" min="0" max="1" step="0.05" value="1" aria-label="Volume">
+      </div>
+    </div>
+    <div class="gallery-caption">
+      <h2 class="gallery-title">Cold War Animation</h2>
+      <p class="gallery-type">Illustration · Animation</p>
+    </div>
+  </article>
+  <article class="gallery-item reveal reveal-delay-4">
     <img src="Work/Illustration/05 Bird-Mask-1980x1280.png" alt="Bird mask illustration">
     <div class="gallery-caption">
       <h2 class="gallery-title">Bird Mask</h2>
       <p class="gallery-type">Illustration · Character</p>
     </div>
   </article>
-  <article class="gallery-item reveal reveal-delay-4">
+  <article class="gallery-item reveal reveal-delay-5">
     <img src="Work/Illustration/06 Dva-vytecnici.png" alt="Dva vytecnici illustration">
     <div class="gallery-caption">
       <h2 class="gallery-title">Dva vytečníci</h2>
       <p class="gallery-type">Illustration · Character</p>
     </div>
   </article>
-  <article class="gallery-item reveal reveal-delay-5">
+  <article class="gallery-item reveal reveal-delay-6">
     <img src="Work/Illustration/07 Bud-Spencer-and-Terence-Hill---Malý-Unavený-Joe-2.png" alt="Bud Spencer and Terence Hill illustration">
     <div class="gallery-caption">
       <h2 class="gallery-title">Malý Unavený Joe</h2>
       <p class="gallery-type">Illustration · Portrait</p>
     </div>
   </article>
-  <article class="gallery-item reveal reveal-delay-6">
+  <article class="gallery-item reveal reveal-delay-7">
     <img src="Work/Illustration/08 Hercule-Poirot-Iris.png" alt="Hercule Poirot Iris illustration">
     <div class="gallery-caption">
-      <h2 class="gallery-title">Hercule Poirot Iris</h2>
-      <p class="gallery-type">Illustration · Portrait</p>
-    </div>
-  </article>
-  <article class="gallery-item reveal reveal-delay-7">
-    <img src="Work/Illustration/09 Hercule-Poirot-S5-Iris---02.png" alt="Hercule Poirot S5 Iris illustration">
-    <div class="gallery-caption">
-      <h2 class="gallery-title">Hercule Poirot S5 Iris</h2>
+      <h2 class="gallery-title">Hercule Poirot</h2>
       <p class="gallery-type">Illustration · Portrait</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-8">
+    <img src="Work/Illustration/09 Hercule-Poirot-S5-Iris---02.png" alt="Hercule Poirot S5 Iris illustration">
+    <div class="gallery-caption">
+      <h2 class="gallery-title">Hercule Poirot Character</h2>
+      <p class="gallery-type">Illustration · Portrait</p>
+    </div>
+  </article>
+  <article class="gallery-item reveal reveal-delay-9">
     <img src="Work/Illustration/10 Orc-Warrior-and-scifi.png" alt="Orc warrior and sci-fi illustration">
     <div class="gallery-caption">
       <h2 class="gallery-title">Orc Warrior & Sci-Fi</h2>
       <p class="gallery-type">Illustration · Fantasy</p>
     </div>
   </article>
-  <article class="gallery-item reveal reveal-delay-9">
+  <article class="gallery-item reveal">
     <img src="Work/Illustration/11 Mapa-Černohvozdu.png" alt="Mapa Černohvozdu illustration">
     <div class="gallery-caption">
-      <h2 class="gallery-title">Mapa Černohvozdu</h2>
+      <h2 class="gallery-title">Gamebook Blank Map</h2>
       <p class="gallery-type">Illustration · Map</p>
     </div>
   </article>
@@ -629,6 +720,35 @@
     if (e.key === 'Escape' && projectModal.classList.contains('is-open')) {
       closeProjectModal();
     }
+  });
+
+  document.querySelectorAll('[data-gallery-video]').forEach(player => {
+    const video = player.querySelector('.gallery-video__media');
+    const volume = player.querySelector('.gallery-video__volume');
+    const item = player.closest('.gallery-item--video');
+
+    player.addEventListener('click', e => {
+      if (e.target === volume) return;
+      if (video.paused) {
+        video.muted = false;
+        video.volume = parseFloat(volume.value);
+        video.play();
+        item.classList.add('is-playing');
+      } else {
+        video.pause();
+        item.classList.remove('is-playing');
+      }
+    });
+
+    volume.addEventListener('click', e => e.stopPropagation());
+    volume.addEventListener('input', () => {
+      video.volume = parseFloat(volume.value);
+      video.muted = volume.value === '0';
+    });
+
+    video.addEventListener('ended', () => {
+      item.classList.remove('is-playing');
+    });
   });
 </script>
 </body>

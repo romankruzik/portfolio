@@ -164,6 +164,9 @@
     background: var(--void);
     overflow: hidden;
   }
+  .gallery-item--full {
+    grid-column: 1 / -1;
+  }
   .gallery-item--clickable .gallery-media {
     border: none;
     padding: 0;
@@ -171,14 +174,16 @@
     width: 100%;
     display: block;
   }
-  .gallery-item img {
+  .gallery-item img,
+  .gallery-item video {
     width: 100%;
     height: auto;
     display: block;
     transition: opacity 0.3s;
   }
   .gallery-item--clickable:hover img { opacity: 0.88; }
-  .gallery-item:not(.gallery-item--clickable):hover img { opacity: 0.92; }
+  .gallery-item:not(.gallery-item--clickable):hover img,
+  .gallery-item:not(.gallery-item--clickable):hover video { opacity: 0.92; }
 
   .gallery-caption {
     padding: 20px 24px 24px;
@@ -451,7 +456,7 @@
     <img src="Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-assets.png" alt="That One Hungry Room assets">
     <div class="gallery-caption">
       <h2 class="gallery-title">That One Hungry Room Assets</h2>
-      <p class="gallery-type">Brno Game Jam 2023 · Pixel Art</p>
+      <p class="gallery-type">Brno Game Jam 2023 · Assets</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-2">
@@ -476,10 +481,12 @@
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-5">
-    <img src="Work/Game Design/Dark Knight/Dark Pixel Background.png" alt="Dark Knight pixel background">
+    <video autoplay muted loop playsinline aria-label="Dark Knight pixel environment">
+      <source src="Work/Game Design/Dark Knight/Dark Knight.mp4" type="video/mp4">
+    </video>
     <div class="gallery-caption">
       <h2 class="gallery-title">Dark Knight</h2>
-      <p class="gallery-type">Pixel Art · Environment</p>
+      <p class="gallery-type">Pixel Art · Fantasy</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-6">
@@ -496,11 +503,40 @@
       <p class="gallery-type">GameDevHub · UX/UI</p>
     </div>
   </article>
-  <article class="gallery-item reveal">
-    <img src="Work/Game Design/Steam Capsule Concepts/05-Finals.png" alt="Steam capsule finals">
+
+  <article class="gallery-item gallery-item--full reveal">
+    <img src="Work/Game Design/Steam Capsule Concepts/01-Research.png" alt="Research">
     <div class="gallery-caption">
-      <h2 class="gallery-title">Steam Capsule Concepts</h2>
-      <p class="gallery-type">Store Art · Concepts</p>
+      <h2 class="gallery-title">Research</h2>
+      <p class="gallery-type">Steam Capsule Concepts · Research</p>
+    </div>
+  </article>
+  <article class="gallery-item gallery-item--full reveal">
+    <img src="Work/Game Design/Steam Capsule Concepts/02-Main-Concept.png" alt="Main Concept">
+    <div class="gallery-caption">
+      <h2 class="gallery-title">Main Concept</h2>
+      <p class="gallery-type">Steam Capsule Concepts · Main Concept</p>
+    </div>
+  </article>
+  <article class="gallery-item gallery-item--full reveal">
+    <img src="Work/Game Design/Steam Capsule Concepts/03-Main-Concept-Scale-Thumbnail.png" alt="Main Concept Scale Thumbnail">
+    <div class="gallery-caption">
+      <h2 class="gallery-title">Main Concept Scale Thumbnail</h2>
+      <p class="gallery-type">Steam Capsule Concepts · Main Concept Scale Thumbnail</p>
+    </div>
+  </article>
+  <article class="gallery-item gallery-item--full reveal">
+    <img src="Work/Game Design/Steam Capsule Concepts/04-Other-Concepts.png" alt="Other Concepts">
+    <div class="gallery-caption">
+      <h2 class="gallery-title">Other Concepts</h2>
+      <p class="gallery-type">Steam Capsule Concepts · Other Concepts</p>
+    </div>
+  </article>
+  <article class="gallery-item gallery-item--full reveal">
+    <img src="Work/Game Design/Steam Capsule Concepts/05-Finals.png" alt="Finals">
+    <div class="gallery-caption">
+      <h2 class="gallery-title">Finals</h2>
+      <p class="gallery-type">Steam Capsule Concepts · Finals</p>
     </div>
   </article>
 
