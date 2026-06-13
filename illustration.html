@@ -179,6 +179,10 @@
     display: block;
     transition: opacity 0.3s;
   }
+  .gallery-item picture {
+    display: block;
+    width: 100%;
+  }
   .gallery-item--clickable:hover img { opacity: 0.88; }
   .gallery-item:not(.gallery-item--clickable):hover img { opacity: 0.92; }
 
@@ -518,21 +522,30 @@
 
 <main class="gallery">
   <article class="gallery-item reveal">
-    <img src="Work/Illustration/01 Sketch-Mockup-PUNK.png" alt="PUNK sketch mockup">
+    <picture>
+      <source type="image/webp" srcset="Work/Illustration/01 Sketch-Mockup-PUNK-640w.webp 640w, Work/Illustration/01 Sketch-Mockup-PUNK-960w.webp 960w, Work/Illustration/01 Sketch-Mockup-PUNK-1280w.webp 1280w, Work/Illustration/01 Sketch-Mockup-PUNK.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/Illustration/01 Sketch-Mockup-PUNK.png" alt="PUNK sketch mockup" width="1920" height="1280" loading="eager" decoding="async">
+    </picture>
     <div class="gallery-caption">
       <h2 class="gallery-title">Postapo Punk</h2>
       <p class="gallery-type">Sketch · Mockup</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-1">
-    <img src="Work/Illustration/02 Sketches-Mockup.png" alt="Sketches mockup">
+    <picture>
+      <source type="image/webp" srcset="Work/Illustration/02 Sketches-Mockup-640w.webp 640w, Work/Illustration/02 Sketches-Mockup-960w.webp 960w, Work/Illustration/02 Sketches-Mockup-1280w.webp 1280w, Work/Illustration/02 Sketches-Mockup.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/Illustration/02 Sketches-Mockup.png" alt="Sketches mockup" width="1920" height="1280" loading="eager" decoding="async">
+    </picture>
     <div class="gallery-caption">
       <h2 class="gallery-title">Sketches Mockup</h2>
       <p class="gallery-type">Sketch · Collection</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-2">
-    <img src="Work/Illustration/03 Retro-Paper-DnD-Board.png" alt="Retro paper DnD board">
+    <picture>
+      <source type="image/webp" srcset="Work/Illustration/03 Retro-Paper-DnD-Board-640w.webp 640w, Work/Illustration/03 Retro-Paper-DnD-Board-960w.webp 960w, Work/Illustration/03 Retro-Paper-DnD-Board-1280w.webp 1280w, Work/Illustration/03 Retro-Paper-DnD-Board.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/Illustration/03 Retro-Paper-DnD-Board.png" alt="Retro paper DnD board" width="1920" height="1280" loading="lazy" decoding="async">
+    </picture>
     <div class="gallery-caption">
       <h2 class="gallery-title">Retro Paper DnD Board</h2>
       <p class="gallery-type">Illustration · Board</p>
@@ -555,49 +568,70 @@
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-4">
-    <img src="Work/Illustration/05 Bird-Mask-1980x1280.png" alt="Bird mask illustration">
+    <picture>
+      <source type="image/webp" srcset="Work/Illustration/05 Bird-Mask-1980x1280-640w.webp 640w, Work/Illustration/05 Bird-Mask-1980x1280-960w.webp 960w, Work/Illustration/05 Bird-Mask-1980x1280-1280w.webp 1280w, Work/Illustration/05 Bird-Mask-1980x1280.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/Illustration/05 Bird-Mask-1980x1280.png" alt="Bird mask illustration" width="1920" height="1280" loading="lazy" decoding="async">
+    </picture>
     <div class="gallery-caption">
       <h2 class="gallery-title">Bird Mask</h2>
       <p class="gallery-type">Illustration · Character</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-5">
-    <img src="Work/Illustration/06 Dva-vytecnici.png" alt="Dva vytecnici illustration">
+    <picture>
+      <source type="image/webp" srcset="Work/Illustration/06 Dva-vytecnici-640w.webp 640w, Work/Illustration/06 Dva-vytecnici-960w.webp 960w, Work/Illustration/06 Dva-vytecnici-1280w.webp 1280w, Work/Illustration/06 Dva-vytecnici.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/Illustration/06 Dva-vytecnici.png" alt="Dva vytecnici illustration" width="1920" height="1280" loading="lazy" decoding="async">
+    </picture>
     <div class="gallery-caption">
       <h2 class="gallery-title">Dva vytečníci</h2>
       <p class="gallery-type">Illustration · Character</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-6">
-    <img src="Work/Illustration/07 Bud-Spencer-and-Terence-Hill---Malý-Unavený-Joe-2.png" alt="Bud Spencer and Terence Hill illustration">
+    <picture>
+      <source type="image/webp" srcset="Work/Illustration/07 Bud-Spencer-and-Terence-Hill---Malý-Unavený-Joe-2-640w.webp 640w, Work/Illustration/07 Bud-Spencer-and-Terence-Hill---Malý-Unavený-Joe-2-960w.webp 960w, Work/Illustration/07 Bud-Spencer-and-Terence-Hill---Malý-Unavený-Joe-2-1280w.webp 1280w, Work/Illustration/07 Bud-Spencer-and-Terence-Hill---Malý-Unavený-Joe-2.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/Illustration/07 Bud-Spencer-and-Terence-Hill---Malý-Unavený-Joe-2.png" alt="Bud Spencer and Terence Hill illustration" width="1920" height="1071" loading="lazy" decoding="async">
+    </picture>
     <div class="gallery-caption">
       <h2 class="gallery-title">Malý Unavený Joe</h2>
       <p class="gallery-type">Illustration · Portrait</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-7">
-    <img src="Work/Illustration/08 Hercule-Poirot-Iris.png" alt="Hercule Poirot Iris illustration">
+    <picture>
+      <source type="image/webp" srcset="Work/Illustration/08 Hercule-Poirot-Iris-640w.webp 640w, Work/Illustration/08 Hercule-Poirot-Iris-960w.webp 960w, Work/Illustration/08 Hercule-Poirot-Iris.webp 1200w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/Illustration/08 Hercule-Poirot-Iris.png" alt="Hercule Poirot Iris illustration" width="1200" height="1265" loading="lazy" decoding="async">
+    </picture>
     <div class="gallery-caption">
       <h2 class="gallery-title">Hercule Poirot</h2>
       <p class="gallery-type">Illustration · Portrait</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-8">
-    <img src="Work/Illustration/09 Hercule-Poirot-S5-Iris---02.png" alt="Hercule Poirot S5 Iris illustration">
+    <picture>
+      <source type="image/webp" srcset="Work/Illustration/09 Hercule-Poirot-S5-Iris---02-640w.webp 640w, Work/Illustration/09 Hercule-Poirot-S5-Iris---02-960w.webp 960w, Work/Illustration/09 Hercule-Poirot-S5-Iris---02-1280w.webp 1280w, Work/Illustration/09 Hercule-Poirot-S5-Iris---02.webp 1563w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/Illustration/09 Hercule-Poirot-S5-Iris---02.png" alt="Hercule Poirot S5 Iris illustration" width="1563" height="1200" loading="lazy" decoding="async">
+    </picture>
     <div class="gallery-caption">
       <h2 class="gallery-title">Hercule Poirot Character</h2>
       <p class="gallery-type">Illustration · Portrait</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-9">
-    <img src="Work/Illustration/10 Orc-Warrior-and-scifi.png" alt="Orc warrior and sci-fi illustration">
+    <picture>
+      <source type="image/webp" srcset="Work/Illustration/10 Orc-Warrior-and-scifi-640w.webp 640w, Work/Illustration/10 Orc-Warrior-and-scifi-960w.webp 960w, Work/Illustration/10 Orc-Warrior-and-scifi-1280w.webp 1280w, Work/Illustration/10 Orc-Warrior-and-scifi.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/Illustration/10 Orc-Warrior-and-scifi.png" alt="Orc warrior and sci-fi illustration" width="1920" height="951" loading="lazy" decoding="async">
+    </picture>
     <div class="gallery-caption">
       <h2 class="gallery-title">Orc Warrior & Sci-Fi</h2>
       <p class="gallery-type">Illustration · Fantasy</p>
     </div>
   </article>
   <article class="gallery-item reveal">
-    <img src="Work/Illustration/11 Mapa-Černohvozdu.png" alt="Mapa Černohvozdu illustration">
+    <picture>
+      <source type="image/webp" srcset="Work/Illustration/11 Mapa-Černohvozdu-640w.webp 640w, Work/Illustration/11 Mapa-Černohvozdu-960w.webp 960w, Work/Illustration/11 Mapa-Černohvozdu.webp 1080w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/Illustration/11 Mapa-Černohvozdu.png" alt="Mapa Černohvozdu illustration" width="1080" height="1653" loading="lazy" decoding="async">
+    </picture>
     <div class="gallery-caption">
       <h2 class="gallery-title">Gamebook Blank Map</h2>
       <p class="gallery-type">Illustration · Map</p>

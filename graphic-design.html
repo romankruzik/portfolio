@@ -167,6 +167,10 @@
     display: block;
     transition: opacity 0.3s;
   }
+  .gallery-item picture {
+    display: block;
+    width: 100%;
+  }
   .gallery-item:hover img { opacity: 0.92; }
 
   /* Pop-up gallery — disabled; restore with gallery-item--clickable + .gallery-media button
@@ -458,56 +462,80 @@
 -->
 <main class="gallery">
   <article class="gallery-item reveal">
-    <img src="Work/Graphic Design/Craniogen-Mockups.png" alt="Craniogen mockups">
+    <picture>
+      <source type="image/webp" srcset="Work/Graphic Design/Craniogen-Mockups-640w.webp 640w, Work/Graphic Design/Craniogen-Mockups-960w.webp 960w, Work/Graphic Design/Craniogen-Mockups-1280w.webp 1280w, Work/Graphic Design/Craniogen-Mockups.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/Graphic Design/Craniogen-Mockups.png" alt="Craniogen mockups" width="1920" height="1280" loading="eager" decoding="async">
+    </picture>
     <div class="gallery-caption">
       <h2 class="gallery-title">Craniogen</h2>
       <p class="gallery-type">Branding · Mockups</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-1">
-    <img src="Work/Graphic Design/Groot-Tshirts-Mockup.png" alt="Groot t-shirts mockup">
+    <picture>
+      <source type="image/webp" srcset="Work/Graphic Design/Groot-Tshirts-Mockup-640w.webp 640w, Work/Graphic Design/Groot-Tshirts-Mockup-960w.webp 960w, Work/Graphic Design/Groot-Tshirts-Mockup-1280w.webp 1280w, Work/Graphic Design/Groot-Tshirts-Mockup.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/Graphic Design/Groot-Tshirts-Mockup.png" alt="Groot t-shirts mockup" width="1920" height="1280" loading="eager" decoding="async">
+    </picture>
     <div class="gallery-caption">
       <h2 class="gallery-title">Groot T-shirts</h2>
       <p class="gallery-type">Apparel · Mockup</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-2">
-    <img src="Work/Graphic Design/JIRMI-Tech-Logo-BLACK-BEST.png" alt="JIRMI Tech logo">
+    <picture>
+      <source type="image/webp" srcset="Work/Graphic Design/JIRMI-Tech-Logo-BLACK-BEST-640w.webp 640w, Work/Graphic Design/JIRMI-Tech-Logo-BLACK-BEST-960w.webp 960w, Work/Graphic Design/JIRMI-Tech-Logo-BLACK-BEST-1280w.webp 1280w, Work/Graphic Design/JIRMI-Tech-Logo-BLACK-BEST.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/Graphic Design/JIRMI-Tech-Logo-BLACK-BEST.png" alt="JIRMI Tech logo" width="1920" height="1280" loading="lazy" decoding="async">
+    </picture>
     <div class="gallery-caption">
       <h2 class="gallery-title">JIRMI Tech</h2>
       <p class="gallery-type">Logo Design</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-3">
-    <img src="Work/Graphic Design/Line-Fitko-Poster.png" alt="Line Fitko poster">
+    <picture>
+      <source type="image/webp" srcset="Work/Graphic Design/Line-Fitko-Poster-640w.webp 640w, Work/Graphic Design/Line-Fitko-Poster-960w.webp 960w, Work/Graphic Design/Line-Fitko-Poster-1280w.webp 1280w, Work/Graphic Design/Line-Fitko-Poster.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/Graphic Design/Line-Fitko-Poster.png" alt="Line Fitko poster" width="1920" height="1280" loading="lazy" decoding="async">
+    </picture>
     <div class="gallery-caption">
       <h2 class="gallery-title">Line Fitko</h2>
       <p class="gallery-type">Poster · Print</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-4">
-    <img src="Work/Graphic Design/MUNI-a-UVT.png" alt="MUNI and ICS design">
+    <picture>
+      <source type="image/webp" srcset="Work/Graphic Design/MUNI-a-UVT-640w.webp 640w, Work/Graphic Design/MUNI-a-UVT-960w.webp 960w, Work/Graphic Design/MUNI-a-UVT-1280w.webp 1280w, Work/Graphic Design/MUNI-a-UVT.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/Graphic Design/MUNI-a-UVT.png" alt="MUNI and ICS design" width="1920" height="1280" loading="lazy" decoding="async">
+    </picture>
     <div class="gallery-caption">
       <h2 class="gallery-title">MUNI & ICS</h2>
       <p class="gallery-type">Institutional Design</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-5">
-    <img src="Work/Graphic Design/okASIAN-1920x1280.png" alt="OK Asian Brand design">
+    <picture>
+      <source type="image/webp" srcset="Work/Graphic Design/okASIAN-1920x1280-640w.webp 640w, Work/Graphic Design/okASIAN-1920x1280-960w.webp 960w, Work/Graphic Design/okASIAN-1920x1280-1280w.webp 1280w, Work/Graphic Design/okASIAN-1920x1280.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/Graphic Design/okASIAN-1920x1280.png" alt="OK Asian Brand design" width="1920" height="1280" loading="lazy" decoding="async">
+    </picture>
     <div class="gallery-caption">
       <h2 class="gallery-title">OK Asian Brand</h2>
       <p class="gallery-type">Visual Identity</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-6">
-    <img src="Work/Graphic Design/Perspective-Screens-3DIM.png" alt="3DIM Web Mockup">
+    <picture>
+      <source type="image/webp" srcset="Work/Graphic Design/Perspective-Screens-3DIM-640w.webp 640w, Work/Graphic Design/Perspective-Screens-3DIM-960w.webp 960w, Work/Graphic Design/Perspective-Screens-3DIM-1280w.webp 1280w, Work/Graphic Design/Perspective-Screens-3DIM.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/Graphic Design/Perspective-Screens-3DIM.png" alt="3DIM Web Mockup" width="1920" height="1280" loading="lazy" decoding="async">
+    </picture>
     <div class="gallery-caption">
       <h2 class="gallery-title">3DIM Web Mockup</h2>
       <p class="gallery-type">Presentation · Mockup</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-7">
-    <img src="Work/Graphic Design/MoraWines-1920x1080.jpg" alt="Mora Wines branding">
+    <picture>
+      <source type="image/webp" srcset="Work/Graphic Design/MoraWines-1920x1080-640w.webp 640w, Work/Graphic Design/MoraWines-1920x1080-960w.webp 960w, Work/Graphic Design/MoraWines-1920x1080-1280w.webp 1280w, Work/Graphic Design/MoraWines-1920x1080-1920w.webp 1920w, Work/Graphic Design/MoraWines-1920x1080.webp 3600w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/Graphic Design/MoraWines-1920x1080.jpg" alt="Mora Wines branding" width="3600" height="2400" loading="lazy" decoding="async">
+    </picture>
     <div class="gallery-caption">
       <h2 class="gallery-title">Mora Wines</h2>
       <p class="gallery-type">Branding · Visual Identity</p>

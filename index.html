@@ -419,6 +419,10 @@
   .about-img-frame {
     width: 75%;
   }
+  .about-img-frame picture {
+    display: block;
+    width: 100%;
+  }
   .about-img-frame img {
     width: 100%;
     height: auto;
@@ -935,7 +939,7 @@
 <div class="cursor-ring" id="cursorRing"></div>
 
 <nav id="nav">
-  <a href="#" class="nav-logo"><img src="Logos/logo_k_electric.svg" alt="Kružík Design"></a>
+  <a href="#" class="nav-logo"><img src="Logos/logo_k_electric.svg" alt="Kružík Design" width="120" height="16" decoding="async"></a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#services">Portfolio</a></li>
@@ -963,7 +967,7 @@
 <!-- Hero -->
 <section class="hero" id="home">
   <div class="hero-video" aria-hidden="true">
-    <video class="hero-video__media" autoplay muted loop playsinline>
+    <video class="hero-video__media" autoplay muted loop playsinline preload="metadata">
       <source src="Videos/vid_brno_game_jam.mp4" type="video/mp4">
     </video>
   </div>
@@ -1047,7 +1051,10 @@
   </div>
   <div class="about-visual reveal">
     <div class="about-img-frame">
-      <img src="Vector-profile.png" alt="Roman Kružík portrait">
+      <picture>
+      <source type="image/webp" srcset="Vector-profile-640w.webp 640w, Vector-profile-960w.webp 960w, Vector-profile-1280w.webp 1280w, Vector-profile.webp 1668w" sizes="(max-width: 900px) 100vw, 40vw">
+      <img src="Vector-profile.png" alt="Roman Kružík portrait" width="1668" height="2216" loading="lazy" decoding="async">
+    </picture>
     </div>
   </div>
 </section>
@@ -1199,7 +1206,7 @@
 <!-- Why Roman -->
 <section class="why" id="why-roman">
   <div class="why-video" aria-hidden="true">
-    <video class="why-video__media" autoplay muted loop playsinline>
+    <video class="why-video__media" autoplay muted loop playsinline preload="metadata">
       <source src="Videos/vid_drummer.mp4" type="video/mp4">
     </video>
   </div>

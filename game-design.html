@@ -181,6 +181,10 @@
     display: block;
     transition: opacity 0.3s;
   }
+  .gallery-item picture {
+    display: block;
+    width: 100%;
+  }
   .gallery-item--clickable:hover img { opacity: 0.88; }
   .gallery-item:not(.gallery-item--clickable):hover img,
   .gallery-item:not(.gallery-item--clickable):hover video { opacity: 0.92; }
@@ -446,42 +450,57 @@
 
 <main class="gallery">
   <article class="gallery-item reveal">
-    <img src="Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-portfolio.png" alt="That One Hungry Room portfolio">
+    <picture>
+      <source type="image/webp" srcset="Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-portfolio-640w.webp 640w, Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-portfolio-960w.webp 960w, Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-portfolio-1280w.webp 1280w, Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-portfolio.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-portfolio.png" alt="That One Hungry Room portfolio" width="1920" height="1280" loading="eager" decoding="async">
+    </picture>
     <div class="gallery-caption">
       <h2 class="gallery-title">That One Hungry Room</h2>
       <p class="gallery-type">Brno Game Jam 2023 · Game</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-1">
-    <img src="Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-assets.png" alt="That One Hungry Room assets">
+    <picture>
+      <source type="image/webp" srcset="Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-assets-640w.webp 640w, Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-assets-960w.webp 960w, Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-assets-1280w.webp 1280w, Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-assets.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-assets.png" alt="That One Hungry Room assets" width="1920" height="1280" loading="eager" decoding="async">
+    </picture>
     <div class="gallery-caption">
       <h2 class="gallery-title">That One Hungry Room Assets</h2>
       <p class="gallery-type">Brno Game Jam 2023 · Assets</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-2">
-    <img src="Work/Game Design/Brno Game Jam 2023/Postavy.png" alt="That One Hungry Room characters">
+    <picture>
+      <source type="image/webp" srcset="Work/Game Design/Brno Game Jam 2023/Postavy-640w.webp 640w, Work/Game Design/Brno Game Jam 2023/Postavy-960w.webp 960w, Work/Game Design/Brno Game Jam 2023/Postavy-1280w.webp 1280w, Work/Game Design/Brno Game Jam 2023/Postavy.webp 1536w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/Game Design/Brno Game Jam 2023/Postavy.png" alt="That One Hungry Room characters" width="1536" height="1536" loading="lazy" decoding="async">
+    </picture>
     <div class="gallery-caption">
       <h2 class="gallery-title">Hungry Room Characters</h2>
       <p class="gallery-type">Brno Game Jam 2023 · Characters</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-3">
-    <img src="Work/Game Design/Brno Game Jam 2024/Lost-in-Underground-Screen.png" alt="Lost in Underground screen">
+    <picture>
+      <source type="image/webp" srcset="Work/Game Design/Brno Game Jam 2024/Lost-in-Underground-Screen-640w.webp 640w, Work/Game Design/Brno Game Jam 2024/Lost-in-Underground-Screen-960w.webp 960w, Work/Game Design/Brno Game Jam 2024/Lost-in-Underground-Screen-1280w.webp 1280w, Work/Game Design/Brno Game Jam 2024/Lost-in-Underground-Screen.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/Game Design/Brno Game Jam 2024/Lost-in-Underground-Screen.png" alt="Lost in Underground screen" width="1920" height="1280" loading="lazy" decoding="async">
+    </picture>
     <div class="gallery-caption">
       <h2 class="gallery-title">Lost in Underground</h2>
       <p class="gallery-type">Brno Game Jam 2024 · Game</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-4">
-    <img src="Work/Game Design/Brno Game Jam 2024/Tiles.png" alt="Lost in Underground tiles">
+    <picture>
+      <source type="image/webp" srcset="Work/Game Design/Brno Game Jam 2024/Tiles.webp 330w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/Game Design/Brno Game Jam 2024/Tiles.png" alt="Lost in Underground tiles" width="330" height="330" loading="lazy" decoding="async">
+    </picture>
     <div class="gallery-caption">
       <h2 class="gallery-title">Lost in Underground Tiles</h2>
       <p class="gallery-type">Brno Game Jam 2024 · Tileset</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-5">
-    <video autoplay muted loop playsinline aria-label="Dark Knight pixel environment">
+    <video autoplay muted loop playsinline preload="metadata" aria-label="Dark Knight pixel environment">
       <source src="Work/Game Design/Dark Knight/Dark Knight.mp4" type="video/mp4">
     </video>
     <div class="gallery-caption">
@@ -490,14 +509,20 @@
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-6">
-    <img src="Work/Game Design/GameDevHub/Moodboard/Moodboard-Goblin-Brotherhood.png" alt="GameDevHub moodboard">
+    <picture>
+      <source type="image/webp" srcset="Work/Game Design/GameDevHub/Moodboard/Moodboard-Goblin-Brotherhood-640w.webp 640w, Work/Game Design/GameDevHub/Moodboard/Moodboard-Goblin-Brotherhood-960w.webp 960w, Work/Game Design/GameDevHub/Moodboard/Moodboard-Goblin-Brotherhood-1280w.webp 1280w, Work/Game Design/GameDevHub/Moodboard/Moodboard-Goblin-Brotherhood.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/Game Design/GameDevHub/Moodboard/Moodboard-Goblin-Brotherhood.png" alt="GameDevHub moodboard" width="1920" height="1280" loading="lazy" decoding="async">
+    </picture>
     <div class="gallery-caption">
       <h2 class="gallery-title">Goblin Brotherhood Moodboard</h2>
       <p class="gallery-type">GameDevHub · Moodboard</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-7">
-    <img src="Work/Game Design/GameDevHub/Wireframes/Wireframes.png" alt="GameDevHub wireframes">
+    <picture>
+      <source type="image/webp" srcset="Work/Game Design/GameDevHub/Wireframes/Wireframes-640w.webp 640w, Work/Game Design/GameDevHub/Wireframes/Wireframes-960w.webp 960w, Work/Game Design/GameDevHub/Wireframes/Wireframes-1280w.webp 1280w, Work/Game Design/GameDevHub/Wireframes/Wireframes.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/Game Design/GameDevHub/Wireframes/Wireframes.png" alt="GameDevHub wireframes" width="1920" height="1280" loading="lazy" decoding="async">
+    </picture>
     <div class="gallery-caption">
       <h2 class="gallery-title">GameDevHub Wireframes</h2>
       <p class="gallery-type">GameDevHub · UX/UI</p>
@@ -505,35 +530,50 @@
   </article>
 
   <article class="gallery-item gallery-item--full reveal">
-    <img src="Work/Game Design/Steam Capsule Concepts/01-Research.png" alt="Research">
+    <picture>
+      <source type="image/webp" srcset="Work/Game Design/Steam Capsule Concepts/01-Research-640w.webp 640w, Work/Game Design/Steam Capsule Concepts/01-Research-960w.webp 960w, Work/Game Design/Steam Capsule Concepts/01-Research-1280w.webp 1280w, Work/Game Design/Steam Capsule Concepts/01-Research.webp 1920w" sizes="100vw">
+      <img src="Work/Game Design/Steam Capsule Concepts/01-Research.png" alt="Research" width="1920" height="1080" loading="lazy" decoding="async">
+    </picture>
     <div class="gallery-caption">
       <h2 class="gallery-title">Research</h2>
       <p class="gallery-type">Steam Capsule Concepts · Research</p>
     </div>
   </article>
   <article class="gallery-item gallery-item--full reveal">
-    <img src="Work/Game Design/Steam Capsule Concepts/02-Main-Concept.png" alt="Main Concept">
+    <picture>
+      <source type="image/webp" srcset="Work/Game Design/Steam Capsule Concepts/02-Main-Concept-640w.webp 640w, Work/Game Design/Steam Capsule Concepts/02-Main-Concept-960w.webp 960w, Work/Game Design/Steam Capsule Concepts/02-Main-Concept-1280w.webp 1280w, Work/Game Design/Steam Capsule Concepts/02-Main-Concept.webp 1920w" sizes="100vw">
+      <img src="Work/Game Design/Steam Capsule Concepts/02-Main-Concept.png" alt="Main Concept" width="1920" height="1080" loading="lazy" decoding="async">
+    </picture>
     <div class="gallery-caption">
       <h2 class="gallery-title">Main Concept</h2>
       <p class="gallery-type">Steam Capsule Concepts · Main Concept</p>
     </div>
   </article>
   <article class="gallery-item gallery-item--full reveal">
-    <img src="Work/Game Design/Steam Capsule Concepts/03-Main-Concept-Scale-Thumbnail.png" alt="Main Concept Scale Thumbnail">
+    <picture>
+      <source type="image/webp" srcset="Work/Game Design/Steam Capsule Concepts/03-Main-Concept-Scale-Thumbnail-640w.webp 640w, Work/Game Design/Steam Capsule Concepts/03-Main-Concept-Scale-Thumbnail-960w.webp 960w, Work/Game Design/Steam Capsule Concepts/03-Main-Concept-Scale-Thumbnail-1280w.webp 1280w, Work/Game Design/Steam Capsule Concepts/03-Main-Concept-Scale-Thumbnail.webp 1920w" sizes="100vw">
+      <img src="Work/Game Design/Steam Capsule Concepts/03-Main-Concept-Scale-Thumbnail.png" alt="Main Concept Scale Thumbnail" width="1920" height="1080" loading="lazy" decoding="async">
+    </picture>
     <div class="gallery-caption">
       <h2 class="gallery-title">Main Concept Scale Thumbnail</h2>
       <p class="gallery-type">Steam Capsule Concepts · Main Concept Scale Thumbnail</p>
     </div>
   </article>
   <article class="gallery-item gallery-item--full reveal">
-    <img src="Work/Game Design/Steam Capsule Concepts/04-Other-Concepts.png" alt="Other Concepts">
+    <picture>
+      <source type="image/webp" srcset="Work/Game Design/Steam Capsule Concepts/04-Other-Concepts-640w.webp 640w, Work/Game Design/Steam Capsule Concepts/04-Other-Concepts-960w.webp 960w, Work/Game Design/Steam Capsule Concepts/04-Other-Concepts-1280w.webp 1280w, Work/Game Design/Steam Capsule Concepts/04-Other-Concepts.webp 1920w" sizes="100vw">
+      <img src="Work/Game Design/Steam Capsule Concepts/04-Other-Concepts.png" alt="Other Concepts" width="1920" height="1080" loading="lazy" decoding="async">
+    </picture>
     <div class="gallery-caption">
       <h2 class="gallery-title">Other Concepts</h2>
       <p class="gallery-type">Steam Capsule Concepts · Other Concepts</p>
     </div>
   </article>
   <article class="gallery-item gallery-item--full reveal">
-    <img src="Work/Game Design/Steam Capsule Concepts/05-Finals.png" alt="Finals">
+    <picture>
+      <source type="image/webp" srcset="Work/Game Design/Steam Capsule Concepts/05-Finals-640w.webp 640w, Work/Game Design/Steam Capsule Concepts/05-Finals-960w.webp 960w, Work/Game Design/Steam Capsule Concepts/05-Finals-1280w.webp 1280w, Work/Game Design/Steam Capsule Concepts/05-Finals.webp 1920w" sizes="100vw">
+      <img src="Work/Game Design/Steam Capsule Concepts/05-Finals.png" alt="Finals" width="1920" height="1080" loading="lazy" decoding="async">
+    </picture>
     <div class="gallery-caption">
       <h2 class="gallery-title">Finals</h2>
       <p class="gallery-type">Steam Capsule Concepts · Finals</p>

@@ -1,0 +1,1252 @@
+[
+  {
+    "src": "Case Studies/01 UX & Product Design/Images/Catalog.png",
+    "width": 1920,
+    "height": 1280,
+    "original_kb": 1160.6,
+    "webp_full_kb": 219.1,
+    "srcset": [
+      {
+        "url": "Case Studies/01 UX & Product Design/Images/Catalog-640w.webp",
+        "w": 640,
+        "kb": 15.6
+      },
+      {
+        "url": "Case Studies/01 UX & Product Design/Images/Catalog-960w.webp",
+        "w": 960,
+        "kb": 48.1
+      },
+      {
+        "url": "Case Studies/01 UX & Product Design/Images/Catalog-1280w.webp",
+        "w": 1280,
+        "kb": 100.5
+      },
+      {
+        "url": "Case Studies/01 UX & Product Design/Images/Catalog.webp",
+        "w": 1920,
+        "kb": 219.1
+      }
+    ],
+    "savings_pct": 81.1
+  },
+  {
+    "src": "Case Studies/02 Graphic Design & Prepress/Images/okASIAN-1920x1280.png",
+    "width": 1920,
+    "height": 1280,
+    "original_kb": 3344.0,
+    "webp_full_kb": 166.8,
+    "srcset": [
+      {
+        "url": "Case Studies/02 Graphic Design & Prepress/Images/okASIAN-1920x1280-640w.webp",
+        "w": 640,
+        "kb": 25.6
+      },
+      {
+        "url": "Case Studies/02 Graphic Design & Prepress/Images/okASIAN-1920x1280-960w.webp",
+        "w": 960,
+        "kb": 48.8
+      },
+      {
+        "url": "Case Studies/02 Graphic Design & Prepress/Images/okASIAN-1920x1280-1280w.webp",
+        "w": 1280,
+        "kb": 79.8
+      },
+      {
+        "url": "Case Studies/02 Graphic Design & Prepress/Images/okASIAN-1920x1280.webp",
+        "w": 1920,
+        "kb": 166.8
+      }
+    ],
+    "savings_pct": 95.0
+  },
+  {
+    "src": "Case Studies/03 Illustration & Personal Projects/Images/01 First Sketch.png",
+    "width": 1200,
+    "height": 720,
+    "original_kb": 317.0,
+    "webp_full_kb": 56.3,
+    "srcset": [
+      {
+        "url": "Case Studies/03 Illustration & Personal Projects/Images/01 First Sketch-640w.webp",
+        "w": 640,
+        "kb": 21.0
+      },
+      {
+        "url": "Case Studies/03 Illustration & Personal Projects/Images/01 First Sketch-960w.webp",
+        "w": 960,
+        "kb": 39.6
+      },
+      {
+        "url": "Case Studies/03 Illustration & Personal Projects/Images/01 First Sketch.webp",
+        "w": 1200,
+        "kb": 56.3
+      }
+    ],
+    "savings_pct": 82.2
+  },
+  {
+    "src": "Case Studies/03 Illustration & Personal Projects/Images/02 Concept Sketch.png",
+    "width": 1600,
+    "height": 960,
+    "original_kb": 333.8,
+    "webp_full_kb": 83.6,
+    "srcset": [
+      {
+        "url": "Case Studies/03 Illustration & Personal Projects/Images/02 Concept Sketch-640w.webp",
+        "w": 640,
+        "kb": 23.6
+      },
+      {
+        "url": "Case Studies/03 Illustration & Personal Projects/Images/02 Concept Sketch-960w.webp",
+        "w": 960,
+        "kb": 43.1
+      },
+      {
+        "url": "Case Studies/03 Illustration & Personal Projects/Images/02 Concept Sketch-1280w.webp",
+        "w": 1280,
+        "kb": 62.3
+      },
+      {
+        "url": "Case Studies/03 Illustration & Personal Projects/Images/02 Concept Sketch.webp",
+        "w": 1600,
+        "kb": 83.6
+      }
+    ],
+    "savings_pct": 75.0
+  },
+  {
+    "src": "Case Studies/03 Illustration & Personal Projects/Images/03 Concept Art.png",
+    "width": 2000,
+    "height": 1495,
+    "original_kb": 2623.1,
+    "webp_full_kb": 132.0,
+    "srcset": [
+      {
+        "url": "Case Studies/03 Illustration & Personal Projects/Images/03 Concept Art-640w.webp",
+        "w": 640,
+        "kb": 26.9
+      },
+      {
+        "url": "Case Studies/03 Illustration & Personal Projects/Images/03 Concept Art-960w.webp",
+        "w": 960,
+        "kb": 49.1
+      },
+      {
+        "url": "Case Studies/03 Illustration & Personal Projects/Images/03 Concept Art-1280w.webp",
+        "w": 1280,
+        "kb": 73.9
+      },
+      {
+        "url": "Case Studies/03 Illustration & Personal Projects/Images/03 Concept Art-1920w.webp",
+        "w": 1920,
+        "kb": 124.1
+      },
+      {
+        "url": "Case Studies/03 Illustration & Personal Projects/Images/03 Concept Art.webp",
+        "w": 2000,
+        "kb": 132.0
+      }
+    ],
+    "savings_pct": 95.0
+  },
+  {
+    "src": "Vector-profile.png",
+    "width": 1668,
+    "height": 2216,
+    "original_kb": 927.2,
+    "webp_full_kb": 252.1,
+    "srcset": [
+      {
+        "url": "Vector-profile-640w.webp",
+        "w": 640,
+        "kb": 76.0
+      },
+      {
+        "url": "Vector-profile-960w.webp",
+        "w": 960,
+        "kb": 134.0
+      },
+      {
+        "url": "Vector-profile-1280w.webp",
+        "w": 1280,
+        "kb": 195.5
+      },
+      {
+        "url": "Vector-profile.webp",
+        "w": 1668,
+        "kb": 252.1
+      }
+    ],
+    "savings_pct": 72.8
+  },
+  {
+    "src": "Work/Game Design/Brno Game Jam 2023/Postavy.png",
+    "width": 1536,
+    "height": 1536,
+    "original_kb": 212.8,
+    "webp_full_kb": 146.5,
+    "srcset": [
+      {
+        "url": "Work/Game Design/Brno Game Jam 2023/Postavy-640w.webp",
+        "w": 640,
+        "kb": 66.4
+      },
+      {
+        "url": "Work/Game Design/Brno Game Jam 2023/Postavy-960w.webp",
+        "w": 960,
+        "kb": 100.3
+      },
+      {
+        "url": "Work/Game Design/Brno Game Jam 2023/Postavy-1280w.webp",
+        "w": 1280,
+        "kb": 150.0
+      },
+      {
+        "url": "Work/Game Design/Brno Game Jam 2023/Postavy.webp",
+        "w": 1536,
+        "kb": 146.5
+      }
+    ],
+    "savings_pct": 31.2
+  },
+  {
+    "src": "Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-assets.png",
+    "width": 1920,
+    "height": 1280,
+    "original_kb": 3469.6,
+    "webp_full_kb": 624.0,
+    "srcset": [
+      {
+        "url": "Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-assets-640w.webp",
+        "w": 640,
+        "kb": 67.1
+      },
+      {
+        "url": "Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-assets-960w.webp",
+        "w": 960,
+        "kb": 149.8
+      },
+      {
+        "url": "Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-assets-1280w.webp",
+        "w": 1280,
+        "kb": 268.9
+      },
+      {
+        "url": "Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-assets.webp",
+        "w": 1920,
+        "kb": 624.0
+      }
+    ],
+    "savings_pct": 82.0
+  },
+  {
+    "src": "Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-portfolio.png",
+    "width": 1920,
+    "height": 1280,
+    "original_kb": 1657.7,
+    "webp_full_kb": 173.6,
+    "srcset": [
+      {
+        "url": "Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-portfolio-640w.webp",
+        "w": 640,
+        "kb": 33.3
+      },
+      {
+        "url": "Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-portfolio-960w.webp",
+        "w": 960,
+        "kb": 63.0
+      },
+      {
+        "url": "Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-portfolio-1280w.webp",
+        "w": 1280,
+        "kb": 96.6
+      },
+      {
+        "url": "Work/Game Design/Brno Game Jam 2023/That-One-Hungry-Room-portfolio.webp",
+        "w": 1920,
+        "kb": 173.6
+      }
+    ],
+    "savings_pct": 89.5
+  },
+  {
+    "src": "Work/Game Design/Brno Game Jam 2024/Lost-in-Underground-Screen.png",
+    "width": 1920,
+    "height": 1280,
+    "original_kb": 928.9,
+    "webp_full_kb": 108.8,
+    "srcset": [
+      {
+        "url": "Work/Game Design/Brno Game Jam 2024/Lost-in-Underground-Screen-640w.webp",
+        "w": 640,
+        "kb": 21.9
+      },
+      {
+        "url": "Work/Game Design/Brno Game Jam 2024/Lost-in-Underground-Screen-960w.webp",
+        "w": 960,
+        "kb": 41.1
+      },
+      {
+        "url": "Work/Game Design/Brno Game Jam 2024/Lost-in-Underground-Screen-1280w.webp",
+        "w": 1280,
+        "kb": 61.6
+      },
+      {
+        "url": "Work/Game Design/Brno Game Jam 2024/Lost-in-Underground-Screen.webp",
+        "w": 1920,
+        "kb": 108.8
+      }
+    ],
+    "savings_pct": 88.3
+  },
+  {
+    "src": "Work/Game Design/Brno Game Jam 2024/Tiles.png",
+    "width": 330,
+    "height": 330,
+    "original_kb": 147.9,
+    "webp_full_kb": 19.5,
+    "srcset": [
+      {
+        "url": "Work/Game Design/Brno Game Jam 2024/Tiles.webp",
+        "w": 330,
+        "kb": 19.5
+      }
+    ],
+    "savings_pct": 86.8
+  },
+  {
+    "src": "Work/Game Design/GameDevHub/Moodboard/Moodboard-Goblin-Brotherhood.png",
+    "width": 1920,
+    "height": 1280,
+    "original_kb": 3184.1,
+    "webp_full_kb": 318.5,
+    "srcset": [
+      {
+        "url": "Work/Game Design/GameDevHub/Moodboard/Moodboard-Goblin-Brotherhood-640w.webp",
+        "w": 640,
+        "kb": 53.9
+      },
+      {
+        "url": "Work/Game Design/GameDevHub/Moodboard/Moodboard-Goblin-Brotherhood-960w.webp",
+        "w": 960,
+        "kb": 105.8
+      },
+      {
+        "url": "Work/Game Design/GameDevHub/Moodboard/Moodboard-Goblin-Brotherhood-1280w.webp",
+        "w": 1280,
+        "kb": 170.2
+      },
+      {
+        "url": "Work/Game Design/GameDevHub/Moodboard/Moodboard-Goblin-Brotherhood.webp",
+        "w": 1920,
+        "kb": 318.5
+      }
+    ],
+    "savings_pct": 90.0
+  },
+  {
+    "src": "Work/Game Design/GameDevHub/Wireframes/Wireframes.png",
+    "width": 1920,
+    "height": 1280,
+    "original_kb": 1254.3,
+    "webp_full_kb": 138.9,
+    "srcset": [
+      {
+        "url": "Work/Game Design/GameDevHub/Wireframes/Wireframes-640w.webp",
+        "w": 640,
+        "kb": 25.8
+      },
+      {
+        "url": "Work/Game Design/GameDevHub/Wireframes/Wireframes-960w.webp",
+        "w": 960,
+        "kb": 50.3
+      },
+      {
+        "url": "Work/Game Design/GameDevHub/Wireframes/Wireframes-1280w.webp",
+        "w": 1280,
+        "kb": 78.4
+      },
+      {
+        "url": "Work/Game Design/GameDevHub/Wireframes/Wireframes.webp",
+        "w": 1920,
+        "kb": 138.9
+      }
+    ],
+    "savings_pct": 88.9
+  },
+  {
+    "src": "Work/Game Design/Steam Capsule Concepts/01-Research.png",
+    "width": 1920,
+    "height": 1080,
+    "original_kb": 1317.0,
+    "webp_full_kb": 141.1,
+    "srcset": [
+      {
+        "url": "Work/Game Design/Steam Capsule Concepts/01-Research-640w.webp",
+        "w": 640,
+        "kb": 25.6
+      },
+      {
+        "url": "Work/Game Design/Steam Capsule Concepts/01-Research-960w.webp",
+        "w": 960,
+        "kb": 49.0
+      },
+      {
+        "url": "Work/Game Design/Steam Capsule Concepts/01-Research-1280w.webp",
+        "w": 1280,
+        "kb": 76.7
+      },
+      {
+        "url": "Work/Game Design/Steam Capsule Concepts/01-Research.webp",
+        "w": 1920,
+        "kb": 141.1
+      }
+    ],
+    "savings_pct": 89.3
+  },
+  {
+    "src": "Work/Game Design/Steam Capsule Concepts/02-Main-Concept.png",
+    "width": 1920,
+    "height": 1080,
+    "original_kb": 2008.8,
+    "webp_full_kb": 209.9,
+    "srcset": [
+      {
+        "url": "Work/Game Design/Steam Capsule Concepts/02-Main-Concept-640w.webp",
+        "w": 640,
+        "kb": 38.4
+      },
+      {
+        "url": "Work/Game Design/Steam Capsule Concepts/02-Main-Concept-960w.webp",
+        "w": 960,
+        "kb": 73.8
+      },
+      {
+        "url": "Work/Game Design/Steam Capsule Concepts/02-Main-Concept-1280w.webp",
+        "w": 1280,
+        "kb": 114.1
+      },
+      {
+        "url": "Work/Game Design/Steam Capsule Concepts/02-Main-Concept.webp",
+        "w": 1920,
+        "kb": 209.9
+      }
+    ],
+    "savings_pct": 89.6
+  },
+  {
+    "src": "Work/Game Design/Steam Capsule Concepts/03-Main-Concept-Scale-Thumbnail.png",
+    "width": 1920,
+    "height": 1080,
+    "original_kb": 1471.8,
+    "webp_full_kb": 169.0,
+    "srcset": [
+      {
+        "url": "Work/Game Design/Steam Capsule Concepts/03-Main-Concept-Scale-Thumbnail-640w.webp",
+        "w": 640,
+        "kb": 28.3
+      },
+      {
+        "url": "Work/Game Design/Steam Capsule Concepts/03-Main-Concept-Scale-Thumbnail-960w.webp",
+        "w": 960,
+        "kb": 56.0
+      },
+      {
+        "url": "Work/Game Design/Steam Capsule Concepts/03-Main-Concept-Scale-Thumbnail-1280w.webp",
+        "w": 1280,
+        "kb": 87.9
+      },
+      {
+        "url": "Work/Game Design/Steam Capsule Concepts/03-Main-Concept-Scale-Thumbnail.webp",
+        "w": 1920,
+        "kb": 169.0
+      }
+    ],
+    "savings_pct": 88.5
+  },
+  {
+    "src": "Work/Game Design/Steam Capsule Concepts/04-Other-Concepts.png",
+    "width": 1920,
+    "height": 1080,
+    "original_kb": 1749.5,
+    "webp_full_kb": 177.8,
+    "srcset": [
+      {
+        "url": "Work/Game Design/Steam Capsule Concepts/04-Other-Concepts-640w.webp",
+        "w": 640,
+        "kb": 34.1
+      },
+      {
+        "url": "Work/Game Design/Steam Capsule Concepts/04-Other-Concepts-960w.webp",
+        "w": 960,
+        "kb": 63.4
+      },
+      {
+        "url": "Work/Game Design/Steam Capsule Concepts/04-Other-Concepts-1280w.webp",
+        "w": 1280,
+        "kb": 94.8
+      },
+      {
+        "url": "Work/Game Design/Steam Capsule Concepts/04-Other-Concepts.webp",
+        "w": 1920,
+        "kb": 177.8
+      }
+    ],
+    "savings_pct": 89.8
+  },
+  {
+    "src": "Work/Game Design/Steam Capsule Concepts/05-Finals.png",
+    "width": 1920,
+    "height": 1080,
+    "original_kb": 2253.0,
+    "webp_full_kb": 275.5,
+    "srcset": [
+      {
+        "url": "Work/Game Design/Steam Capsule Concepts/05-Finals-640w.webp",
+        "w": 640,
+        "kb": 52.4
+      },
+      {
+        "url": "Work/Game Design/Steam Capsule Concepts/05-Finals-960w.webp",
+        "w": 960,
+        "kb": 96.9
+      },
+      {
+        "url": "Work/Game Design/Steam Capsule Concepts/05-Finals-1280w.webp",
+        "w": 1280,
+        "kb": 146.9
+      },
+      {
+        "url": "Work/Game Design/Steam Capsule Concepts/05-Finals.webp",
+        "w": 1920,
+        "kb": 275.5
+      }
+    ],
+    "savings_pct": 87.8
+  },
+  {
+    "src": "Work/Graphic Design/Craniogen-Mockups.png",
+    "width": 1920,
+    "height": 1280,
+    "original_kb": 598.3,
+    "webp_full_kb": 62.6,
+    "srcset": [
+      {
+        "url": "Work/Graphic Design/Craniogen-Mockups-640w.webp",
+        "w": 640,
+        "kb": 13.1
+      },
+      {
+        "url": "Work/Graphic Design/Craniogen-Mockups-960w.webp",
+        "w": 960,
+        "kb": 23.9
+      },
+      {
+        "url": "Work/Graphic Design/Craniogen-Mockups-1280w.webp",
+        "w": 1280,
+        "kb": 36.2
+      },
+      {
+        "url": "Work/Graphic Design/Craniogen-Mockups.webp",
+        "w": 1920,
+        "kb": 62.6
+      }
+    ],
+    "savings_pct": 89.5
+  },
+  {
+    "src": "Work/Graphic Design/Groot-Tshirts-Mockup.png",
+    "width": 1920,
+    "height": 1280,
+    "original_kb": 3222.1,
+    "webp_full_kb": 199.6,
+    "srcset": [
+      {
+        "url": "Work/Graphic Design/Groot-Tshirts-Mockup-640w.webp",
+        "w": 640,
+        "kb": 31.8
+      },
+      {
+        "url": "Work/Graphic Design/Groot-Tshirts-Mockup-960w.webp",
+        "w": 960,
+        "kb": 62.1
+      },
+      {
+        "url": "Work/Graphic Design/Groot-Tshirts-Mockup-1280w.webp",
+        "w": 1280,
+        "kb": 104.5
+      },
+      {
+        "url": "Work/Graphic Design/Groot-Tshirts-Mockup.webp",
+        "w": 1920,
+        "kb": 199.6
+      }
+    ],
+    "savings_pct": 93.8
+  },
+  {
+    "src": "Work/Graphic Design/JIRMI-Tech-Logo-BLACK-BEST.png",
+    "width": 1920,
+    "height": 1280,
+    "original_kb": 3800.3,
+    "webp_full_kb": 829.1,
+    "srcset": [
+      {
+        "url": "Work/Graphic Design/JIRMI-Tech-Logo-BLACK-BEST-640w.webp",
+        "w": 640,
+        "kb": 56.1
+      },
+      {
+        "url": "Work/Graphic Design/JIRMI-Tech-Logo-BLACK-BEST-960w.webp",
+        "w": 960,
+        "kb": 165.9
+      },
+      {
+        "url": "Work/Graphic Design/JIRMI-Tech-Logo-BLACK-BEST-1280w.webp",
+        "w": 1280,
+        "kb": 329.1
+      },
+      {
+        "url": "Work/Graphic Design/JIRMI-Tech-Logo-BLACK-BEST.webp",
+        "w": 1920,
+        "kb": 829.1
+      }
+    ],
+    "savings_pct": 78.2
+  },
+  {
+    "src": "Work/Graphic Design/Line-Fitko-Poster.png",
+    "width": 1920,
+    "height": 1280,
+    "original_kb": 3328.3,
+    "webp_full_kb": 143.5,
+    "srcset": [
+      {
+        "url": "Work/Graphic Design/Line-Fitko-Poster-640w.webp",
+        "w": 640,
+        "kb": 25.1
+      },
+      {
+        "url": "Work/Graphic Design/Line-Fitko-Poster-960w.webp",
+        "w": 960,
+        "kb": 44.0
+      },
+      {
+        "url": "Work/Graphic Design/Line-Fitko-Poster-1280w.webp",
+        "w": 1280,
+        "kb": 68.0
+      },
+      {
+        "url": "Work/Graphic Design/Line-Fitko-Poster.webp",
+        "w": 1920,
+        "kb": 143.5
+      }
+    ],
+    "savings_pct": 95.7
+  },
+  {
+    "src": "Work/Graphic Design/MUNI-a-UVT.png",
+    "width": 1920,
+    "height": 1280,
+    "original_kb": 812.5,
+    "webp_full_kb": 158.4,
+    "srcset": [
+      {
+        "url": "Work/Graphic Design/MUNI-a-UVT-640w.webp",
+        "w": 640,
+        "kb": 34.9
+      },
+      {
+        "url": "Work/Graphic Design/MUNI-a-UVT-960w.webp",
+        "w": 960,
+        "kb": 62.7
+      },
+      {
+        "url": "Work/Graphic Design/MUNI-a-UVT-1280w.webp",
+        "w": 1280,
+        "kb": 94.2
+      },
+      {
+        "url": "Work/Graphic Design/MUNI-a-UVT.webp",
+        "w": 1920,
+        "kb": 158.4
+      }
+    ],
+    "savings_pct": 80.5
+  },
+  {
+    "src": "Work/Graphic Design/MoraWines-1920x1080.jpg",
+    "width": 3600,
+    "height": 2400,
+    "original_kb": 2778.6,
+    "webp_full_kb": 874.6,
+    "srcset": [
+      {
+        "url": "Work/Graphic Design/MoraWines-1920x1080-640w.webp",
+        "w": 640,
+        "kb": 19.0
+      },
+      {
+        "url": "Work/Graphic Design/MoraWines-1920x1080-960w.webp",
+        "w": 960,
+        "kb": 41.2
+      },
+      {
+        "url": "Work/Graphic Design/MoraWines-1920x1080-1280w.webp",
+        "w": 1280,
+        "kb": 89.6
+      },
+      {
+        "url": "Work/Graphic Design/MoraWines-1920x1080-1920w.webp",
+        "w": 1920,
+        "kb": 261.6
+      },
+      {
+        "url": "Work/Graphic Design/MoraWines-1920x1080.webp",
+        "w": 3600,
+        "kb": 874.6
+      }
+    ],
+    "savings_pct": 68.5
+  },
+  {
+    "src": "Work/Graphic Design/Perspective-Screens-3DIM.png",
+    "width": 1920,
+    "height": 1280,
+    "original_kb": 1405.6,
+    "webp_full_kb": 99.2,
+    "srcset": [
+      {
+        "url": "Work/Graphic Design/Perspective-Screens-3DIM-640w.webp",
+        "w": 640,
+        "kb": 18.2
+      },
+      {
+        "url": "Work/Graphic Design/Perspective-Screens-3DIM-960w.webp",
+        "w": 960,
+        "kb": 34.4
+      },
+      {
+        "url": "Work/Graphic Design/Perspective-Screens-3DIM-1280w.webp",
+        "w": 1280,
+        "kb": 53.9
+      },
+      {
+        "url": "Work/Graphic Design/Perspective-Screens-3DIM.webp",
+        "w": 1920,
+        "kb": 99.2
+      }
+    ],
+    "savings_pct": 92.9
+  },
+  {
+    "src": "Work/Graphic Design/okASIAN-1920x1280.png",
+    "width": 1920,
+    "height": 1280,
+    "original_kb": 3344.0,
+    "webp_full_kb": 166.8,
+    "srcset": [
+      {
+        "url": "Work/Graphic Design/okASIAN-1920x1280-640w.webp",
+        "w": 640,
+        "kb": 25.6
+      },
+      {
+        "url": "Work/Graphic Design/okASIAN-1920x1280-960w.webp",
+        "w": 960,
+        "kb": 48.8
+      },
+      {
+        "url": "Work/Graphic Design/okASIAN-1920x1280-1280w.webp",
+        "w": 1280,
+        "kb": 79.8
+      },
+      {
+        "url": "Work/Graphic Design/okASIAN-1920x1280.webp",
+        "w": 1920,
+        "kb": 166.8
+      }
+    ],
+    "savings_pct": 95.0
+  },
+  {
+    "src": "Work/Illustration/01 Sketch-Mockup-PUNK.png",
+    "width": 1920,
+    "height": 1280,
+    "original_kb": 4426.4,
+    "webp_full_kb": 448.9,
+    "srcset": [
+      {
+        "url": "Work/Illustration/01 Sketch-Mockup-PUNK-640w.webp",
+        "w": 640,
+        "kb": 48.7
+      },
+      {
+        "url": "Work/Illustration/01 Sketch-Mockup-PUNK-960w.webp",
+        "w": 960,
+        "kb": 105.9
+      },
+      {
+        "url": "Work/Illustration/01 Sketch-Mockup-PUNK-1280w.webp",
+        "w": 1280,
+        "kb": 190.6
+      },
+      {
+        "url": "Work/Illustration/01 Sketch-Mockup-PUNK.webp",
+        "w": 1920,
+        "kb": 448.9
+      }
+    ],
+    "savings_pct": 89.9
+  },
+  {
+    "src": "Work/Illustration/02 Sketches-Mockup.png",
+    "width": 1920,
+    "height": 1280,
+    "original_kb": 3812.1,
+    "webp_full_kb": 231.8,
+    "srcset": [
+      {
+        "url": "Work/Illustration/02 Sketches-Mockup-640w.webp",
+        "w": 640,
+        "kb": 35.3
+      },
+      {
+        "url": "Work/Illustration/02 Sketches-Mockup-960w.webp",
+        "w": 960,
+        "kb": 69.7
+      },
+      {
+        "url": "Work/Illustration/02 Sketches-Mockup-1280w.webp",
+        "w": 1280,
+        "kb": 115.7
+      },
+      {
+        "url": "Work/Illustration/02 Sketches-Mockup.webp",
+        "w": 1920,
+        "kb": 231.8
+      }
+    ],
+    "savings_pct": 93.9
+  },
+  {
+    "src": "Work/Illustration/03 Retro-Paper-DnD-Board.png",
+    "width": 1920,
+    "height": 1280,
+    "original_kb": 4184.4,
+    "webp_full_kb": 488.7,
+    "srcset": [
+      {
+        "url": "Work/Illustration/03 Retro-Paper-DnD-Board-640w.webp",
+        "w": 640,
+        "kb": 64.0
+      },
+      {
+        "url": "Work/Illustration/03 Retro-Paper-DnD-Board-960w.webp",
+        "w": 960,
+        "kb": 140.7
+      },
+      {
+        "url": "Work/Illustration/03 Retro-Paper-DnD-Board-1280w.webp",
+        "w": 1280,
+        "kb": 244.3
+      },
+      {
+        "url": "Work/Illustration/03 Retro-Paper-DnD-Board.webp",
+        "w": 1920,
+        "kb": 488.7
+      }
+    ],
+    "savings_pct": 88.3
+  },
+  {
+    "src": "Work/Illustration/05 Bird-Mask-1980x1280.png",
+    "width": 1920,
+    "height": 1280,
+    "original_kb": 585.1,
+    "webp_full_kb": 31.4,
+    "srcset": [
+      {
+        "url": "Work/Illustration/05 Bird-Mask-1980x1280-640w.webp",
+        "w": 640,
+        "kb": 7.9
+      },
+      {
+        "url": "Work/Illustration/05 Bird-Mask-1980x1280-960w.webp",
+        "w": 960,
+        "kb": 12.9
+      },
+      {
+        "url": "Work/Illustration/05 Bird-Mask-1980x1280-1280w.webp",
+        "w": 1280,
+        "kb": 18.5
+      },
+      {
+        "url": "Work/Illustration/05 Bird-Mask-1980x1280.webp",
+        "w": 1920,
+        "kb": 31.4
+      }
+    ],
+    "savings_pct": 94.6
+  },
+  {
+    "src": "Work/Illustration/06 Dva-vytecnici.png",
+    "width": 1920,
+    "height": 1280,
+    "original_kb": 4179.8,
+    "webp_full_kb": 309.6,
+    "srcset": [
+      {
+        "url": "Work/Illustration/06 Dva-vytecnici-640w.webp",
+        "w": 640,
+        "kb": 38.4
+      },
+      {
+        "url": "Work/Illustration/06 Dva-vytecnici-960w.webp",
+        "w": 960,
+        "kb": 85.3
+      },
+      {
+        "url": "Work/Illustration/06 Dva-vytecnici-1280w.webp",
+        "w": 1280,
+        "kb": 150.8
+      },
+      {
+        "url": "Work/Illustration/06 Dva-vytecnici.webp",
+        "w": 1920,
+        "kb": 309.6
+      }
+    ],
+    "savings_pct": 92.6
+  },
+  {
+    "src": "Work/Illustration/07 Bud-Spencer-and-Terence-Hill---Mal\u00fd-Unaven\u00fd-Joe-2.png",
+    "width": 1920,
+    "height": 1071,
+    "original_kb": 2214.0,
+    "webp_full_kb": 155.5,
+    "srcset": [
+      {
+        "url": "Work/Illustration/07 Bud-Spencer-and-Terence-Hill---Mal\u00fd-Unaven\u00fd-Joe-2-640w.webp",
+        "w": 640,
+        "kb": 32.6
+      },
+      {
+        "url": "Work/Illustration/07 Bud-Spencer-and-Terence-Hill---Mal\u00fd-Unaven\u00fd-Joe-2-960w.webp",
+        "w": 960,
+        "kb": 59.8
+      },
+      {
+        "url": "Work/Illustration/07 Bud-Spencer-and-Terence-Hill---Mal\u00fd-Unaven\u00fd-Joe-2-1280w.webp",
+        "w": 1280,
+        "kb": 88.1
+      },
+      {
+        "url": "Work/Illustration/07 Bud-Spencer-and-Terence-Hill---Mal\u00fd-Unaven\u00fd-Joe-2.webp",
+        "w": 1920,
+        "kb": 155.5
+      }
+    ],
+    "savings_pct": 93.0
+  },
+  {
+    "src": "Work/Illustration/08 Hercule-Poirot-Iris.png",
+    "width": 1200,
+    "height": 1265,
+    "original_kb": 866.6,
+    "webp_full_kb": 21.9,
+    "srcset": [
+      {
+        "url": "Work/Illustration/08 Hercule-Poirot-Iris-640w.webp",
+        "w": 640,
+        "kb": 9.5
+      },
+      {
+        "url": "Work/Illustration/08 Hercule-Poirot-Iris-960w.webp",
+        "w": 960,
+        "kb": 16.1
+      },
+      {
+        "url": "Work/Illustration/08 Hercule-Poirot-Iris.webp",
+        "w": 1200,
+        "kb": 21.9
+      }
+    ],
+    "savings_pct": 97.5
+  },
+  {
+    "src": "Work/Illustration/09 Hercule-Poirot-S5-Iris---02.png",
+    "width": 1563,
+    "height": 1200,
+    "original_kb": 1331.4,
+    "webp_full_kb": 35.4,
+    "srcset": [
+      {
+        "url": "Work/Illustration/09 Hercule-Poirot-S5-Iris---02-640w.webp",
+        "w": 640,
+        "kb": 10.1
+      },
+      {
+        "url": "Work/Illustration/09 Hercule-Poirot-S5-Iris---02-960w.webp",
+        "w": 960,
+        "kb": 18.0
+      },
+      {
+        "url": "Work/Illustration/09 Hercule-Poirot-S5-Iris---02-1280w.webp",
+        "w": 1280,
+        "kb": 26.4
+      },
+      {
+        "url": "Work/Illustration/09 Hercule-Poirot-S5-Iris---02.webp",
+        "w": 1563,
+        "kb": 35.4
+      }
+    ],
+    "savings_pct": 97.3
+  },
+  {
+    "src": "Work/Illustration/10 Orc-Warrior-and-scifi.png",
+    "width": 1920,
+    "height": 951,
+    "original_kb": 739.0,
+    "webp_full_kb": 106.2,
+    "srcset": [
+      {
+        "url": "Work/Illustration/10 Orc-Warrior-and-scifi-640w.webp",
+        "w": 640,
+        "kb": 18.6
+      },
+      {
+        "url": "Work/Illustration/10 Orc-Warrior-and-scifi-960w.webp",
+        "w": 960,
+        "kb": 35.9
+      },
+      {
+        "url": "Work/Illustration/10 Orc-Warrior-and-scifi-1280w.webp",
+        "w": 1280,
+        "kb": 57.3
+      },
+      {
+        "url": "Work/Illustration/10 Orc-Warrior-and-scifi.webp",
+        "w": 1920,
+        "kb": 106.2
+      }
+    ],
+    "savings_pct": 85.6
+  },
+  {
+    "src": "Work/Illustration/11 Mapa-\u010cernohvozdu.png",
+    "width": 1080,
+    "height": 1653,
+    "original_kb": 795.7,
+    "webp_full_kb": 332.2,
+    "srcset": [
+      {
+        "url": "Work/Illustration/11 Mapa-\u010cernohvozdu-640w.webp",
+        "w": 640,
+        "kb": 146.3
+      },
+      {
+        "url": "Work/Illustration/11 Mapa-\u010cernohvozdu-960w.webp",
+        "w": 960,
+        "kb": 272.8
+      },
+      {
+        "url": "Work/Illustration/11 Mapa-\u010cernohvozdu.webp",
+        "w": 1080,
+        "kb": 332.2
+      }
+    ],
+    "savings_pct": 58.3
+  },
+  {
+    "src": "Work/UXUI Design/BSP - Tescan 3DIM/Catalog/Catalog.png",
+    "width": 1920,
+    "height": 1280,
+    "original_kb": 1160.6,
+    "webp_full_kb": 219.1,
+    "srcset": [
+      {
+        "url": "Work/UXUI Design/BSP - Tescan 3DIM/Catalog/Catalog-640w.webp",
+        "w": 640,
+        "kb": 15.6
+      },
+      {
+        "url": "Work/UXUI Design/BSP - Tescan 3DIM/Catalog/Catalog-960w.webp",
+        "w": 960,
+        "kb": 48.1
+      },
+      {
+        "url": "Work/UXUI Design/BSP - Tescan 3DIM/Catalog/Catalog-1280w.webp",
+        "w": 1280,
+        "kb": 100.5
+      },
+      {
+        "url": "Work/UXUI Design/BSP - Tescan 3DIM/Catalog/Catalog.webp",
+        "w": 1920,
+        "kb": 219.1
+      }
+    ],
+    "savings_pct": 81.1
+  },
+  {
+    "src": "Work/UXUI Design/BSP - Tescan 3DIM/Design Kit/Design-Kit-Mockup.png",
+    "width": 1920,
+    "height": 1280,
+    "original_kb": 561.6,
+    "webp_full_kb": 126.6,
+    "srcset": [
+      {
+        "url": "Work/UXUI Design/BSP - Tescan 3DIM/Design Kit/Design-Kit-Mockup-640w.webp",
+        "w": 640,
+        "kb": 29.7
+      },
+      {
+        "url": "Work/UXUI Design/BSP - Tescan 3DIM/Design Kit/Design-Kit-Mockup-960w.webp",
+        "w": 960,
+        "kb": 52.4
+      },
+      {
+        "url": "Work/UXUI Design/BSP - Tescan 3DIM/Design Kit/Design-Kit-Mockup-1280w.webp",
+        "w": 1280,
+        "kb": 76.5
+      },
+      {
+        "url": "Work/UXUI Design/BSP - Tescan 3DIM/Design Kit/Design-Kit-Mockup.webp",
+        "w": 1920,
+        "kb": 126.6
+      }
+    ],
+    "savings_pct": 77.5
+  },
+  {
+    "src": "Work/UXUI Design/BSP - Tescan 3DIM/Icons/Set-of-Icons.png",
+    "width": 1920,
+    "height": 1280,
+    "original_kb": 2101.7,
+    "webp_full_kb": 140.7,
+    "srcset": [
+      {
+        "url": "Work/UXUI Design/BSP - Tescan 3DIM/Icons/Set-of-Icons-640w.webp",
+        "w": 640,
+        "kb": 35.9
+      },
+      {
+        "url": "Work/UXUI Design/BSP - Tescan 3DIM/Icons/Set-of-Icons-960w.webp",
+        "w": 960,
+        "kb": 58.8
+      },
+      {
+        "url": "Work/UXUI Design/BSP - Tescan 3DIM/Icons/Set-of-Icons-1280w.webp",
+        "w": 1280,
+        "kb": 85.6
+      },
+      {
+        "url": "Work/UXUI Design/BSP - Tescan 3DIM/Icons/Set-of-Icons.webp",
+        "w": 1920,
+        "kb": 140.7
+      }
+    ],
+    "savings_pct": 93.3
+  },
+  {
+    "src": "Work/UXUI Design/FPS Game/Prototype.png",
+    "width": 2000,
+    "height": 1125,
+    "original_kb": 1780.7,
+    "webp_full_kb": 153.2,
+    "srcset": [
+      {
+        "url": "Work/UXUI Design/FPS Game/Prototype-640w.webp",
+        "w": 640,
+        "kb": 24.6
+      },
+      {
+        "url": "Work/UXUI Design/FPS Game/Prototype-960w.webp",
+        "w": 960,
+        "kb": 48.9
+      },
+      {
+        "url": "Work/UXUI Design/FPS Game/Prototype-1280w.webp",
+        "w": 1280,
+        "kb": 76.1
+      },
+      {
+        "url": "Work/UXUI Design/FPS Game/Prototype-1920w.webp",
+        "w": 1920,
+        "kb": 142.0
+      },
+      {
+        "url": "Work/UXUI Design/FPS Game/Prototype.webp",
+        "w": 2000,
+        "kb": 153.2
+      }
+    ],
+    "savings_pct": 91.4
+  },
+  {
+    "src": "Work/UXUI Design/FPS Game/Wireframe.png",
+    "width": 2000,
+    "height": 1125,
+    "original_kb": 232.2,
+    "webp_full_kb": 49.0,
+    "srcset": [
+      {
+        "url": "Work/UXUI Design/FPS Game/Wireframe-640w.webp",
+        "w": 640,
+        "kb": 11.7
+      },
+      {
+        "url": "Work/UXUI Design/FPS Game/Wireframe-960w.webp",
+        "w": 960,
+        "kb": 19.8
+      },
+      {
+        "url": "Work/UXUI Design/FPS Game/Wireframe-1280w.webp",
+        "w": 1280,
+        "kb": 29.5
+      },
+      {
+        "url": "Work/UXUI Design/FPS Game/Wireframe-1920w.webp",
+        "w": 1920,
+        "kb": 47.6
+      },
+      {
+        "url": "Work/UXUI Design/FPS Game/Wireframe.webp",
+        "w": 2000,
+        "kb": 49.0
+      }
+    ],
+    "savings_pct": 78.9
+  },
+  {
+    "src": "Work/UXUI Design/Protocom-Wireframe.png",
+    "width": 1920,
+    "height": 1280,
+    "original_kb": 449.2,
+    "webp_full_kb": 93.0,
+    "srcset": [
+      {
+        "url": "Work/UXUI Design/Protocom-Wireframe-640w.webp",
+        "w": 640,
+        "kb": 23.6
+      },
+      {
+        "url": "Work/UXUI Design/Protocom-Wireframe-960w.webp",
+        "w": 960,
+        "kb": 39.5
+      },
+      {
+        "url": "Work/UXUI Design/Protocom-Wireframe-1280w.webp",
+        "w": 1280,
+        "kb": 57.6
+      },
+      {
+        "url": "Work/UXUI Design/Protocom-Wireframe.webp",
+        "w": 1920,
+        "kb": 93.0
+      }
+    ],
+    "savings_pct": 79.3
+  }
+]

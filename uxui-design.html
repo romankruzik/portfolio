@@ -177,6 +177,10 @@
     display: block;
     transition: opacity 0.3s;
   }
+  .gallery-item picture {
+    display: block;
+    width: 100%;
+  }
   .gallery-item--clickable:hover img { opacity: 0.88; }
   .gallery-item:not(.gallery-item--clickable):hover img { opacity: 0.92; }
 
@@ -440,42 +444,60 @@
 
 <main class="gallery">
   <article class="gallery-item reveal">
-    <img src="Work/UXUI Design/Protocom-Wireframe.png" alt="Protocom wireframe">
+    <picture>
+      <source type="image/webp" srcset="Work/UXUI Design/Protocom-Wireframe-640w.webp 640w, Work/UXUI Design/Protocom-Wireframe-960w.webp 960w, Work/UXUI Design/Protocom-Wireframe-1280w.webp 1280w, Work/UXUI Design/Protocom-Wireframe.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/UXUI Design/Protocom-Wireframe.png" alt="Protocom wireframe" width="1920" height="1280" loading="eager" decoding="async">
+    </picture>
     <div class="gallery-caption">
       <h2 class="gallery-title">Protocom Wireframe</h2>
       <p class="gallery-type">Wireframe</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-1">
-    <img src="Work/UXUI Design/BSP - Tescan 3DIM/Catalog/Catalog.png" alt="BSP Tescan catalog">
+    <picture>
+      <source type="image/webp" srcset="Work/UXUI Design/BSP - Tescan 3DIM/Catalog/Catalog-640w.webp 640w, Work/UXUI Design/BSP - Tescan 3DIM/Catalog/Catalog-960w.webp 960w, Work/UXUI Design/BSP - Tescan 3DIM/Catalog/Catalog-1280w.webp 1280w, Work/UXUI Design/BSP - Tescan 3DIM/Catalog/Catalog.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/UXUI Design/BSP - Tescan 3DIM/Catalog/Catalog.png" alt="BSP Tescan catalog" width="1920" height="1280" loading="eager" decoding="async">
+    </picture>
     <div class="gallery-caption">
       <h2 class="gallery-title">BSP Catalog</h2>
       <p class="gallery-type">UX/UI · Catalog</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-2">
-    <img src="Work/UXUI Design/BSP - Tescan 3DIM/Design Kit/Design-Kit-Mockup.png" alt="BSP design kit mockup">
+    <picture>
+      <source type="image/webp" srcset="Work/UXUI Design/BSP - Tescan 3DIM/Design Kit/Design-Kit-Mockup-640w.webp 640w, Work/UXUI Design/BSP - Tescan 3DIM/Design Kit/Design-Kit-Mockup-960w.webp 960w, Work/UXUI Design/BSP - Tescan 3DIM/Design Kit/Design-Kit-Mockup-1280w.webp 1280w, Work/UXUI Design/BSP - Tescan 3DIM/Design Kit/Design-Kit-Mockup.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/UXUI Design/BSP - Tescan 3DIM/Design Kit/Design-Kit-Mockup.png" alt="BSP design kit mockup" width="1920" height="1280" loading="lazy" decoding="async">
+    </picture>
     <div class="gallery-caption">
       <h2 class="gallery-title">BSP Design Kit</h2>
       <p class="gallery-type">Design System · Mockup</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-3">
-    <img src="Work/UXUI Design/BSP - Tescan 3DIM/Icons/Set-of-Icons.png" alt="BSP icon set">
+    <picture>
+      <source type="image/webp" srcset="Work/UXUI Design/BSP - Tescan 3DIM/Icons/Set-of-Icons-640w.webp 640w, Work/UXUI Design/BSP - Tescan 3DIM/Icons/Set-of-Icons-960w.webp 960w, Work/UXUI Design/BSP - Tescan 3DIM/Icons/Set-of-Icons-1280w.webp 1280w, Work/UXUI Design/BSP - Tescan 3DIM/Icons/Set-of-Icons.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/UXUI Design/BSP - Tescan 3DIM/Icons/Set-of-Icons.png" alt="BSP icon set" width="1920" height="1280" loading="lazy" decoding="async">
+    </picture>
     <div class="gallery-caption">
       <h2 class="gallery-title">BSP Icon Set</h2>
       <p class="gallery-type">Design System · Icons</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-4">
-    <img src="Work/UXUI Design/FPS Game/Wireframe.png" alt="FPS game wireframe">
+    <picture>
+      <source type="image/webp" srcset="Work/UXUI Design/FPS Game/Wireframe-640w.webp 640w, Work/UXUI Design/FPS Game/Wireframe-960w.webp 960w, Work/UXUI Design/FPS Game/Wireframe-1280w.webp 1280w, Work/UXUI Design/FPS Game/Wireframe-1920w.webp 1920w, Work/UXUI Design/FPS Game/Wireframe.webp 2000w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/UXUI Design/FPS Game/Wireframe.png" alt="FPS game wireframe" width="2000" height="1125" loading="lazy" decoding="async">
+    </picture>
     <div class="gallery-caption">
       <h2 class="gallery-title">FPS Game Wireframe</h2>
       <p class="gallery-type">Wireframe</p>
     </div>
   </article>
   <article class="gallery-item reveal reveal-delay-5">
-    <img src="Work/UXUI Design/FPS Game/Prototype.png" alt="FPS game prototype">
+    <picture>
+      <source type="image/webp" srcset="Work/UXUI Design/FPS Game/Prototype-640w.webp 640w, Work/UXUI Design/FPS Game/Prototype-960w.webp 960w, Work/UXUI Design/FPS Game/Prototype-1280w.webp 1280w, Work/UXUI Design/FPS Game/Prototype-1920w.webp 1920w, Work/UXUI Design/FPS Game/Prototype.webp 2000w" sizes="(max-width: 900px) 100vw, 50vw">
+      <img src="Work/UXUI Design/FPS Game/Prototype.png" alt="FPS game prototype" width="2000" height="1125" loading="lazy" decoding="async">
+    </picture>
     <div class="gallery-caption">
       <h2 class="gallery-title">FPS Game Prototype</h2>
       <p class="gallery-type">Prototype</p>
