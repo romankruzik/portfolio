@@ -150,13 +150,6 @@
     opacity: 0.4;
     font-size: 11px;
   }
-  .page-eyebrow::after {
-    content: '';
-    display: inline-block;
-    width: 40px;
-    height: 1px;
-    background: var(--electric);
-  }
   .page-headline {
     font-family: 'Playfair Display', serif;
     font-size: clamp(56px, 8vw, 110px);
@@ -444,25 +437,41 @@
   footer {
     padding: 48px var(--page-gutter);
     border-top: 1px solid var(--border);
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    justify-content: space-between;
     background: var(--void2);
   }
   .footer-logo {
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--electric);
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+    display: block;
+    line-height: 0;
+    text-decoration: none;
+  }
+  .footer-logo img {
+    display: block;
+    height: 16px;
+    width: auto;
   }
   .footer-copy {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    justify-self: center;
+    text-align: center;
     font-family: 'DM Mono', monospace;
     font-size: 10px;
     letter-spacing: 0.1em;
     color: var(--muted2);
   }
-  .footer-socials { display: flex; gap: 24px; }
+  .footer-socials {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
+    display: flex;
+    gap: 24px;
+  }
   .footer-socials a {
     font-family: 'DM Mono', monospace;
     font-size: 10px;
@@ -498,7 +507,21 @@
     .cs-tile-content { padding: 0 28px 32px; }
     .case-meta { flex-direction: column; gap: 20px; }
     .cta-strip { padding: 60px 28px; flex-direction: column; align-items: flex-start; }
-    footer { padding: 32px 28px; flex-direction: column; gap: 20px; text-align: center; }
+    footer {
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+    }
+    .footer-logo,
+    .footer-copy,
+    .footer-socials {
+      grid-column: auto;
+      grid-row: auto;
+      justify-self: center;
+    }
+    .footer-socials { justify-content: center; }
   }
   @media (max-width: 500px) {
     .page-headline { font-size: 40px; }
@@ -734,7 +757,7 @@
 
 <!-- Footer -->
 <footer>
-  <span class="footer-logo">Kružík Design</span>
+  <a href="index.html" class="footer-logo"><img src="Logos/logo_k_electric.svg" alt="Kružík Design"></a>
   <span class="footer-copy">© 2026 Roman Kružík · Czech Republic</span>
   <div class="footer-socials">
     <a href="https://www.linkedin.com/in/roman-kru%C5%BE%C3%ADk-05a044168/" target="_blank">LinkedIn</a>
