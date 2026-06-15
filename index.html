@@ -584,6 +584,41 @@
     margin-bottom: 8px;
   }
   .exp-headline em { font-style: italic; color: var(--electric); }
+  .exp-group-header {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+
+  .edu-logos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    border-top: 1px solid var(--border);
+    padding-top: 40px;
+  }
+  .edu-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 140px;
+    padding: 32px 24px;
+    background: transparent;
+    transition: background 0.2s;
+  }
+  .edu-logo:hover {
+    background: var(--void2);
+  }
+  .edu-logo img {
+    max-width: 100%;
+    max-height: 80px;
+    width: auto;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+  }
+  .edu-logo:hover img { opacity: 1; }
 
   .exp-list { display: flex; flex-direction: column; }
   .exp-item {
@@ -903,6 +938,7 @@
     /* Experience */
     .experience { padding: 80px 28px; }
     .exp-item { grid-template-columns: 1fr; gap: 12px; }
+    .edu-logos { grid-template-columns: repeat(2, 1fr); gap: 16px; }
 
     /* Fix 5: Tools strip — stack label above badges */
     .tools-strip { padding: 40px 28px; flex-direction: column; align-items: flex-start; gap: 20px; }
@@ -931,6 +967,7 @@
     .hero-desc { font-size: 18px; }
     .contact-link-value { font-size: 14px; }
     .exp-tag { font-size: 10px; padding: 5px 10px; }
+    .edu-logos { grid-template-columns: 1fr; }
   }
 
   .lang-switch {
@@ -1239,6 +1276,46 @@
       </div>
       <span class="exp-tag">Graphic Design</span>
     </div>
+  </div>
+
+  <div class="exp-group-header reveal">
+    <h2 class="exp-headline">Game<br><em>Projects</em></h2>
+  </div>
+  <div class="exp-list">
+    <div class="exp-item reveal">
+      <span class="exp-date">2023 — now</span>
+      <div>
+        <div class="exp-role">Concept Artist</div>
+        <div class="exp-company">Overmind Game Studios</div>
+      </div>
+      <span class="exp-tag">Concept Art</span>
+    </div>
+    <div class="exp-item reveal">
+      <span class="exp-date">2023 — now</span>
+      <div>
+        <div class="exp-role">2D Graphic Designer / Godot Scripter</div>
+        <div class="exp-company">Brno Game Jams</div>
+      </div>
+      <span class="exp-tag">Game Jam · Godot</span>
+    </div>
+  </div>
+
+  <div class="exp-group-header reveal">
+    <h2 class="exp-headline">Education and<br><em>Certificates</em></h2>
+  </div>
+  <div class="edu-logos reveal">
+    <a href="https://www.zusjk.cz/" class="edu-logo" target="_blank" rel="noopener noreferrer" aria-label="ZUŠ Jaroslava Kvapila Brno">
+      <img src="Logos/zusjk_white.svg" alt="ZUŠ Jaroslava Kvapila Brno" width="440" height="654" loading="lazy" decoding="async">
+    </a>
+    <a href="https://ssgbrno.cz/" class="edu-logo" target="_blank" rel="noopener noreferrer" aria-label="Střední škola grafická Brno">
+      <img src="Logos/logo_ssgbrno_white.png" alt="Střední škola grafická Brno" width="400" height="120" loading="lazy" decoding="async">
+    </a>
+    <a href="Certificates/Kruz%CC%8Ci%CC%81k_Roman_UX101_GameDevHub.pdf" class="edu-logo" target="_blank" rel="noopener noreferrer" aria-label="GameDevHub UX101 certificate (PDF)">
+      <img src="Logos/game_dev_hub_logo.svg" alt="GameDevHub" width="164" height="143" loading="lazy" decoding="async">
+    </a>
+    <a href="Certificates/Projektov%C3%A9%20my%C5%A1len%C3%AD%20SHINE%20-%20Kru%C5%BE%C3%ADk%20Roman.pdf" class="edu-logo" target="_blank" rel="noopener noreferrer" aria-label="SHINE project thinking certificate (PDF)">
+      <img src="Logos/SHINE_light_of_change.svg" alt="SHINE — Light of Change" width="200" height="80" loading="lazy" decoding="async">
+    </a>
   </div>
 </section>
 
