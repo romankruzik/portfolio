@@ -96,6 +96,9 @@ TRANSLATIONS = [
     ("Illustrator / Concept Artist", "Ilustrátor / concept artist"),
     ("Graphic Designer", "Grafický designér"),
     # index — experience paragraphs
+    ("Graphic Designer - Illustrator", "Grafický designer / Ilustrátor"),
+    ("Focused on creating 2D visual assets, user interface (UI) elements, and game components for modern digital gaming applications. Worked closely with developers and game designers to ensure visual consistency, optimize graphics, and achieve seamless integration into the game engine.", "Věnoval jsem se tvorbě 2D vizuálních podkladů, uživatelského rozhraní (UI) a herních assetů pro moderní digitální herní aplikace. Úzce jsem spolupracoval s vývojáři a herními designéry na zajištění vizuální konzistence, optimalizaci grafických prvků a jejich bezproblémové integraci do herního enginu."),
+    ("2D Graphics · UI/UX · Game Dev", "2D Graphics · UI/UX · Game Dev"),
     ("2D Graphic Designer / Godot Scripter", "2D grafický design / Tvorba v enginu Godot"),
     ("Concept Artist", "Kresba a koncepty"),
     ("Game<br><em>Projects</em>", "Herní<br><em>projekty</em>"),
